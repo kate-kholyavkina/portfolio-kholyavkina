@@ -1,4 +1,4 @@
-# Loftshool builder
+# My Portfolio - Kholyavkina Kate
 
 Getting started:
 
