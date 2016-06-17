@@ -1,6 +1,7 @@
 'use strict';
 
 global.$ = {
+  fs: require('fs'),
   package: require('./package.json'),
   config: require('./gulp/config'),
   path: {
@@ -28,6 +29,7 @@ $.gulp.task('default', $.gulp.series(
     'js.foundation',
     'js.process',
     'copy.image',
+    'copy.fonts',
     'css.foundation'
   ),
   $.gulp.parallel(

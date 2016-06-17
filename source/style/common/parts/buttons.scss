@@ -1,0 +1,20 @@
+// buttons
+.btn {
+  font-size: 1rem;
+  line-height: 1em;
+  display: inline-block;
+  padding: 0.85em 1.35em;
+  text-align: center;
+  border-radius: 0.35714285em;
+  transition: all 0.3s
+}
+.btn--transparent {
+  border: 0.0714285em solid #fff;
+  background-color: transparent;
+  color: #fff;
+  &:hover {
+    border: 0.0714285em solid #fff;
+    background-color: #fff;
+    color: $color_welcome_nav_hover;
+  }
+}

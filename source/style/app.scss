@@ -1,5 +1,53 @@
-body {
-  margin: 0;
-}
+// adjustment variables
 
-@import 'common/greating';
+$skill_circle_diameter: 110px;
+$skill_circle_stroke: 20px;
+
+
+// colors
+$color_welcome_title: #455a64;
+$color_welcome_nav: #00bfa5;
+$color_welcome_nav_hover: #009688;
+$color_welcome_nav_decor: #dee3e7;
+$color_welcome_nav_decor2: #73cac2;
+
+$color_footer_bg: #373e42;
+
+$color_section_subtitle: #4d5963;
+$color_skills_outer: #16c1a9;
+$color_skills_outer_bg: #dfdcd5;
+
+$color_skills_inner: #eeebdf;
+
+$section_about_bg: #efeee9;
+$section_skills_bg: #eeebdf;
+
+$color_contact_icons: #00bda3;
+
+
+// fonts
+@import 'font-awesome/font-awesome';
+@import 'common/fonts';
+
+// mixins
+@import 'common/mixins';
+
+// adjustment
+@import 'common/adjustment';
+
+// sections
+@import 'sections/header';
+@import 'sections/footer';
+
+// socials, buttons, titles 
+@import 'common/parts/socials';
+@import 'common/parts/titles';
+@import 'common/parts/buttons';
+
+// welcome page
+@import 'sections/welcome';
+@import 'sections/parts/welcome-flipcard';
+@import 'sections/parts/welcome-nav';
+
+// about page
+@import 'sections/about';

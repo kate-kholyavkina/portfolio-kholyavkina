@@ -1,0 +1,65 @@
+
+
+// titles
+.section-title {
+  text-align: center;
+  max-width: 140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-title__inner {
+  color: $color_welcome_title;
+  font-family: 'BERNIERRegular-Regular';
+  position: relative;
+  display: inline-block;
+
+  font-size: 2.55rem;
+  margin-top: 0.575em;
+  margin-bottom: 0.575em;
+
+  &:before,
+  &:after {
+    font-size: 2.55rem;
+    content: '';
+    background-color: rgba(#373e42, 0.2);
+    position: absolute;
+    width: 0.65em;
+    height: 0.14285714em;
+    top: 50%;
+    margin-top: -0.071428571em;
+  }
+  &:before{
+    left: -1.2em;
+  }
+  &:after {
+    right: -1.2em;
+  }
+
+  .section-title--card &{
+    font-size: 2.15rem;
+    margin-top: 1.1em;
+    margin-bottom: 0;
+  }
+  .section-title--contacts & {
+    margin-bottom: 0;
+  }
+
+  .section-title--small & {
+    font-size: 1.55rem;
+    margin-top: 0.85em;
+    margin-bottom: 0.5em;
+  }
+
+}
+
+
+
+.section-subtitle {
+  color: $color_section_subtitle;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.section-subtitle--skills {
+  margin-top:  0;
+  margin-bottom: 0;
+}

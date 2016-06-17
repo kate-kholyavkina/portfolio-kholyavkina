@@ -1,0 +1,39 @@
+.footer {
+  @include clearfix;
+}
+.footer__small-nav {
+  font-size: 1rem;
+  margin-top: 1.7em;
+}
+.small-nav {
+  font-size: 0.92857142857rem;
+  font-family:'Roboto-Medium';
+}
+
+.small-nav__item {
+  display: inline-block;
+  margin: 0 0.3em;
+}
+.small-nav__link {
+  color: #fff;
+  &:hover {
+    color: rgba(#fff, 0.5);
+  }
+}
+
+
+
+.footer__social {
+  font-size: 1rem;
+  margin-top: 0.95em;
+  padding-bottom: 1.3em;
+  border-bottom: 1px solid;
+}
+
+.footer-text {
+  font-size: (13.04 / 14) * 1rem;
+  display: block;
+  margin-top: 0.8em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+}

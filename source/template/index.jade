@@ -1,17 +1,27 @@
 doctype html
 html
   include common/_head
+  include common/_mixins
   body
     <!--[if lt IE 7]>
     <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
     <![endif]-->
 
-    .welcome__parallax
-      .welcome__card
-        .card
-          .card__photo
-          .card__name
-          .card__text
-          .card__social
-          nav.card__menu
-      footer.welcome__footer
+    .welcome__wrapper--welcome
+      .welcome__login
+        .login
+          a.btn.btn--transparent(href="#",class="btn--show-login",id="btn-show-login") Авторизоваться
+      .welcome__card.flip-container
+        .flipper
+          .card.card--front
+            include parts/_welcome__card--front
+
+          .card.card--back
+            include parts/_welcome__card--back
+
+    footer.footer.footer--welcome
+      span.footer--welcome__textline © Екатерина Холявкина
+      span.footer--welcome__textline создано с любовью в LoftSchool | 2016
+
+
+

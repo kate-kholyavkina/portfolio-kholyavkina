@@ -1,0 +1,127 @@
+
+.header {
+  background: url(../img/mountains_for_parallax.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 39.8rem;
+  @include clearfix;
+}
+
+
+.header__navbar {
+  @include clearfix;
+}
+.header__social {
+  float: left;
+  width: 50%;
+  margin-top: 0.35em;
+}
+
+
+.header__avatar {
+  margin-top: 5.7rem;
+}
+.header__avatar-text {
+  margin-top: 1.9rem;
+}
+
+
+.header__nav {
+  float: right;
+  width: 50%;
+  @include clearfix;
+}
+.header__burger {
+  float: right;
+  margin-top: 0.65em;
+  margin-right: 0.8em;
+}
+
+.main-menu {
+
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color_welcome_nav, 0.85);
+  transform: translateX(100%);
+  transition: all 0.3s;
+
+  &.main-menu--open {
+    transform: translateX(0);
+  }
+}
+
+
+
+.burger-btn {
+  transition: 0.1s all linear;
+  position: relative;
+  background: 0;
+  height: 1.5rem;
+  width: 1.75rem;
+  z-index: 1;
+  outline: 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+.burger-btn__bar {
+
+  &, &::before, &::after {
+    position: absolute;
+    width: 100%;
+    height: 0.21428571em;
+    top: 50%;
+    left: 0;
+    margin: auto;
+    background: rgba(#fff, 0.5);
+    transition: all linear 0.2s;
+    border-radius: 0.14285714em;
+    content: '';
+  }
+
+  &::before { top: -0.7rem; }
+  &::after { top: 0.7rem; }
+
+  &::before,
+  &::after {
+    transform: rotate(0deg);
+  }
+
+
+  .burger-btn:hover &,
+  .burger-btn:hover &::before,
+  .burger-btn:hover &::after {
+    background: #fff;
+  }
+
+  .burger-btn--active:hover &{
+    background: 0;
+  }
+  .burger-btn--active & {
+    background: 0;
+
+    &::before { transform: rotate(45deg); }
+    &::after { transform: rotate(-45deg); }
+
+    &::before,
+    &::after {
+      top: 0;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+.block {
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  } 
+}

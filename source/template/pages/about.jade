@@ -1,0 +1,37 @@
+extends ../main.jade
+block content
+  section.page-about__outer
+    //-  2 coumns with equal height trick (#4 form htmlbook)
+    
+    .page-about__inner
+
+      .about__aboutme.about__left
+        .section-title.section-title--bg 
+          .section-title__inner Обо мне
+        .about__content
+          p.about__photo
+            img(class="" src="assets/img/kholyavkina.jpg", alt="Катя Холявкина")
+          .section-title.section-title--small 
+            .section-title__inner Кто я
+          p.
+            Я веб разработчик из Украины. Мне 23 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные современные проекты.
+          p.
+            Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+      .about__skills.about__left
+        .about__content
+          .section-title.section-title--small
+            .section-title__inner Чем я могу быть вам полезна
+          p.
+            Больше всего меня привлекет Frontend разработка, но я также знакома и могу решать не сложные задачи на Backend. Но давайте по порядку.
+        .skills
+          +knobList("skills", skillsList)
+
+  section.section-map
+    include ../parts/_map
+
+    
+    .about__contacts
+      .section-title.section-title--contacts
+        .section-title__inner Контакты
+      +contactList("contacts", contactsList)

@@ -2,10 +2,14 @@
 
 module.exports = function() {
   $.gulp.task('jade', function() {
+    var YOUR_LOCALS = './content.json';
+    // console.log(JSON.parse($.fs.readFileSync(YOUR_LOCALS, 'utf-8')));
     return $.gulp.src($.path.template)
-      .pipe($.gp.jade({ pretty: true }))
+      .pipe($.gp.jade({ 
+        locals: JSON.parse($.fs.readFileSync(YOUR_LOCALS, 'utf-8')),
+        pretty: true 
+      }))
       .on('error', $.gp.notify.onError(function(error) {
-        console.log(123);
         return {
           title: 'Jade',
           message:  error.message

@@ -1,0 +1,19 @@
+.section-title.section-title--card
+  .section-title__inner  Авторизуйтесь
+
+div.card__form--login
+  form.form--login(action="")
+    input.form-input.form--login__input(type="text",placeholder="Логин")
+    input.form-input.form--login__input(type="text",placeholder="Пароль")
+    label(for="captcha-isHuman") Я человек
+    input(type="checkbox",id="captcha-isHuman")
+    div.
+     Вы точно не робот?
+    input(type='radio', name='captcha-notRobot', value='yes', checked='')
+    |  Да
+    input(type='radio', name='gender', value='no')
+    |  Не уверен
+
+
+nav.card__welcome-nav
+  +navigation("welcome-nav", loginpageMenu)

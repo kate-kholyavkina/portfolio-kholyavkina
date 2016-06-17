@@ -1,0 +1,19 @@
+header.header
+  .header__navbar
+    .header__social
+      +socials_navigation("social", "social--header", socials)
+    .header__nav
+      
+      .header__burger
+        button(id="burger-btn" class="burger-btn" type="button")
+          span(class="burger-btn__bar")
+
+      +navigation("main-menu", mainMenu)
+  .header__avatar
+    .avatar
+      .avatar__holder
+        img.avatar__pic(src="assets/img/kholyavkina.jpg", alt="")
+  .header__avatar-text
+    .avatar-text.avatar-text--white
+      .avatar-text__name Екатерина Холявкина
+      .avatar-text__text Личный сайт веб разработчика

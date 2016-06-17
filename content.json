@@ -1,0 +1,102 @@
+{
+  "socials": {
+    "Vkontakte" : {
+      "href" : "https://vk.com/id9807272",
+      "title" : "Vkontakte",
+      "iconClass" : "fa fa-vk"
+    },
+    "Github" : {
+      "href" : "https://github.com/kate-kholyavkina",
+      "title" : "Github",
+      "iconClass" : "fa fa-github-alt"
+    },
+    "LinkedIn" : {
+      "href" : "https://www.linkedin.com/in/kat-oleynick-17509091?trk=nav_responsive_tab_profile_pic",
+      "title" : "LinkedIn",
+      "iconClass" : "fa fa-linkedin"
+    }
+  },
+  "welcomeMenu" : {
+    "works" : {
+      "href" : "works.html",
+      "title" : "Мои работы"
+    },
+    "about" : {
+      "href" : "about.html",
+      "title" : "Обо мне"
+    },
+    "blog" : {
+      "href" : "blog.html",
+      "title" : "Блог"
+    }
+  },
+  "mainMenu" : {
+    "works" : {
+      "href" : "works.html",
+      "title" : "Мои работы"
+    },
+    "blog" : {
+      "href" : "blog.html",
+      "title" : "Блог"
+    },
+    "about" : {
+      "href" : "about.html",
+      "title" : "Обо мне"
+    },
+    "login" : {
+      "href" : "/",
+      "title" : "Авторизация"
+    }
+  },
+  "loginpageMenu" : {
+    "works" : {
+      "href" : "/",
+      "title" : "На главную",
+      "class" : "btn--hide-login"
+    },
+    "about" : {
+      "href" : "#",
+      "title" : "Войти"
+    }
+  },
+  "contactsList" : {
+    "skype" : {
+      "href" : "skype:kate.oleynik?add",
+      "title" : "kate.oleynik",
+      "iconClass" : "fa fa-skype"
+    },
+    "mail" : {
+      "href" : "mailto:katerina.kholyavkina@gmail.com",
+      "title" : "katerina.kholyavkina@gmail.com",
+      "iconClass" : "fa fa-envelope"
+    },
+    "phone" : {
+      "href" : "tel:+380934865296",
+      "title" : "+38 093 486 52 96",
+      "iconClass" : "fa fa-phone"
+    },
+    "address" : {
+      "href" : "",
+      "title" : "г. Киев",
+      "iconClass" : "fa fa-map-marker"
+    }
+  },
+  "skillsList" : {
+    "Frontend" : {
+      "HTML5" : "80",
+      "CSS3" : "85",
+      "JavaScript & jQuery" : "65"
+    },
+    "Backend" : {
+      "PHP" : "20",
+      "mySQL" : "25",
+      "Node.js & npm" : "10",
+      "Mongo.db" : "5"
+    },
+    "WorkFlow" : {
+      "Git" : "50",
+      "Gulp" : "65",
+      "Bower" : "65"
+    }
+  }
+}
