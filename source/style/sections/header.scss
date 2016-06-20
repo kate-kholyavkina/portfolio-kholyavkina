@@ -1,54 +1,143 @@
-
 .header {
   background: url(../img/mountains_for_parallax.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   min-height: 39.8rem;
+  height: 100vh;
   @include clearfix;
+  position: relative;
 }
 
-
-.header__navbar {
-  @include clearfix;
-}
-.header__social {
-  float: left;
+.header__triangle {
+  position: absolute;
+  bottom: 0;
   width: 50%;
-  margin-top: 0.35em;
+  height: 6.6rem;
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: $body_bg;
+    .body--about .header__triangle--left {
+      fill: $about_left_bg;
+    }
+    .body--about .header__triangle--right {
+      fill: $about_right_bg;
+    }
+  }
+
+  &.header__triangle--left {
+    left: 0;
+  }
+  &.header__triangle--right {
+    right: 0;
+  }
+  @include tablet {
+    height: 2.1rem;
+  }
+}
+
+.header__social {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 1.4rem;
+  margin-left: 1rem;
+  @include phones {
+    margin-top: 0.35rem;
+    margin-left: 0;
+  }
 }
 
 
 .header__avatar {
-  margin-top: 5.7rem;
+  margin-top: 9.5rem;
+  @include phones {
+    margin-top: 5.7rem;
+  }
 }
 .header__avatar-text {
   margin-top: 1.9rem;
 }
 
-
-.header__nav {
-  float: right;
-  width: 50%;
-  @include clearfix;
-}
 .header__burger {
-  float: right;
-  margin-top: 0.65em;
-  margin-right: 0.8em;
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  top: 0;
+  margin-top: 1.6rem;
+  margin-right: 1.9rem;
+
+  @include phones {
+    margin-top: 0.65rem;
+    margin-right: 0.8rem;
+  }
+
+
+  &.fixed {
+    position: fixed;
+  }
 }
 
 .main-menu {
 
+  z-index: 2;
   position: fixed;
+  left: 0;
+  top: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba($color_welcome_nav, 0.85);
   transform: translateX(100%);
   transition: all 0.3s;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   &.main-menu--open {
     transform: translateX(0);
+  }
+}
+.main-menu__list {
+  text-align: center;
+}
+.main-menu__item {
+  padding: 1.5rem 1rem;
+
+}
+.main-menu__link {
+  color: #fff;
+  font-family:'BERNIERRegular-Regular';
+  font-size: 2rem;
+  position: relative;
+
+  &:before,
+  &:after {
+    font-size: 2.55rem;
+    content: '';
+    background-color: rgba(#fff,0.2);
+    position: absolute;
+    top: 50%;
+    margin-top: -0.18rem;
+    transition: background 0.3s;
+    width: rem(22px);
+    height: 5px;
+
+    @include phones {
+      width: 1.6575rem;
+      height: 0.35rem;
+    }
+  }
+  &:hover:before,
+  &:hover:after {
+    background-color: #fff;
+  }
+  &:before{
+    left: -3rem;
+  }
+  &:after {
+    right: -3rem;
   }
 }
 
@@ -58,31 +147,49 @@
   transition: 0.1s all linear;
   position: relative;
   background: 0;
-  height: 1.5rem;
-  width: 1.75rem;
+  width: rem(40px);
+  height: rem(35px);
   z-index: 1;
   outline: 0;
   padding: 0;
   border: 0;
   cursor: pointer;
+  @include phones {
+    width: 1.75rem;
+    height: 1.5rem;
+  }
 }
 .burger-btn__bar {
 
   &, &::before, &::after {
     position: absolute;
     width: 100%;
-    height: 0.21428571em;
+    height: 5px;
     top: 50%;
     left: 0;
     margin: auto;
     background: rgba(#fff, 0.5);
     transition: all linear 0.2s;
-    border-radius: 0.14285714em;
+    border-radius: 2.5px;
     content: '';
+    @include phones {
+      height: 3px;
+      border-radius: 1.5px;
+    }
   }
 
-  &::before { top: -0.7rem; }
-  &::after { top: 0.7rem; }
+  &::before { 
+    top: rem(-15px);
+    @include phones {
+      top: -0.7rem; 
+    }
+  }
+  &::after { 
+    top: rem(15px); 
+    @include phones {
+      top: 0.7rem; 
+    }
+  }
 
   &::before,
   &::after {
@@ -95,7 +202,6 @@
   .burger-btn:hover &::after {
     background: #fff;
   }
-
   .burger-btn--active:hover &{
     background: 0;
   }

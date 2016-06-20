@@ -1,8 +1,10 @@
 // adjustment variables
-
+$footer_height_phones: 300px;
+$footer_height_tablet: 230px;
+$footer_height_desktop: 148px;
 $skill_circle_diameter: 110px;
 $skill_circle_stroke: 20px;
-
+$blog_menu_width: 284px;
 
 // colors
 $color_welcome_title: #455a64;
@@ -19,8 +21,9 @@ $color_skills_outer_bg: #dfdcd5;
 
 $color_skills_inner: #eeebdf;
 
-$section_about_bg: #efeee9;
-$section_skills_bg: #eeebdf;
+$about_left_bg: #efeee9;
+$about_right_bg: #eeebdf;
+$body_bg: #efeee9;
 
 $color_contact_icons: #00bda3;
 
@@ -49,5 +52,6 @@ $color_contact_icons: #00bda3;
 @import 'sections/parts/welcome-flipcard';
 @import 'sections/parts/welcome-nav';
 
-// about page
+// pages
 @import 'sections/about';
+@import 'sections/blog';

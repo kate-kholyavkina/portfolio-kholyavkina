@@ -2,8 +2,18 @@
   @include clearfix;
 }
 .footer__small-nav {
-  font-size: 1rem;
-  margin-top: 1.7em;
+  margin-top: 1.5rem;
+  padding-left: 0.4rem;
+  float: left;
+  width: 50%;
+  text-align: left;
+  @include laptop {
+    float: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 1.7rem;
+    padding-left: 0;
+  }
 }
 .small-nav {
   font-size: 0.92857142857rem;
@@ -12,7 +22,11 @@
 
 .small-nav__item {
   display: inline-block;
-  margin: 0 0.3em;
+  margin: 0 1.1rem;
+
+  @include tablet {
+    margin: 0 0.3rem;
+  }
 }
 .small-nav__link {
   color: #fff;
@@ -22,18 +36,57 @@
 }
 
 
-
-.footer__social {
-  font-size: 1rem;
-  margin-top: 0.95em;
-  padding-bottom: 1.3em;
+.footer__nav {
+  @include clearfix;
   border-bottom: 1px solid;
 }
+.footer__social {
+  margin-top: 0.95rem;
+  padding-bottom: 1.3rem;
+    padding-right: 2rem;
 
+  float: left;
+  width: 50%;
+  text-align: right;
+  @include laptop {
+    float: none;
+    width: 100%;
+    text-align: center;
+    padding-right: 0;
+  }
+}
+.footer__texts {
+  display: table;
+  width: 100%;
+  @include laptop {
+    display: block;
+  }
+}
 .footer-text {
+  width: 50%;
+  text-align: right;
+  display: table-cell;
+  vertical-align: middle;
+
   font-size: (13.04 / 14) * 1rem;
-  display: block;
-  margin-top: 0.8em;
-  padding-left: 0.8em;
-  padding-right: 0.8em;
+  margin-top: 0.3rem;
+    padding-left: 1.6rem;
+    padding-right: 2.6rem;
+  &.footer-text--left {
+    text-align: left;
+  }
+  &.footer-text--right {
+    text-align: right;
+  }
+  @include laptop {
+    display: block;
+    width: 100%;
+    margin-top: 0.85rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+    &.footer-text--left,
+    &.footer-text--right {
+      text-align: center;
+    }
+  }
 }

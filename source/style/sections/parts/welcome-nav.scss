@@ -1,4 +1,4 @@
-.welcome-nav { 
+.welcome-nav__list { 
   display: table;
   width: 100%;
   border-radius: 0 0 5px 5px;
@@ -34,8 +34,8 @@
   display: block;
   color: #ffffff;
   background-color: rgba($color_welcome_nav, 0.85);
-  padding: 0.85em 0.5em;
-  min-width: 4em;
+  padding: 0.85rem 0.5rem;
+  min-width: 4rem;
   text-align: center;
   transition: background-color 0.3s;
 

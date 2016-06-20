@@ -4,25 +4,20 @@
   $(function() {
 
 
-// map
+// blog
 
-
-
+    var html = $('html');
+    $('.off-canvas--menu').on('click', function() {
+      html.toggleClass('html--blog-opened');
+    });
 
 // hamburger menu using css transitions
 
-    var isActive = false;
 
     $('#burger-btn').on('click', function() {
-      if (isActive) {
-        $(this).removeClass('burger-btn--active');
-        $('.main-menu').removeClass('main-menu--open');
-      } else {
-        $(this).addClass('burger-btn--active');
-        $('.main-menu').addClass('main-menu--open');
-      }
-
-      isActive = !isActive;
+      $(this).toggleClass('burger-btn--active');
+      $('.header__burger').toggleClass('fixed');
+      $('.main-menu').toggleClass('main-menu--open');
     });
 
 
@@ -49,7 +44,7 @@
 
     }
 
-    setTimeout(showSkills, 300);
+    setTimeout(showSkills, 200);
 
 
 
@@ -72,7 +67,7 @@
     });
 
 
-    $('.welcome__wrapper--welcome').on('click', function(e){
+    $('.wrapper--welcome').on('click', function(e){
       
       console.log(e.target);
       if (e.target !== this) {

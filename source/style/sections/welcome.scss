@@ -1,5 +1,5 @@
 // wrapper
-.welcome__wrapper--welcome {
+.wrapper--welcome {
   min-height: 100%;
   overflow: hidden;
   position: relative;
@@ -19,8 +19,8 @@
   height: 6.25rem;
   margin-top: -6.25rem;
   position: relative;
-  line-height: 1.75em;
-  padding-top: 2.5em;
+  line-height: 1.75rem;
+  padding-top: 2.5rem;
   text-align: center;
   background-color: transparent;
   @include clearfix;
@@ -73,16 +73,19 @@
   margin-top: 2.85714285rem;
 }
 .card__social {
-  font-size: 1rem;
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 .avatar__holder {
-  width: 10rem;
-  height: 10rem;
   border-radius: 50%;
   background-color: #e2e2e2;
   overflow: hidden;
   margin: 0 auto;
+  width: 9rem;
+  height: 9rem;
+  @include phones {
+    width: 10rem;
+    height: 10rem;
+  }
 }
 .avatar__pic {
     display: block;
@@ -104,15 +107,24 @@
   color: #fff;
 }
 .avatar-text__name {
+  font-size: 2.15rem;
+  line-height: 1.35rem;
   font-family:'Roboto-Medium';
-  font-size: 1.5rem;
-  line-height: 1.5em;
+
+  @include phones {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
 }
 .avatar-text__text {
-  margin-top: 0.2em;
+  margin-top: 0.6rem;
   font-family:'Roboto-Light';
   font-size: 1rem;
-  line-height: 1.5em;
+  line-height: 1.5rem;
+
+  @include phones {
+    margin-top: 0.2rem;
+  }
 }
 
 

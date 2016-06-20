@@ -3,9 +3,44 @@
 // titles
 .section-title {
   text-align: center;
-  max-width: 140px;
+  max-width: 22rem;
   margin-left: auto;
   margin-right: auto;
+  font-size: 2.2rem;
+
+  &.section-title--bg {
+    padding: 1.45rem 3rem;
+    margin-top: -1.3rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  @include phones {
+    // font-size: 2.55rem;
+    font-size: 1.55rem;
+    max-width: 10em;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  &.section-title--small {
+    max-width: 13rem;
+  }
+  &.section-title--card{
+    font-size: 2.15rem;
+  }
+
+  &.section-title--bg {
+    font-size: 4.15rem;
+    @include phones {
+      font-size: 2.55rem;
+    }
+  }
+
 }
 .section-title__inner {
   color: $color_welcome_title;
@@ -13,9 +48,8 @@
   position: relative;
   display: inline-block;
 
-  font-size: 2.55rem;
-  margin-top: 0.575em;
-  margin-bottom: 0.575em;
+  @include phones {
+  }
 
   &:before,
   &:after {
@@ -23,32 +57,40 @@
     content: '';
     background-color: rgba(#373e42, 0.2);
     position: absolute;
-    width: 0.65em;
-    height: 0.14285714em;
+    width: 1.6575rem;
+    height: 0.35rem;
     top: 50%;
-    margin-top: -0.071428571em;
+    margin-top: -0.18rem;
   }
   &:before{
-    left: -1.2em;
+    left: -3rem;
+    @include phones {
+      left: -3rem;
+    }
   }
   &:after {
-    right: -1.2em;
+    right: -3rem;
+    @include phones {
+      right: -3rem;
+    }
   }
 
   .section-title--card &{
-    font-size: 2.15rem;
-    margin-top: 1.1em;
-    margin-bottom: 0;
-  }
-  .section-title--contacts & {
+    margin-top: 2.365rem;
     margin-bottom: 0;
   }
 
   .section-title--small & {
-    font-size: 1.55rem;
-    margin-top: 0.85em;
-    margin-bottom: 0.5em;
+    margin-top: 0.65rem;
+    margin-bottom: 1.4rem;
+
+    @include phones {
+      margin-top: 1.3175rem;
+      margin-bottom: 0.775rem;
+    }
   }
+
+
 
 }
 
@@ -57,9 +99,22 @@
 .section-subtitle {
   color: $color_section_subtitle;
   text-align: center;
-  font-size: 1.5rem;
+
+  font-size: 1.75rem;
+  @include phones {
+    font-size: 1.5rem;
+  }
 }
-.section-subtitle--skills {
-  margin-top:  0;
+
+
+.avatar-text__title {
+  font-family: 'BERNIERRegular-Regular';
+  position: relative;
+  display: inline-block;
+
+  font-size: 2.55rem;
+  margin-top: 0;
   margin-bottom: 0;
+  line-height: 2.55rem;
+
 }

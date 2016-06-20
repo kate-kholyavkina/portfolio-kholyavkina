@@ -8,7 +8,7 @@ mixin socials_navigation(className, ulClassName, items)
 
 
 mixin navigation(className, items)
-  ul(class="#{className}")
+  ul(class="#{className}__list")
     each item, ndx in items
       li(class="#{className}__item")
         a(class="#{className}__link #{item.class}"  href=item.href) #{item.title}  
@@ -49,3 +49,19 @@ mixin knobList(className, array)
             div(class="#{className}__label-holder")
               div(class="#{className}__label")= title
 
+
+mixin blogArticles(className, array)
+  ul(class="#{className}__list")
+    each item, ndx in array
+      li(class="#{className}__item")
+        h2(class="#{className}__title")= item.title
+        div(class="#{className}__date")= item.date
+        div(class="#{className}__text")= item.text
+
+
+
+mixin blogMenu(className, array)
+  ul(class="#{className}__list")
+    each item, ndx in array
+      li(class="#{className}__item")
+        div(class="#{className}__title")= item.title

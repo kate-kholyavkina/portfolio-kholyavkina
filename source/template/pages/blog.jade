@@ -1,3 +1,17 @@
-extends ../main.jade
+extends ../main-blog.jade
+block title
+   title Блог. Статьи, которые я написала
+
+block avatar-text
+  .avatar-text.avatar-text--white
+    .avatar-text__title Блог
+    .avatar-text__text Статьи, которые я написала
+    
 block content
-  | Blog
+  .blog__articles
+    +blogArticles("articles", blogArticles)
+
+
+block menu 
+  .blog__blog-nav
+    +blogMenu("blog-nav", blogArticles)

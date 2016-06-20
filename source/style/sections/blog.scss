@@ -1,0 +1,133 @@
+
+.off-canvas--menu {
+  z-index: 2;
+  position: relative;
+}
+.off-canvas--content {
+  z-index: 1;
+  position: relative;
+}
+.top-nav {
+  z-index: 3;
+  position: relative;
+}
+.off-canvas--content {
+  overflow: hidden;
+  .wrapper, .footer  {
+    transition: transform 0.3s;
+    transform: translate(0, 0);
+
+    html.html--blog-opened & {
+      transform: translate($blog_menu_width, 0);
+    }
+  }
+}
+.header__burger {
+  transform: translate(0, 0);
+  transition: transform 0.3s;
+}
+html.html--blog-opened .header__burger {
+  transform: translate($blog_menu_width, 0);
+}
+
+
+.blog__articles {
+  margin-left: 28%;
+
+  @include desktop {
+    margin-left: 33.5%;
+  }
+  @include laptop {}
+  @include tablet {
+
+    margin-left: 0;
+  }
+  @include phones {}
+}
+
+.blog__blog-nav {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100vh;
+  width: $blog_menu_width;
+  height: 100%;
+
+  @include tablet {
+    position: fixed;
+    width: $blog_menu_width;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $color_welcome_nav;
+    z-index: 1;
+    box-shadow: 4px 0 4px rgba(#000, 0.5);
+    transition: transform 0.3s;
+    transform: translate(-$blog_menu_width, 0);
+
+    html.html--blog-opened & {
+      transform: translate(0, 0);
+    }
+
+    &:after {
+      display: block;
+      position: absolute;
+      z-index: 1;
+      content: '';
+      top: 45%;
+      left: $blog_menu_width - 60 + 8;
+      background-color: $color_welcome_nav;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 4px 0 4px rgba(#000, 0.5);
+    }
+
+  }
+}
+
+
+
+.blog-nav {}
+.blog-nav__list {}
+.blog-nav__item {}
+.blog-nav__title {
+}
+
+.articles {}
+.articles__list {
+
+  max-width: 71.5rem;
+  padding-right: 10rem;
+  @include desktop {
+
+  // max-width: 40rem;
+  }
+  @include laptop {}
+  @include tablet {}
+  @include phones {}
+}
+.articles__item {
+  padding-bottom: 4rem;
+  border-top: rem(4px) solid gray;
+  padding-top: 4rem;
+  &:first-child {
+    border-top: none;
+  }
+}
+.articles__title {
+
+  font-family: 'BERNIERRegular-Regular';
+  font-size: 2.2rem;
+  margin-bottom: 0.9rem;
+  margin-top: 0;
+}
+.articles__date {
+  color: $color_welcome_nav;
+  margin-bottom: 1.2rem;
+}
+.articles__text {
+  line-height: 1.65rem;
+}
+

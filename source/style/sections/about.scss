@@ -1,78 +1,91 @@
-@mixin columns-trick__container-outer($colorRight) {
-  // float:left;
-  overflow: hidden;
-  background: $colorRight;
+.table {
+  display: table;
 }
-@mixin columns-trick__container-inner($colorLeft) {
-  float:left;
-  background: $colorLeft;
-  position: relative;
-  right: 50%;
+.row {
+  display: table-row;
 }
-@mixin columns-trick__column-left {
-  float: left;
-  width: 50%;
-  position: relative;
-  left: 50%;
-}
-@mixin columns-trick__column-right {
-  float: left;
-  width: 50%;
-  position: relative;
-  left: 50%;
+.cell {
+  display: table-cell;
 }
 
 
-.page-about__outer {
-  @media screen and (min-width: 992px) {
-    @include columns-trick__container-outer($section_skills_bg);
+.table--about {
+  width: 100%;
+  z-index: 1;
+  position: relative;
+
+  @include laptop {
+    display: block;
   }
-  @include clearfix;
-}
-.page-about__inner {
-  @include clearfix;
-  @media screen and (min-width: 992px) {
-    @include columns-trick__container-inner($section_about_bg);
-  }
-}
 
-.about__aboutme {
-  @include clearfix;
+  .row {
+    width: 100%;
 
-  background-color: $section_about_bg;
-.about__content {
-      font-size: 1rem;
-      max-width: 33em;
-      margin: 0 auto;
+    @include laptop {
+      display: block;
     }
-  @media screen and (max-width: 991px) {
+  }
+  .cell {
+    width: 50%;
+    @include clearfix;
+
+    &.cell--left { 
+      background-color: $about_left_bg;
+    }
+    &.cell--right { 
+      background-color: $about_right_bg;
+    }
+
+    @include laptop {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+
+.aboutme {
+  @include clearfix;
+  @include wide {
+    text-align: right;
+  }
+
+  .section-title--about {
+    background-image: url("../img/about_header.svg");
+    background-position: center -0.7rem;
+    @include wide {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    @include desktop { 
+      display: block;
+    }
+  }
+  .about__content {
+    max-width: 29rem;
+    margin: 0 auto;
     
-  }
-  @media screen and (min-width: 992px) {
-    @include columns-trick__column-left;
-  }
-}
-.about__skills{
-  @include clearfix;
-
-  background-color: $section_skills_bg;
-
-  @media screen and (max-width: 991px) {
-    .about__content {
-      font-size: 1rem;
-      max-width: 33em;
-      margin: 0 auto;
+    @include wide {
+      display: inline-block;
+      vertical-align: top;
+      max-width: 29.2rem;
+      text-align: left;
+      margin-top: 1.3rem;
     }
-  }
-  @media screen and (min-width: 992px) {
-    @include columns-trick__column-right;
+    @include desktop { 
+      display: block;
+    }
+
   }
 }
 
 
 .about__photo {
-  margin-left: -0.8rem;
-  margin-right: -0.8rem;
+  @include tablet {
+    margin-left: -0.8rem;
+    margin-right: -0.8rem;
+  }
 }
 
 
@@ -82,44 +95,58 @@
 .section-map {
   position: relative;
   @include clearfix;
+  @include fullscreen;
 }
 .map { 
-  height: 500px; 
+  height: 100%; 
 }
 
 .about__contacts{
-  font-size: 1rem;
-  position: absolute;
+
+    position: absolute;
+
   top: 0;
   left: 0;
+  bottom: 0;
   right: 0;
-  background-color: #fff;
-  width: 100%;
-  max-width: (380 / 14) * 1em;
-  height: (290 / 14) * 1em;
+  background-color: rgba(#fcfcfc, 0.85);
+  border-radius: 5px;
   margin: auto;
+  max-width: (380 / 16) * 1rem;
+  height: (290 / 16) * 1rem;
 
-
-  @media all and (min-width: 480px) {
+  @include phones {
     top: 0;
     left: 0;
-    bottom: 0;
     right: 0;
-    background-color: rgba(#fcfcfc, 0.85);
-    border-radius: 5px;
+    bottom: auto;
+    width: 100%;
+    background-color: #fff;
+    max-width: (380 / 14) * 1rem;
+    height: (290 / 14) * 1rem;
+    border-radius: 0;
   }
+}
+
+
+.section-title--contacts .section-title__inner {
+  margin-bottom: 0.8rem;
+  margin-top: 1.7rem;
 }
 
 
 
 .contacts__list {}
 .contacts__item {
-  margin: 0.2em 0.8em 0.3em 0.8em;
+  margin: 0rem 2.3rem;
+  @include phones {
+    margin: 0.2rem 0.8rem 0.3rem 0.8rem;
+  }
 }
 .contacts__icon { 
   color: $color_contact_icons;
   font-size: 2rem;
-  width: 1.2em;
+  width: 2.4rem;
   display: inline-block;
 }
 .contacts__icon .fa.fa-envelope{
@@ -141,12 +168,49 @@
   color: #455a64; 
 }
 
+.skills-block{
+  max-width: 45rem;
+  padding-left: 1.6rem;
+
+  @include tablet {
+    padding-left: 0;
+    
+    .about__content {
+      max-width: 33rem;
+      margin: 0 auto;
+    }
+  }
+
+}
+
 .skills {
   font-size: 1rem;
-  padding-top: 0.7em;
+  padding-left: 0.8rem;
+  padding-top: 1.5rem;
+  @include phones {
+    padding-top: 0.7rem;
+  }
 }
+
+
 .skills__list {
-  text-align: center;
+  text-align: left;
+
+  @include laptop {
+    text-align: center;
+  }
+}
+
+.section-subtitle--skills {
+  text-align: left;
+  margin-top: 0.4rem;
+
+  @include tablet {
+    text-align: center;
+    margin-top:  0;
+    margin-bottom: 0;
+  }
+
 }
 
 .skills__item {
@@ -155,12 +219,32 @@
   display: inline-block;
   margin-right: 10px;
   position: relative;
-  margin: 0.7em 1.2em 1.7em;
+  margin: 0.7rem 1.6rem 1.7rem 0;
+
+  height: 110px;
+  width: 110px;
+  @include wide {
+    height: 120px;
+    width: 120px;
+  }
+  @include wide {
+    margin: 0.7rem 2.4rem 1.7rem 0;
+  }
 }
 
+.skills__circle {
+  width: 100%;
+  height: 100%;
+}
 .skills__circle .outer{
   fill: $color_skills_inner;
   stroke: $color_skills_outer_bg;
+
+  @include wide {
+    r: 50px;
+    cx: 60px;
+    cy: 60px;
+  }
 }
 .skills__circle .inner {
   transform-origin: center;
@@ -168,6 +252,12 @@
   transition: all 1s;
   stroke: $color_skills_outer;
   fill: transparent;
+
+  @include wide {
+    r: 50px;
+    cx: 60px;
+    cy: 60px;
+  }
 }
 
 .skills__label-holder {
@@ -181,8 +271,12 @@
 
 .skills__label {
   margin: auto;
+  text-align: center;
   color: $color_skills_outer;
   font-family:'Roboto-Medium';
-  font-size: 0.91643rem;
+  font-size: rem(13px);
   max-width: $skill_circle_diameter - ($skill_circle_stroke * 2);
+  @include phones {
+    font-size: 0.91643rem;
+  }
 }

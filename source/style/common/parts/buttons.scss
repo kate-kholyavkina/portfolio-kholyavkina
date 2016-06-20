@@ -1,19 +1,18 @@
 // buttons
 .btn {
-  font-size: 1rem;
-  line-height: 1em;
+  line-height: 1rem;
   display: inline-block;
-  padding: 0.85em 1.35em;
+  padding: 0.85rem 1.35rem;
   text-align: center;
-  border-radius: 0.35714285em;
+  border-radius: 0.35714285rem;
   transition: all 0.3s
 }
 .btn--transparent {
-  border: 0.0714285em solid #fff;
+  border: 1px solid #fff;
   background-color: transparent;
   color: #fff;
   &:hover {
-    border: 0.0714285em solid #fff;
+    border: 1px solid #fff;
     background-color: #fff;
     color: $color_welcome_nav_hover;
   }

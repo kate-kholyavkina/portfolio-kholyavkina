@@ -18,3 +18,42 @@
     height: 0;
   }
 }
+@mixin fullscreen {
+  height: 100vh;
+  min-height: 650px;
+}
+
+@function rem($px) {
+  @return ($px / 16px) + 0rem
+}
+
+@mixin wide() {
+  @media screen and (min-width: 1601px) {
+    @content;
+  }
+}
+@mixin desktop() {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin laptop() {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+@mixin tablet() {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin phones() {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin only-xs() {
+  @media screen and (max-width: 479px) {
+    @content;
+  }
+}
