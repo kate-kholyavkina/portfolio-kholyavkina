@@ -43,7 +43,7 @@
   top: 0;
   margin-top: 1.4rem;
   margin-left: 1rem;
-  @include phones {
+  @include phone {
     margin-top: 0.35rem;
     margin-left: 0;
   }
@@ -52,7 +52,7 @@
 
 .header__avatar {
   margin-top: 9.5rem;
-  @include phones {
+  @include phone {
     margin-top: 5.7rem;
   }
 }
@@ -68,7 +68,7 @@
   margin-top: 1.6rem;
   margin-right: 1.9rem;
 
-  @include phones {
+  @include phone {
     margin-top: 0.65rem;
     margin-right: 0.8rem;
   }
@@ -108,7 +108,7 @@
 }
 .main-menu__link {
   color: #fff;
-  font-family:'BERNIERRegular-Regular';
+  @include bernier;
   font-size: 2rem;
   position: relative;
 
@@ -124,7 +124,7 @@
     width: rem(22px);
     height: 5px;
 
-    @include phones {
+    @include phone {
       width: 1.6575rem;
       height: 0.35rem;
     }
@@ -154,7 +154,7 @@
   padding: 0;
   border: 0;
   cursor: pointer;
-  @include phones {
+  @include phone {
     width: 1.75rem;
     height: 1.5rem;
   }
@@ -172,7 +172,7 @@
     transition: all linear 0.2s;
     border-radius: 2.5px;
     content: '';
-    @include phones {
+    @include phone {
       height: 3px;
       border-radius: 1.5px;
     }
@@ -180,13 +180,13 @@
 
   &::before { 
     top: rem(-15px);
-    @include phones {
+    @include phone {
       top: -0.7rem; 
     }
   }
   &::after { 
     top: rem(15px); 
-    @include phones {
+    @include phone {
       top: 0.7rem; 
     }
   }

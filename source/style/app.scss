@@ -6,7 +6,7 @@ $skill_circle_diameter: 110px;
 $skill_circle_stroke: 20px;
 $blog_menu_width: 284px;
 
-// colors
+// colors welcome
 $color_welcome_title: #455a64;
 $color_welcome_nav: #00bfa5;
 $color_welcome_nav_hover: #009688;
@@ -15,6 +15,7 @@ $color_welcome_nav_decor2: #73cac2;
 
 $color_footer_bg: #373e42;
 
+// colors about
 $color_section_subtitle: #4d5963;
 $color_skills_outer: #16c1a9;
 $color_skills_outer_bg: #dfdcd5;
@@ -23,9 +24,17 @@ $color_skills_inner: #eeebdf;
 
 $about_left_bg: #efeee9;
 $about_right_bg: #eeebdf;
-$body_bg: #efeee9;
+$body_bg: #faf8f0;
 
 $color_contact_icons: #00bda3;
+
+// works colors
+$slider_preview_hover: #b6b4ae;
+$color_slider_bg: #f0efe9;
+$color_slider_skills: #20b5a1;
+$color_slider_right: #efebe0;
+$color_quote: #dde0e0;
+
 
 
 // fonts
@@ -55,3 +64,4 @@ $color_contact_icons: #00bda3;
 // pages
 @import 'sections/about';
 @import 'sections/blog';
+@import 'sections/works';

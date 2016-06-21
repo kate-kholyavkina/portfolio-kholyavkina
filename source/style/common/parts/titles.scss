@@ -9,8 +9,9 @@
   font-size: 2.2rem;
 
   &.section-title--bg {
-    padding: 1.45rem 3rem;
-    margin-top: -1.3rem;
+    @include clearfix;
+    max-width: 28rem;
+    padding: 2.9rem 0;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
@@ -19,7 +20,7 @@
     }
   }
 
-  @include phones {
+  @include phone {
     // font-size: 2.55rem;
     font-size: 1.55rem;
     max-width: 10em;
@@ -36,7 +37,7 @@
 
   &.section-title--bg {
     font-size: 4.15rem;
-    @include phones {
+    @include phone {
       font-size: 2.55rem;
     }
   }
@@ -44,11 +45,11 @@
 }
 .section-title__inner {
   color: $color_welcome_title;
-  font-family: 'BERNIERRegular-Regular';
+  @include bernier;
   position: relative;
   display: inline-block;
 
-  @include phones {
+  @include phone {
   }
 
   &:before,
@@ -64,13 +65,13 @@
   }
   &:before{
     left: -3rem;
-    @include phones {
+    @include phone {
       left: -3rem;
     }
   }
   &:after {
     right: -3rem;
-    @include phones {
+    @include phone {
       right: -3rem;
     }
   }
@@ -84,7 +85,7 @@
     margin-top: 0.65rem;
     margin-bottom: 1.4rem;
 
-    @include phones {
+    @include phone {
       margin-top: 1.3175rem;
       margin-bottom: 0.775rem;
     }
@@ -101,14 +102,14 @@
   text-align: center;
 
   font-size: 1.75rem;
-  @include phones {
+  @include phone {
     font-size: 1.5rem;
   }
 }
 
 
 .avatar-text__title {
-  font-family: 'BERNIERRegular-Regular';
+  @include bernier;
   position: relative;
   display: inline-block;
 
@@ -116,5 +117,31 @@
   margin-top: 0;
   margin-bottom: 0;
   line-height: 2.55rem;
+}
 
+
+
+.section-title--about {
+  background-image: url("../img/about_header.svg");
+  background-position: center -0.7rem;
+  @include wide {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  @include desktop { 
+    display: block;
+  }
+}
+.section-title--works {
+  background-image: url("../img/works_header.svg");
+  background-position: center -0.7rem;
+  @include wide {
+    // display: inline-block;
+    // vertical-align: top;
+  }
+
+  @include desktop { 
+    display: block;
+  }
 }

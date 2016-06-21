@@ -49,19 +49,6 @@
   @include wide {
     text-align: right;
   }
-
-  .section-title--about {
-    background-image: url("../img/about_header.svg");
-    background-position: center -0.7rem;
-    @include wide {
-      display: inline-block;
-      vertical-align: top;
-    }
-
-    @include desktop { 
-      display: block;
-    }
-  }
   .about__content {
     max-width: 29rem;
     margin: 0 auto;
@@ -78,7 +65,12 @@
     }
 
   }
+  .section-title--bg {
+    margin-top: -1.3rem;
+    padding: 1.45rem 3rem;
+  }
 }
+
 
 
 .about__photo {
@@ -115,7 +107,7 @@
   max-width: (380 / 16) * 1rem;
   height: (290 / 16) * 1rem;
 
-  @include phones {
+  @include phone {
     top: 0;
     left: 0;
     right: 0;
@@ -139,7 +131,7 @@
 .contacts__list {}
 .contacts__item {
   margin: 0rem 2.3rem;
-  @include phones {
+  @include phone {
     margin: 0.2rem 0.8rem 0.3rem 0.8rem;
   }
 }
@@ -157,14 +149,14 @@
   font-size: 1.8rem;
 }
 .contacts__link {
-  font-family:'Roboto-Medium';
+  @include roboto-medium;
   color: #455a64; 
   &:hover {
     text-decoration: underline;
   }
 }
 .contacts__text { 
-  font-family:'Roboto-Medium';
+  @include roboto-medium;
   color: #455a64; 
 }
 
@@ -172,12 +164,16 @@
   max-width: 45rem;
   padding-left: 1.6rem;
 
-  @include tablet {
+  @include laptop {
     padding-left: 0;
-    
+
+    margin: 0 auto;
+    text-align: center;
+
     .about__content {
       max-width: 33rem;
       margin: 0 auto;
+      text-align: center;
     }
   }
 
@@ -187,7 +183,7 @@
   font-size: 1rem;
   padding-left: 0.8rem;
   padding-top: 1.5rem;
-  @include phones {
+  @include phone {
     padding-top: 0.7rem;
   }
 }
@@ -205,7 +201,7 @@
   text-align: left;
   margin-top: 0.4rem;
 
-  @include tablet {
+  @include laptop {
     text-align: center;
     margin-top:  0;
     margin-bottom: 0;
@@ -273,10 +269,10 @@
   margin: auto;
   text-align: center;
   color: $color_skills_outer;
-  font-family:'Roboto-Medium';
+  @include roboto-medium;
   font-size: rem(13px);
   max-width: $skill_circle_diameter - ($skill_circle_stroke * 2);
-  @include phones {
+  @include phone {
     font-size: 0.91643rem;
   }
 }

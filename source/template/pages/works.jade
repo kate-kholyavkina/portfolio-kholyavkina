@@ -3,4 +3,60 @@ block title
    title Мои работы
 
 block content
-  | Works
+  .section-title.section-title--bg.section-title--works
+    .section-title__inner Мои работы
+  .slider
+    .slider__left
+      .slider__info
+        .section-title 
+          .section-title__inner Сайт школы онлайн Образования
+        .slider__skills HTML , CSS, JAVASCRIPT
+        .slider__btn 
+          a(href="").btn 
+            <i class="fa fa-link" aria-hidden="true"></i>
+            span Посмотреть сайт 
+    .slider__right
+      .slider__display
+        img(src="assets/img/slider-big.png", alt="")
+      .slider__controls
+        a(href="").slider__control.slider__control--prev
+          img(src="assets/img/slider-small-1.png", alt="")
+        a(href="").slider__control.slider__control--next
+          img(src="assets/img/slider-small-2.png", alt="")
+
+  .testimonials
+    .container
+      .section-title.section-title--bg.section-title--about
+        .section-title__inner Что обо мне говорят
+      .testimonial__list
+        .testimonial__item
+          .testimonial__text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+          .testimonial__photo
+            .testimonial__pic-wrap
+              img.testimonial__pic(src="assets/img/testimonial-pic-1.jpg", alt="")
+          .testimonial__person-info
+            .testimonial__name Ковальчук Дмитрий
+            .testimonial__position основатель Loftschool
+
+        .testimonial__item
+          .testimonial__text Этот код выдержет любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!Этот код выдержет любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
+          .testimonial__photo
+            .testimonial__pic-wrap
+              img.testimonial__pic(src="assets/img/testimonial-pic-2.jpg", alt="")
+          .testimonial__person-info
+            .testimonial__name Зар Захаров
+            .testimonial__position главный преподаватель
+
+
+      .contact-form__wrapper
+        .contact-form
+          form.form(action="")
+            input.form-input.form--login__input(type="text",placeholder="Имя")
+            input.form-input.form--login__input(type="email",placeholder="Email")
+            textarea.form-input.form--login__input(name="", cols="30", rows="10", placeholder="Ваше сообщение")
+
+            nav.card__welcome-nav
+              +navigation("welcome-nav", loginpageMenu)
+            
+      .scroll-control.scroll-control--up
+        .scroll-control__btn

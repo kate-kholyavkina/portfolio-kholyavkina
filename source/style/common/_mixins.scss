@@ -1,3 +1,4 @@
+// clearfix
 @mixin clearfix {
   &:before,
   &:after {
@@ -9,6 +10,8 @@
   }
 }
 
+
+// full-width list
 @mixin list-justify {
   text-align: justify;
   &:after {
@@ -18,15 +21,30 @@
     height: 0;
   }
 }
+
+// fullscreen
 @mixin fullscreen {
   height: 100vh;
   min-height: 650px;
+  // max-height: 50rem;
 }
 
+// centered
+@mixin centered {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  margin: auto;
+}
+
+// rem
 @function rem($px) {
   @return ($px / 16px) + 0rem
 }
 
+// media
 @mixin wide() {
   @media screen and (min-width: 1601px) {
     @content;
@@ -47,7 +65,7 @@
     @content;
   }
 }
-@mixin phones() {
+@mixin phone() {
   @media screen and (max-width: 480px) {
     @content;
   }
@@ -56,4 +74,21 @@
   @media screen and (max-width: 479px) {
     @content;
   }
+}
+
+// fonts
+@mixin roboto-bold {
+  font-family:'Roboto-Bold';
+}
+@mixin roboto-light {
+  font-family:'Roboto-Light';
+}
+@mixin roboto-medium {
+  font-family:'Roboto-Medium';
+}
+@mixin roboto-regular {
+  font-family:'Roboto-Regular';
+}
+@mixin bernier {
+  font-family:'BERNIERRegular-Regular';
 }

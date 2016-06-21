@@ -28,7 +28,7 @@
 
 .footer--welcome__textline {
   display: block;
-  font-family:'Roboto-Light';
+  @include roboto-light;
   color: #fff;
 }
 
@@ -82,7 +82,7 @@
   margin: 0 auto;
   width: 9rem;
   height: 9rem;
-  @include phones {
+  @include phone {
     width: 10rem;
     height: 10rem;
   }
@@ -109,20 +109,24 @@
 .avatar-text__name {
   font-size: 2.15rem;
   line-height: 1.35rem;
-  font-family:'Roboto-Medium';
+  @include roboto-medium;
+  .card__avatar-text &{
 
-  @include phones {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+  @include phone {
     font-size: 1.5rem;
     line-height: 2.25rem;
   }
 }
 .avatar-text__text {
   margin-top: 0.6rem;
-  font-family:'Roboto-Light';
+  @include roboto-light;
   font-size: 1rem;
   line-height: 1.5rem;
 
-  @include phones {
+  @include phone {
     margin-top: 0.2rem;
   }
 }

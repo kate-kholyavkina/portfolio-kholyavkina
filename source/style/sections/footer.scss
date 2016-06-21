@@ -17,7 +17,7 @@
 }
 .small-nav {
   font-size: 0.92857142857rem;
-  font-family:'Roboto-Medium';
+  @include roboto-medium;
 }
 
 .small-nav__item {
