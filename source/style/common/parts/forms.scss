@@ -1,0 +1,140 @@
+@include placeholder(#373e42);
+
+.form__input {
+  background: #fff;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  margin-bottom: rem(19px);
+  padding: rem(12.5px) rem(16px);
+  outline: none;
+  color: rgba(#373e42, 0.85);
+}
+
+// login form
+
+.form--login {
+  padding: 0 rem(20px);
+  .form__input {
+    padding: 1rem;
+  }
+}
+
+
+
+// contact form
+
+.form--contact__wrapper {
+  margin: 2rem auto 4rem;
+  max-width: rem(380px);
+
+  .form--contact {
+    position: relative;
+    border-radius: 5px;
+    background-image: url(../img/testimonials-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 rem(20px) 3rem;
+  }
+  .contact-form__buttons {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3rem;
+    width: 100%;
+    border-radius:  0 0 5px 5px;
+  }
+
+}
+
+.form__input-group {
+  display: table;
+  margin-bottom: rem(19px);
+  width: 100%;
+
+  .form__input-group-addon {
+    display: table-cell;
+    padding: rem(6px) rem(14px);
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1;
+
+    color: #c4cbcd;
+    text-align: center;
+    background-color: #f0efe9;
+    border-radius: 4px 0 0 4px;
+    .fa {
+        width: 14px;
+    }
+  }
+  .form__input {
+    display: table-cell;
+    margin-bottom: 0;
+    border-radius: 0 4px 4px 0;
+
+  }
+  .form__radio {
+    display: inline-block;
+  }
+}
+
+
+
+.checkbox-custom, .radio-custom {
+    opacity: 0;
+    position: absolute;   
+}
+.checkbox-custom, .checkbox-custom-label, .radio-custom, .radio-custom-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+}
+.checkbox-custom-label, .radio-custom-label {
+    position: relative;
+}
+.checkbox-custom + .checkbox-custom-label:before, .radio-custom + .radio-custom-label:before {
+    content: '';
+    background: #fff;
+    border: 1px solid #cdcdcd;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 2px;
+}
+.checkbox-custom + .checkbox-custom-label:before {
+    padding: 0;
+}
+.checkbox-custom:checked + .checkbox-custom-label:before {
+    background-color: $color_welcome_nav;
+    border-color: $color_welcome_nav;
+}
+.checkbox-custom:checked + .checkbox-custom-label:after {
+    position: absolute;
+    left: 3px;
+    top: 4px;
+    font-family: FontAwesome;
+    content: "\f00c";
+    width: 8px;
+    height: 8px;
+    color: #fff;
+    font-size: 1rem;
+}
+.radio-custom + .radio-custom-label:before {
+    border-radius: 50%;
+}
+.radio-custom:checked + .radio-custom-label:after {
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    content: '';
+    border-radius: 50%;
+    background-color: $color_welcome_nav;
+}

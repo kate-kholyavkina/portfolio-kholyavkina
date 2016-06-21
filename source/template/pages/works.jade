@@ -7,6 +7,8 @@ block content
     .section-title__inner Мои работы
   .slider
     .slider__left
+      .slider__display
+        img(src="assets/img/slider-big.png", alt="")
       .slider__info
         .section-title 
           .section-title__inner Сайт школы онлайн Образования
@@ -16,8 +18,6 @@ block content
             <i class="fa fa-link" aria-hidden="true"></i>
             span Посмотреть сайт 
     .slider__right
-      .slider__display
-        img(src="assets/img/slider-big.png", alt="")
       .slider__controls
         a(href="").slider__control.slider__control--prev
           img(src="assets/img/slider-small-1.png", alt="")
@@ -48,15 +48,23 @@ block content
             .testimonial__position главный преподаватель
 
 
-      .contact-form__wrapper
-        .contact-form
-          form.form(action="")
-            input.form-input.form--login__input(type="text",placeholder="Имя")
-            input.form-input.form--login__input(type="email",placeholder="Email")
-            textarea.form-input.form--login__input(name="", cols="30", rows="10", placeholder="Ваше сообщение")
+      .form--contact__wrapper
+        
+        form.form.form--contact(action="")
 
-            nav.card__welcome-nav
-              +navigation("welcome-nav", loginpageMenu)
+          .section-title.section-title--card
+            .section-title__inner Связаться со мной
+          input.form__input.form--contact__input(type="text",placeholder="Имя")
+          input.form__input.form--contact__input(type="email",placeholder="Email")
+          textarea.form__input.form--contact__input(name="", cols="30", rows="6", placeholder="Ваше сообщение")
+
+          .contact-form__buttons
+            ul.welcome-nav__list
+              li.welcome-nav__item
+                input.welcome-nav__link(type="submit" value="Отправить")
+              li.welcome-nav__item
+                input.welcome-nav__link(type="submit" value="Очистить")
+
             
       .scroll-control.scroll-control--up
         .scroll-control__btn

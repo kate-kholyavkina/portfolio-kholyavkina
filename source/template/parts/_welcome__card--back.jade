@@ -1,19 +1,36 @@
 .section-title.section-title--card
   .section-title__inner  Авторизуйтесь
 
-div.card__form--login
-  form.form--login(action="")
-    input.form-input.form--login__input(type="text",placeholder="Логин")
-    input.form-input.form--login__input(type="text",placeholder="Пароль")
-    label(for="captcha-isHuman") Я человек
-    input(type="checkbox",id="captcha-isHuman")
-    div.
-     Вы точно не робот?
-    input(type='radio', name='captcha-notRobot', value='yes', checked='')
-    |  Да
-    input(type='radio', name='gender', value='no')
-    |  Не уверен
+//- div.card__form--login
+form.form.form--login(action="")
+  .form__input-group
+    span.form__input-group-addon
+      i.fa.fa-user(aria-hidden='true')
+    input.form__input.form--login__input(type="text",placeholder="Логин")
+  .form__input-group
+    span.form__input-group-addon
+      i.fa.fa-key(aria-hidden='true')
+    input.form__input.form--login__input(type="password",placeholder="Пароль")
 
+  .form__input-group
+    input#ishuman.checkbox-custom(name='isHuman', type='checkbox')
+    label.checkbox-custom-label(for='ishuman') Я человек
 
-nav.card__welcome-nav
+  .form__input-group
+    div Вы точно не робот?
+    .form__radio
+      input#yes.radio-custom(name='radio-group', type='radio')
+      label.radio-custom-label(for='yes') Да
+    .form__radio
+      input#no.radio-custom(name='radio-group', type='radio')
+      label.radio-custom-label(for='no') Не уверен
+
+  nav.card__welcome-nav
+    ul.welcome-nav__list
+      li.welcome-nav__item
+        a.welcome-nav__link.btn--hide-login(href='/') На главную  
+      li.welcome-nav__item
+        input(type="submit" value="Войти").welcome-nav__link
+
+//- nav.card__welcome-nav
   +navigation("welcome-nav", loginpageMenu)
