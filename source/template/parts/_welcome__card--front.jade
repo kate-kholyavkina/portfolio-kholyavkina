@@ -1,16 +1,17 @@
 
-.card__avatar
-  .avatar
-    .avatar__holder
-      img.avatar__pic(src="assets/img/kholyavkina.jpg", alt="")
-.card__avatar-text
-  .avatar-text
-    .avatar-text__name Екатерина Холявкина
-    .avatar-text__text Личный сайт веб разработчика
-  
+.card__bg
+  .card__avatar
+    .avatar
+      .avatar__holder
+        img.avatar__pic(src="assets/img/kholyavkina.jpg", alt="")
+  .card__avatar-text
+    .avatar-text
+      .avatar-text__name Екатерина Холявкина
+      .avatar-text__text Личный сайт веб разработчика
+    
 
-.card__social
-  +socials_navigation("social", "social--welcome", socials)
+  .card__social
+    +socials_navigation("social", "social--welcome", socials)
 
 nav.card__welcome-nav
   +navigation("welcome-nav", welcomeMenu)

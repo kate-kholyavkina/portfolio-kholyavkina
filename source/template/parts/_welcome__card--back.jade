@@ -1,29 +1,31 @@
-.section-title.section-title--card
-  .section-title__inner  Авторизуйтесь
 
-//- div.card__form--login
-form.form.form--login(action="")
-  .form__input-group
-    span.form__input-group-addon
-      i.fa.fa-user(aria-hidden='true')
-    input.form__input.form--login__input(type="text",placeholder="Логин")
-  .form__input-group
-    span.form__input-group-addon
-      i.fa.fa-key(aria-hidden='true')
-    input.form__input.form--login__input(type="password",placeholder="Пароль")
+.card__bg
+  .section-title.section-title--card
+    .section-title__inner  Авторизуйтесь
 
-  .form__input-group
-    input#ishuman.checkbox-custom(name='isHuman', type='checkbox')
-    label.checkbox-custom-label(for='ishuman') Я человек
+  //- div.card__form--login
+  form.form.form--login(action="")
+    .form__input-group
+      span.form__input-group-addon
+        i.fa.fa-user(aria-hidden='true')
+      input.form__input.form--login__input(type="text",placeholder="Логин")
+    .form__input-group
+      span.form__input-group-addon
+        i.fa.fa-key(aria-hidden='true')
+      input.form__input.form--login__input(type="password",placeholder="Пароль")
 
-  .form__input-group
-    div Вы точно не робот?
-    .form__radio
-      input#yes.radio-custom(name='radio-group', type='radio')
-      label.radio-custom-label(for='yes') Да
-    .form__radio
-      input#no.radio-custom(name='radio-group', type='radio')
-      label.radio-custom-label(for='no') Не уверен
+    .form__input-group
+      input#ishuman.checkbox-custom(name='isHuman', type='checkbox')
+      label.checkbox-custom-label(for='ishuman') Я человек
+
+    .form__input-group
+      div Вы точно не робот?
+      .form__radio
+        input#yes.radio-custom(name='radio-group', type='radio')
+        label.radio-custom-label(for='yes') Да
+      .form__radio
+        input#no.radio-custom(name='radio-group', type='radio')
+        label.radio-custom-label(for='no') Не уверен
 
   nav.card__welcome-nav
     ul.welcome-nav__list

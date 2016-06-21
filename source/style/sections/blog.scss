@@ -1,7 +1,18 @@
 
 .off-canvas--menu {
   z-index: 2;
-  position: relative;
+  position: absolute;
+  top: 100vh;
+  width: 25.6%;
+  &.fixed {
+    position: fixed;
+    top: 0 !important;
+  }
+  @include tablet {
+    position: relative;
+    top: auto;
+    width: auto;
+  }
 }
 .off-canvas--content {
   z-index: 1;
@@ -30,6 +41,10 @@ html.html--blog-opened .header__burger {
   transform: translate($blog_menu_width, 0);
 }
 
+html.html--blog-opened .top-nav {
+  overflow: hidden;
+}
+
 
 .blog__articles {
   margin-left: 28%;
@@ -54,7 +69,7 @@ html.html--blog-opened .header__burger {
     top: 0;
     left: 0;
     z-index: 1;
-    box-shadow: 4px 0 4px rgba(#000, 0.5);
+    box-shadow: 3px 0 3px rgba(0,0,0,.2);
     transition: transform 0.3s;
     transform: translate(-$blog_menu_width, 0);
 
@@ -74,7 +89,7 @@ html.html--blog-opened .header__burger {
       height: 60px;
       border-radius: 50%;
       cursor: pointer;
-      box-shadow: 4px 0 4px rgba(#000, 0.5);
+      box-shadow: 3px 0 3px rgba(0,0,0,.2);
     }
   }
 }
@@ -82,17 +97,22 @@ html.html--blog-opened .header__burger {
   position: absolute;
   z-index: 2;
   left: 0;
-  top: 100vh;
-  width: $blog_menu_width;
-  height: 100%;
+  top: 0;
+  width: 100%;
+  height: auto;
+  padding-top: 68px;
 
   @include tablet {
     display: flex;
     align-items: center;
     justify-content: center;
     top: 0;
+    height: 100%;
+    width: $blog_menu_width;
     background-color: $color_welcome_nav;
     text-align: right;
+
+    padding-top: 0;
   }
 
 }
@@ -102,18 +122,30 @@ html.html--blog-opened .header__burger {
 .blog-nav {}
 .blog-nav__list {}
 .blog-nav__item {
-    padding: 0.9rem 1rem 0.9rem 1.3rem;
 }
 .blog-nav__title {
   @include roboto-regular;
-  color: rgba(#fff, 0.7);
-  font-size: 1.135rem;
-  line-height: 1.9rem;
+    color: #455a64;
+    padding: 0.6rem 1rem 0.6rem 1.3rem;
+    text-align: right;
+    margin-bottom: 1rem;
 
-  &.blog-nav__title--avtive {
+  &.blog-nav__title--active {
     @include roboto-bold;
-    color: #fff;
+    color: $color_welcome_nav;
+    border-right: 3px solid;
+  }
 
+  @include tablet {
+    color: rgba(#fff, 0.7);
+    font-size: 1.135rem;
+    line-height: 1.9rem;
+
+    &.blog-nav__title--active {
+      @include roboto-bold;
+      color: #fff;
+      border-right: none;
+    }
   }
 }
 
@@ -124,9 +156,12 @@ html.html--blog-opened .header__burger {
   padding-right: 10rem;
   @include desktop {
 
-  // max-width: 40rem;
   }
-  @include laptop {}
+  @include laptop {
+    max-width: auto;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
   @include tablet {}
   @include phone {}
 }

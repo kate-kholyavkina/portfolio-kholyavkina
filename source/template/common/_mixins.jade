@@ -63,5 +63,9 @@ mixin blogArticles(className, array)
 mixin blogMenu(className, array)
   ul(class="#{className}__list")
     each item, ndx in array
-      li(class="#{className}__item")
-        div(class="#{className}__title")= item.title
+      if (ndx == 1)
+        li(class="#{className}__item")
+          div(class="#{className}__title #{className}__title--active")= item.title
+      else
+        li(class="#{className}__item")
+          div(class="#{className}__title")= item.title

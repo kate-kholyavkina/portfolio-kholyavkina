@@ -11,6 +11,46 @@
       html.toggleClass('html--blog-opened');
     });
 
+    $(window).on({
+
+      'resize' : function(){
+        if ( $( window ).width() > 768 ) {
+          html.removeClass('html--blog-opened');
+        }
+        blogMenuFindTop();
+      },
+      'scroll' : function(){
+        var header = $('.header');
+        var headerHeight = parseInt($(header).css('height'));
+        var menu = $('.off-canvas--menu');
+        var scrollY = window.scrollY;
+
+        if (scrollY > headerHeight) {
+          menu.addClass('fixed');
+        } else {
+          menu.removeClass('fixed');
+        }
+        
+      }
+    });
+
+// blog menu: give it top, make it fixed
+  
+  function blogMenuFindTop() {
+    var header = $('.header');
+    var menu = $('.off-canvas--menu');
+
+    if ( $( window ).width() > 768 ) {
+      $(menu).css('top', $(header).css('height'));
+    } else {
+      $(menu).css('top', '0');
+    }
+  }
+  blogMenuFindTop();
+
+
+
+
 // hamburger menu using css transitions
 
 
@@ -19,6 +59,7 @@
       $('.header__burger').toggleClass('fixed');
       $('.main-menu').toggleClass('main-menu--open');
     });
+
 
 
 

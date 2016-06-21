@@ -4,6 +4,7 @@ body {
   margin: 0;
   @include roboto-regular;
   background-color: $body_bg;
+  position: relative;
 }
 html {
   min-width: 320px;
@@ -56,7 +57,8 @@ p {
   @include laptop {
     // padding-bottom: rem($footer_height_phones);
   }
-  .testimonials {
+  .testimonials,
+  .blog__articles {
     padding-bottom: rem($footer_height_desktop);
     @include laptop {
       padding-bottom: rem($footer_height_phones);

@@ -42,7 +42,7 @@
 // nav
 .card__welcome-nav {
   position: absolute;
-  top: 100%;
+  bottom: 0;
   left: 0;
   width: 100%;
   border-radius: 0 0 5px 5px;
@@ -54,7 +54,7 @@
 .welcome__card {
   margin-top: 2.5rem;
   width: 300px;
-  height: 25rem;
+  height: 28rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -64,16 +64,20 @@
   height: 100%;
   border-radius: 5px 5px 0 0;
   @include clearfix;
-  background-color: rgba(#fcfcfc, 0.85);
   position: relative;
+    padding-bottom: 3rem;
+}
+.card__bg {
+  background-color: rgba(#fcfcfc, 0.85);
+  height: 100%;
 }
 
 // front card
 .card__avatar {
-  margin-top: 2.85714285rem;
+  padding-top: 2.85714285rem;
+  margin-bottom: 1.25rem;
 }
 .card__social {
-  margin-top: 2rem;
 }
 .avatar__holder {
   border-radius: 50%;
@@ -97,7 +101,7 @@
     transform: translateX(-50%);
 }
 .card__avatar-text {
-  margin-top: 1.25rem;
+    margin-bottom: 2rem;
 }
 .avatar-text {
   color: $color_welcome_title;
