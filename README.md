@@ -4,16 +4,24 @@ This project is Portfolio of Kate Kholyavkina. This is a first project I made at
 
 
 
-How to use use project:
+How to use this project
 --------
 
 1. clone this repo
 2. On command line, type in the following commands to install libraries:
 
-      cd path/to/project
-      npm install gulpjs/gulp-cli#4.0 -g
-      npm install
+	$ cd path/to/project
+	$ npm install gulpjs/gulp-cli#4.0 -g
+	$ npm install
 
 3. On command line, type in the following commands to start:
 
-      gulp
+	$ gulp
+
+
+
+
+Example
+--------
+http://dev2.holyan.info
+
