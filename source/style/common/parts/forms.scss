@@ -28,13 +28,22 @@
   margin: 2rem auto 4rem;
   max-width: rem(380px);
 
+
+  .form--contact__bg {
+    background-image: url(../img/testimonials-bg.jpg);
+    background-size: cover;
+    filter: blur(5px);
+    height: 400px;
+    width: 350px;
+    position: absolute;
+  }
   .form--contact {
     position: relative;
     border-radius: 5px;
-    background-image: url(../img/testimonials-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0 rem(20px) 3rem;
+
   }
   .contact-form__buttons {
     overflow: hidden;

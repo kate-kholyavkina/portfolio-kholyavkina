@@ -4,7 +4,7 @@
   background-size: cover;
   background-position: center;
   min-height: 39.8rem;
-  height: 100vh;
+  @include fullscreen;
   @include clearfix;
   position: relative;
 }
@@ -18,12 +18,13 @@
     width: 100%;
     height: 100%;
     fill: $body_bg;
-    .body--about .header__triangle--left {
-      fill: $about_left_bg;
-    }
-    .body--about .header__triangle--right {
-      fill: $about_right_bg;
-    }
+  }
+
+  .body--about &.header__triangle--left svg {
+    fill: $about_left_bg;
+  }
+  .body--about &.header__triangle--right svg {
+    fill: $about_right_bg;
   }
 
   &.header__triangle--left {
@@ -86,7 +87,7 @@
   left: 0;
   top: 0;
   width: 100%;
-  height: 100vh;
+  @include fullscreen;
   background-color: rgba($color_welcome_nav, 0.85);
   transform: translateX(100%);
   transition: all 0.3s;

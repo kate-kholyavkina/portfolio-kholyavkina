@@ -2,19 +2,22 @@ doctype html
 html
   include common/_head
   include common/_mixins
-  body
-    include common/_ie
 
-    .top-nav
-      include parts/_header_nav
-    .off-canvas--content
-      .wrapper
-        include parts/_header
+  
+  block body
+    body
+      include common/_ie
 
-        block content 
+      .top-nav
+        include parts/_header_nav
+      .off-canvas--content
+        .wrapper
+          include parts/_header
 
-      include parts/_footer
+          block content 
 
-    .off-canvas--menu
-      
-      block menu 
+        include parts/_footer
+
+      .off-canvas--menu
+        
+        block menu 
