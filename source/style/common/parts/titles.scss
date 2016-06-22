@@ -8,6 +8,34 @@
   margin-right: auto;
   font-size: 2.2rem;
 
+  @include phone {
+    font-size: 1.55rem;
+    max-width: 10em;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .slider__info & {
+    max-width: none;
+    font-size: 1.85rem;
+  }
+  &.section-title--small {
+    max-width: 14rem;
+
+    @include tablet {
+      font-size: 1.875rem;
+    }
+    @include phone {
+      max-width: 13rem;
+    }
+  }
+  &.section-title--card{
+    // font-size: 2.15rem;
+    font-size: 1.85rem;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   &.section-title--bg {
     @include clearfix;
     max-width: 28rem;
@@ -15,36 +43,32 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
+    font-size: 4.15rem;
+
     @include tablet {
       margin-top: 0;
+      font-size: 3.15rem;
     }
-  }
-
-  @include phone {
-    // font-size: 2.55rem;
-    font-size: 1.55rem;
-    max-width: 10em;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-
-  &.section-title--small {
-    max-width: 13rem;
-  }
-  &.section-title--card{
-    font-size: 2.15rem;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  &.section-title--bg {
-    font-size: 4.15rem;
     @include phone {
       font-size: 2.55rem;
     }
   }
 
 }
+
+.section-title--bg.section-title--works {
+  margin-top: -0.7rem;
+  margin-bottom: -0.5rem;
+  min-width: 30rem;
+  padding: 3.6rem 0;
+  @include tablet {
+    padding: 1.85rem 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+}
+
 .section-title__inner {
   color: $color_welcome_title;
   @include bernier;
@@ -79,14 +103,22 @@
   }
 
   .section-title--card &{
-    margin-top: 2.365rem;
-    margin-bottom: 2.35rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    @include phone {
+      margin-top: 2.365rem;
+      margin-bottom: 2.35rem;
+    }
   }
 
   .section-title--small & {
     margin-top: 0.65rem;
     margin-bottom: 1.4rem;
 
+    @include tablet {
+      margin-top: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
     @include phone {
       margin-top: 1.3175rem;
       margin-bottom: 0.775rem;
@@ -119,6 +151,43 @@
   margin-top: 0;
   margin-bottom: 0;
   line-height: 2.55rem;
+
+  .body--blog & {
+    font-size: 3.9rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+
+
+    &:before,
+    &:after {
+      font-size: 2.55rem;
+      content: '';
+      background-color: #fff;
+      position: absolute;
+      width: 1.6575rem;
+      height: 0.35rem;
+      top: 50%;
+      margin-top: -0.18rem;
+    }
+
+    &:before{
+      left: -3rem;
+      @include phone {
+        left: -3rem;
+      }
+    }
+    &:after {
+      right: -3rem;
+      @include phone {
+        right: -3rem;
+      }
+    }
+    @include tablet {
+      font-size: 2.8rem;
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+    }
+  }
 }
 
 

@@ -1,4 +1,6 @@
 extends ../main.jade
+block prepend body
+  body.body--works
 block title
    title Мои работы
 
@@ -39,7 +41,7 @@ block content
             .testimonial__position основатель Loftschool
 
         .testimonial__item
-          .testimonial__text Этот код выдержет любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!Этот код выдержет любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
+          .testimonial__text Этот код выдержет любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
           .testimonial__photo
             .testimonial__pic-wrap
               img.testimonial__pic(src="assets/img/testimonial-pic-2.jpg", alt="")
@@ -56,7 +58,7 @@ block content
             .section-title__inner Связаться со мной
           input.form__input.form--contact__input(type="text",placeholder="Имя")
           input.form__input.form--contact__input(type="email",placeholder="Email")
-          textarea.form__input.form--contact__input(name="", cols="30", rows="6", placeholder="Ваше сообщение")
+          textarea.form__input.form__input--textarea.form--contact__input(name="", cols="30", rows="6", placeholder="Ваше сообщение")
 
           .contact-form__buttons
             ul.welcome-nav__list
@@ -66,5 +68,5 @@ block content
                 input.welcome-nav__link(type="submit" value="Очистить")
 
             
-      .scroll-control.scroll-control--up
-        .scroll-control__btn
+      .footer__scroll-control
+        a(href="#").scroll-control.scroll-control--up

@@ -14,12 +14,12 @@
         i.fa.fa-key(aria-hidden='true')
       input.form__input.form--login__input(type="password",placeholder="Пароль")
 
-    .form__input-group
+    .form__input-group.form__input-group--checkbox
       input#ishuman.checkbox-custom(name='isHuman', type='checkbox')
       label.checkbox-custom-label(for='ishuman') Я человек
 
-    .form__input-group
-      div Вы точно не робот?
+    div Вы точно не робот?
+    .form__input-group.form__input-group--radios
       .form__radio
         input#yes.radio-custom(name='radio-group', type='radio')
         label.radio-custom-label(for='yes') Да

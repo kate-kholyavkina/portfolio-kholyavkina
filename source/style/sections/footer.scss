@@ -14,6 +14,9 @@
     margin-top: 1.7rem;
     padding-left: 0;
   }
+  @include laptop {
+    margin-top: 1.3rem;
+  }
 }
 .small-nav {
   font-size: 0.92857142857rem;
@@ -24,7 +27,7 @@
   display: inline-block;
   margin: 0 1.1rem;
 
-  @include tablet {
+  @include phone {
     margin: 0 0.3rem;
   }
 }
@@ -54,10 +57,15 @@
     text-align: center;
     padding-right: 0;
   }
+  @include tablet {
+    margin-top: 0.7rem;
+  }
 }
 .footer__texts {
   display: table;
   width: 100%;
+  padding-top: 0.5rem;
+  line-height: 1.6rem;
   @include laptop {
     display: block;
   }
@@ -68,15 +76,24 @@
   display: table-cell;
   vertical-align: middle;
 
-  font-size: (13.04 / 14) * 1rem;
+  font-size: 1rem;
+
   margin-top: 0.3rem;
-    padding-left: 1.6rem;
-    padding-right: 2.6rem;
+  padding-left: 1.6rem;
+  padding-right: 2.6rem;
+
   &.footer-text--left {
     text-align: left;
+
+    @include wide {
+      width: 35%;
+    }
   }
   &.footer-text--right {
     text-align: right;
+    @include wide {
+      width: 65%;
+    }
   }
   @include laptop {
     display: block;
@@ -88,5 +105,12 @@
     &.footer-text--right {
       text-align: center;
     }
+  }
+  @include tablet {
+    margin-top: 0.4rem;
+  }
+
+  @include phone {
+    font-size: (13.04 / 14) * 1rem;
   }
 }

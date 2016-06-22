@@ -1,9 +1,4 @@
-.section-title--bg.section-title--works {
-  margin-top: -0.7rem;
-  margin-bottom: -0.5rem;
-  min-width: 30rem;
-  padding: 3.6rem 0;
-}
+
 .slider {
   @include fullscreen;
   position: relative;
@@ -44,8 +39,10 @@
   left: 100%;
   width: 100%;
   height: 70%;
+  background-color: $color_slider_right;
   @include tablet {
     position: static;
+    padding: 5rem 0 2.5rem;
   }
 }
 .slider__display img{
@@ -58,6 +55,13 @@
   display: inline-block;
   vertical-align: middle;
   width: 70%;
+  background-color: $color_slider_left;
+
+
+  @include tablet {
+    width: 100%;
+    padding: 2.5rem 2.5rem 3.6rem;
+  }
 }
 
 .slider__skills {
@@ -67,6 +71,10 @@
   padding: 0.95rem 1rem 0.9rem;
   margin-top: 1.8rem;
   margin-bottom: 2.5rem;
+  @include tablet {
+    margin-top: 0.7rem;
+    margin-bottom: 1.2rem;
+  }
 }
 
 .slider__btn .btn{
@@ -152,6 +160,7 @@
   }
 
   @include tablet {
+    max-height: 13.4rem;
   }
 }
 
@@ -161,23 +170,48 @@
   background-image: url(../img/testimonials-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+
+  text-align: center;
   // background-attachment: fixed;
 
   .section-title--about {
-    font-size: 3.95rem;
     line-height: 4rem;
     padding: 4rem 0 3.6rem;
+    @include tablet {
+      padding: 2rem 0;
+    }
+  }
+  .section-title--about .section-title__inner {
+    font-size: 3.95rem;
+    @include tablet {
+      font-size: 3rem;
+    }
   }
   .section-title--card .section-title__inner {
     margin-top: 1.7rem;
-    margin-bottom: 0.9em;
+    margin-bottom: 1.65rem;
+    @include tablet {
+      margin-bottom: 1rem;
+    }
   }
 }
-
+.testimonials .container {
+  @include clearfix;
+  max-width: rem(780px);
+  margin: 0 auto;
+  @include tablet {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+  }
+}
 .testimonial__list {
   @include clearfix;
   font-size: 0;
   margin-bottom: 4.5rem;
+  text-align: left;
+  @include tablet {
+    margin-bottom: 3.5rem;
+  }
 }
 .testimonial__item {
     position: relative;
@@ -198,6 +232,10 @@
       top: 0;
       left: 0;
     }
+    @include tablet {
+      font-size: 0.85rem;
+      padding-top: 2.9rem;
+    }
     @include phone {
       display: block;
       width: 100%;
@@ -207,6 +245,11 @@
 .testimonial__text {
     line-height: 1.7rem;
     margin-bottom: 1.3rem;
+    color: $color_welcome_title;
+    @include tablet {
+      line-height: 1.5rem;
+      margin-bottom: 0.9rem;
+    }
 }
 .testimonial__photo {
     float: left;
@@ -232,16 +275,4 @@
 }
 .testimonial__position {
   @include roboto-regular;
-}
-
-
-
-.testimonials .scroll-control--up {
-  margin: 0 auto 9.6rem;
-  background-image: url(../img/portf_arrow_up.svg);
-  height: 1.1rem;
-  width: 1.7rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
 }

@@ -2,10 +2,13 @@
 .btn {
   line-height: 1rem;
   display: inline-block;
-  padding: 0.85rem 1.35rem;
+  padding: 0.85rem 1.65rem;
   text-align: center;
   border-radius: 0.35714285rem;
-  transition: all 0.3s
+  transition: all 0.3s;
+  @include phone {
+    padding: 0.85rem 1.35rem;
+  }
 }
 .btn--transparent {
   border: 1px solid #fff;
@@ -15,5 +18,48 @@
     border: 1px solid #fff;
     background-color: #fff;
     color: $color_welcome_nav_hover;
+  }
+}
+
+
+
+
+
+.scroll-control {
+  display: block;
+  height: 1.1rem;
+  width: 1.7rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:link,
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+.header__scroll-control {
+  position: absolute;
+  bottom: 4.3rem;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+.scroll-control--up {
+  background-image: url(../img/portf_arrow_up.svg);
+}
+.scroll-control--down {
+  background-image: url(../img/portf_arrow_down.svg);
+}
+.footer__scroll-control {
+  margin: 0 auto 4rem;
+  display: inline-block;
+
+  @include tablet {
+    margin: 0 auto 3rem;
   }
 }

@@ -12,7 +12,7 @@ html {
   height: 100%;
   box-sizing: border-box;
   font-size: 16px;
-  @include tablet {
+  @include phone {
     font-size: 14px;
   }
 }
@@ -39,12 +39,14 @@ img {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
-
   line-height: 1.6rem;
-  padding-left: 0.8rem;
-  padding-right: 0.8rem;
+  @include tablet {
+    font-size: 0.875rem;
+  }
   @include phone {
     line-height: 1.7rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
   }
 }
 
@@ -58,10 +60,17 @@ p {
     // padding-bottom: rem($footer_height_phones);
   }
   .testimonials,
-  .blog__articles {
+  .blog__articles,
+  .map {
     padding-bottom: rem($footer_height_desktop);
     @include laptop {
-      padding-bottom: rem($footer_height_phones);
+      padding-bottom: rem($footer_height_laptop);
+    }
+    @include tablet {
+      padding-bottom: rem($footer_height_tablet);
+    }
+    @include phone {
+      padding-bottom: rem($footer_height_phone);
     }
   }
 }
@@ -75,19 +84,22 @@ p {
     @include roboto-light;
     text-align: center;
   @include laptop {
+    height: rem($footer_height_laptop);
+    margin-top: rem(-$footer_height_laptop);
+  }
+  @include tablet {
     height: rem($footer_height_tablet);
     margin-top: rem(-$footer_height_tablet);
   }
-  @include tablet {
-    height: rem($footer_height_phones);
-    margin-top: rem(-$footer_height_phones);
+  @include phone {
+    height: rem($footer_height_phone);
+    margin-top: rem(-$footer_height_phone);
   }
 }
 .fixed {
   position: fixed;
 }
-.container {
-  @include clearfix;
-  max-width: rem(780px);
-  margin: 0 auto;
+
+.defs-only {
+  display: none;
 }

@@ -10,13 +10,19 @@
   outline: none;
   color: rgba(#373e42, 0.85);
 }
+.form__input--textarea {
+  height: 8.8rem;
+}
 
 // login form
 
 .form--login {
   padding: 0 rem(20px);
   .form__input {
-    padding: 1rem;
+    padding: 0.8rem 1rem;
+    @include phone {
+      padding: 1rem;
+    }
   }
 }
 
@@ -27,15 +33,20 @@
 .form--contact__wrapper {
   margin: 2rem auto 4rem;
   max-width: rem(380px);
+  position: relative;
 
 
   .form--contact__bg {
     background-image: url(../img/testimonials-bg.jpg);
     background-size: cover;
     filter: blur(5px);
-    height: 400px;
-    width: 350px;
+    height: 100%;
+    width: 100%;
     position: absolute;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
   }
   .form--contact {
     position: relative;
@@ -43,7 +54,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0 rem(20px) 3rem;
-
+    @include tablet {
+      .form__input {
+        font-size: rem(14px);
+      }
+    }
   }
   .contact-form__buttons {
     overflow: hidden;
@@ -54,6 +69,10 @@
     width: 100%;
     border-radius:  0 0 5px 5px;
   }
+  @include tablet {
+    max-width: 21.75rem;
+    margin: 2rem auto 6rem;
+  }
 
 }
 
@@ -61,6 +80,11 @@
   display: table;
   margin-bottom: rem(19px);
   width: 100%;
+
+  &.form__input-group--checkbox {
+    margin-bottom: rem(10px);
+  }
+
 
   .form__input-group-addon {
     display: table-cell;
@@ -85,10 +109,15 @@
   }
   .form__radio {
     display: inline-block;
+    margin-left: rem(24px);
+    margin-top: rem(4px);
+    &:first-child {
+      margin-left: 0;
+    }
   }
 }
 
-
+// custom checkboxes and radios
 
 .checkbox-custom, .radio-custom {
     opacity: 0;
@@ -99,34 +128,33 @@
     vertical-align: middle;
     margin: 5px;
     cursor: pointer;
+    padding-left: 27px;
 }
 .checkbox-custom-label, .radio-custom-label {
     position: relative;
 }
-.checkbox-custom + .checkbox-custom-label:before, .radio-custom + .radio-custom-label:before {
+.checkbox-custom + .checkbox-custom-label:before,
+.radio-custom + .radio-custom-label:before {
     content: '';
     background: #fff;
-    border: 1px solid #cdcdcd;
-    display: inline-block;
-    vertical-align: bottom;
+    border-radius: 2px;
+
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 20px;
     height: 20px;
-    padding: 2px;
-    margin-right: 10px;
-    text-align: center;
-    border-radius: 2px;
+    border: 1px solid #cdcdcd;
 }
-.checkbox-custom + .checkbox-custom-label:before {
-    padding: 0;
-}
+
 .checkbox-custom:checked + .checkbox-custom-label:before {
     background-color: $color_welcome_nav;
     border-color: $color_welcome_nav;
 }
 .checkbox-custom:checked + .checkbox-custom-label:after {
     position: absolute;
-    left: 3px;
-    top: 4px;
+    left: 2px;
+    top: 2px;
     font-family: FontAwesome;
     content: "\f00c";
     width: 8px;

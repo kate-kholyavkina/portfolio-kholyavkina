@@ -31,14 +31,22 @@
 
     &.cell--left { 
       background-color: $about_left_bg;
+      @include laptop {
+        padding-bottom: 1.7rem;
+      }
     }
     &.cell--right { 
       background-color: $about_right_bg;
+      @include laptop {
+        padding-top: 1.3rem;
+        padding-bottom: 1.7rem;
+      }
     }
 
     @include laptop {
       display: block;
       width: 100%;
+
     }
   }
 }
@@ -48,6 +56,8 @@
   @include clearfix;
   @include wide {
     text-align: right;
+    display: flex;
+    align-items: flex-start;
   }
   .about__content {
     max-width: 29rem;
@@ -68,13 +78,18 @@
   .section-title--bg {
     margin-top: -1.3rem;
     padding: 1.45rem 3rem;
+    flex-grow: 1;
+    @include tablet {
+      margin-top: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
   }
 }
 
 
 
 .about__photo {
-  @include tablet {
+  @include phone {
     margin-left: -0.8rem;
     margin-right: -0.8rem;
   }
@@ -87,26 +102,36 @@
 .section-map {
   position: relative;
   @include clearfix;
-  @include fullscreen;
 }
 .map { 
-  height: 100%; 
+  @include fullscreen;
+  // height: 100%; 
+  box-sizing: content-box;
 }
 
 .about__contacts{
 
-    position: absolute;
-
+  position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
   right: 0;
+  bottom: $footer_height_desktop;
+  
   background-color: rgba(#fcfcfc, 0.85);
   border-radius: 5px;
   margin: auto;
   max-width: (380 / 16) * 1rem;
   height: (290 / 16) * 1rem;
 
+  @include desktop {
+    bottom: $footer_height_desktop;
+  }
+  @include laptop {
+    bottom: $footer_height_laptop;
+  }
+  @include tablet {
+    bottom: $footer_height_tablet;
+  }
   @include phone {
     top: 0;
     left: 0;
@@ -164,6 +189,9 @@
   max-width: 45rem;
   padding-left: 1.6rem;
 
+  @include wide {
+    max-width: none;
+  }
   @include laptop {
     padding-left: 0;
 
@@ -176,6 +204,7 @@
       text-align: center;
     }
   }
+
 
 }
 

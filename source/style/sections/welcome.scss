@@ -3,11 +3,14 @@
   min-height: 100%;
   overflow: hidden;
   position: relative;
-  padding-bottom: 6.25rem;
   background: url(../img/mountains_for_parallax.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   @include clearfix;
+
+  display: flex;
+  align-items: center;
+
 }
 
 .wrapper--welcome {
@@ -16,27 +19,56 @@
 
 // footer
 .footer--welcome {
-  height: 6.25rem;
-  margin-top: -6.25rem;
+  height: 3.75rem;
+  margin-top: -3.75rem;
   position: relative;
   line-height: 1.75rem;
-  padding-top: 2.5rem;
   text-align: center;
   background-color: transparent;
   @include clearfix;
 }
 
 .footer--welcome__textline {
-  display: block;
+  display: inline-block;
+
+  padding-left: 0.4rem; 
+  &:before {
+    content: '|';
+    margin-right: 0.4rem;
+  }
+
+  &:first-child {
+    padding-left: 0;
+    &:before {
+      content: '';
+      margin-right: 0;
+    }
+  }
+
   @include roboto-light;
   color: #fff;
+
+  @include phone {
+    display: block;
+  }
 }
 
 
 // login
 .welcome__login {
-  margin-top: 0.714285rem;
-  text-align: center;
+
+    position: absolute;
+    text-align: center;
+    right: rem(100px);
+    top: rem(24px);
+
+    @include desktop {
+      right: 1.15rem;
+    }
+    @include phone {
+      margin-top: 0.714285rem;
+      text-align: center;
+    }
 }
 
 // nav
@@ -52,30 +84,43 @@
 
 // card
 .welcome__card {
-  margin-top: 2.5rem;
-  width: 300px;
-  height: 28rem;
+  margin-top: 6.25rem;
+  width: 23.75rem;
+  height: 25rem;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 6.25rem;
+  @include tablet {
+    width: 21.75rem;
+  }
+  @include phone {
+    width: 24.75rem;
+    // width: rem(300px);
+    height: 28rem;
+  }
 }
 
 .card {
   width: 100%;
   height: 100%;
-  border-radius: 5px 5px 0 0;
   @include clearfix;
   position: relative;
     padding-bottom: 3rem;
 }
 .card__bg {
   background-color: rgba(#fcfcfc, 0.85);
+  border-radius: 5px 5px 0 0;
   height: 100%;
 }
 
 // front card
 .card__avatar {
   padding-top: 2.85714285rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
+
+  @include phone {
+    margin-bottom: 1.25rem;
+  }
 }
 .card__social {
 }
@@ -84,8 +129,14 @@
   background-color: #e2e2e2;
   overflow: hidden;
   margin: 0 auto;
-  width: 9rem;
-  height: 9rem;
+
+  width: 8.5rem;
+  height: 8.5rem;
+  .card & {
+    @include wide {
+    }
+  }
+
   @include phone {
     width: 10rem;
     height: 10rem;
@@ -101,7 +152,10 @@
     transform: translateX(-50%);
 }
 .card__avatar-text {
+  margin-bottom: 1.7rem;
+  @include phone {
     margin-bottom: 2rem;
+  }
 }
 .avatar-text {
   color: $color_welcome_title;
@@ -113,26 +167,40 @@
 .avatar-text__name {
   font-size: 2.15rem;
   line-height: 1.35rem;
+  margin-bottom: 0.6rem;
   @include roboto-medium;
-  .card__avatar-text &{
 
+  .card &{
+    margin-bottom: 0;
     font-size: 1.5rem;
     line-height: 2.25rem;
+    @include phone {
+      font-size: 1.8rem;
+      line-height: 2rem;
+      margin-bottom: 0.5rem;
+      margin-top: 1.2rem;
+    }
   }
   @include phone {
     font-size: 1.5rem;
     line-height: 2.25rem;
+    margin-bottom: 0.2rem;
   }
 }
 .avatar-text__text {
-  margin-top: 0.6rem;
   @include roboto-light;
   font-size: 1rem;
   line-height: 1.5rem;
 
-  @include phone {
-    margin-top: 0.2rem;
+  @include tablet {
+    .body--blog & {
+      font-size: 0.85rem;
+    }
   }
+  @include phone {
+    font-size: 1.2rem;
+  }
+
 }
 
 

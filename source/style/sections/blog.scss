@@ -52,12 +52,15 @@ html.html--blog-opened .top-nav {
   @include desktop {
     margin-left: 33.5%;
   }
-  @include laptop {}
-  @include tablet {
+  @include laptop {
 
+  }
+  @include tablet {
     margin-left: 0;
   }
-  @include phone {}
+  @include phone {
+    
+  }
 }
 
 .off-canvas--menu {
@@ -101,6 +104,10 @@ html.html--blog-opened .top-nav {
   width: 100%;
   height: auto;
   padding-top: 68px;
+  max-width: 24.5rem;
+  @include wide {
+    padding-left: 6rem;
+  }
 
   @include tablet {
     display: flex;
@@ -158,11 +165,12 @@ html.html--blog-opened .top-nav {
 
   }
   @include laptop {
-    max-width: auto;
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
+    max-width: none;
   }
-  @include tablet {}
+  @include tablet {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
   @include phone {}
 }
 .articles__item {
@@ -172,18 +180,35 @@ html.html--blog-opened .top-nav {
   &:first-child {
     border-top: none;
   }
+
+  @include tablet {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
 }
 .articles__title {
   @include bernier;
   font-size: 2.2rem;
   margin-bottom: 0.9rem;
   margin-top: 0;
+  @include tablet {
+    font-size: 1.85rem;
+    margin-bottom: 0.6rem;
+  }
 }
 .articles__date {
   color: $color_welcome_nav;
   margin-bottom: 1.2rem;
+  @include tablet {
+    font-size: 0.875rem;
+    margin-bottom: 0.6rem;
+  }
 }
 .articles__text {
   line-height: 1.65rem;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.35rem;
+  }
 }
 
