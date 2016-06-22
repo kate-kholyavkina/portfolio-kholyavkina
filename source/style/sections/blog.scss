@@ -171,7 +171,10 @@ html.html--blog-opened .top-nav {
     padding-left: 1.6rem;
     padding-right: 1.6rem;
   }
-  @include phone {}
+  @include phone {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
 }
 .articles__item {
   padding-bottom: 4rem;
@@ -185,6 +188,10 @@ html.html--blog-opened .top-nav {
     padding-bottom: 3rem;
     padding-top: 3rem;
   }
+  @include phone {
+    padding-bottom: 2.2rem;
+    padding-top: 2.2rem;
+  }
 }
 .articles__title {
   @include bernier;
@@ -195,13 +202,21 @@ html.html--blog-opened .top-nav {
     font-size: 1.85rem;
     margin-bottom: 0.6rem;
   }
+  @include phone {
+    font-size: 1.45rem;
+    margin-bottom: 0.8rem;
+  }
 }
 .articles__date {
   color: $color_welcome_nav;
   margin-bottom: 1.2rem;
   @include tablet {
     font-size: 0.875rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
+  }
+  @include phone {
+    font-size: 1rem;
+    margin-bottom: 1rem;
   }
 }
 .articles__text {
@@ -209,6 +224,10 @@ html.html--blog-opened .top-nav {
   @include tablet {
     font-size: 0.875rem;
     line-height: 1.35rem;
+  }
+  @include phone {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 

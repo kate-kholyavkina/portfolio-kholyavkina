@@ -54,11 +54,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0 rem(20px) 3rem;
-    @include tablet {
       .form__input {
-        font-size: rem(14px);
+        @include tablet {
+            font-size: rem(14px);
+        }
+        @include phone {
+            font-size: 1rem;
+        }
       }
-    }
   }
   .contact-form__buttons {
     overflow: hidden;

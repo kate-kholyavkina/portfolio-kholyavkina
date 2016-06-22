@@ -50,6 +50,12 @@
 
   @include phone {
     display: block;
+
+    &:before {
+      content: '';
+      margin-right: 0;
+      padding-left: 0;
+    }
   }
 }
 
@@ -66,8 +72,9 @@
       right: 1.15rem;
     }
     @include phone {
-      margin-top: 0.714285rem;
-      text-align: center;
+      top: 0.8rem;
+      right: 50%;
+      transform: translate(50%, 0);
     }
 }
 
@@ -94,8 +101,7 @@
     width: 21.75rem;
   }
   @include phone {
-    width: 24.75rem;
-    // width: rem(300px);
+    width: 21.5rem;
     height: 28rem;
   }
 }
@@ -170,21 +176,21 @@
   margin-bottom: 0.6rem;
   @include roboto-medium;
 
+  @include phone {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    margin-bottom: 0.2rem;
+  }
   .card &{
     margin-bottom: 0;
     font-size: 1.5rem;
     line-height: 2.25rem;
     @include phone {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       line-height: 2rem;
       margin-bottom: 0.5rem;
       margin-top: 1.2rem;
     }
-  }
-  @include phone {
-    font-size: 1.5rem;
-    line-height: 2.25rem;
-    margin-bottom: 0.2rem;
   }
 }
 .avatar-text__text {
@@ -198,7 +204,7 @@
     }
   }
   @include phone {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
 }

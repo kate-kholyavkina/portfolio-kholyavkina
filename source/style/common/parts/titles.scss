@@ -18,6 +18,11 @@
   .slider__info & {
     max-width: none;
     font-size: 1.85rem;
+    @include phone {
+      font-size: 1.45rem;
+      max-width: 80%;
+      padding-bottom: 1.2rem;
+    }
   }
   &.section-title--small {
     max-width: 14rem;
@@ -29,11 +34,13 @@
       max-width: 13rem;
     }
   }
-  &.section-title--card{
-    // font-size: 2.15rem;
+  &.section-title--card {
     font-size: 1.85rem;
     padding-top: 0;
     padding-bottom: 0;
+    @include phone {
+      font-size: 2.15rem;
+    }
   }
 
   &.section-title--bg {
@@ -67,6 +74,10 @@
     margin-bottom: 0;
   }
 
+  @include phone {
+    min-width: 0;
+  }
+
 }
 
 .section-title__inner {
@@ -92,13 +103,13 @@
   &:before{
     left: -3rem;
     @include phone {
-      left: -3rem;
+      left: -2rem;
     }
   }
   &:after {
     right: -3rem;
     @include phone {
-      right: -3rem;
+      right: -2rem;
     }
   }
 

@@ -7,6 +7,10 @@
   @include tablet {
     height: auto;
   }
+
+  @include phone {
+    min-height: 540px;
+  }
 }
 .slider__left {
   float: left;
@@ -44,6 +48,9 @@
     position: static;
     padding: 5rem 0 2.5rem;
   }
+    @include phone {
+      padding: 3rem 2.5rem 3rem;
+    }
 }
 .slider__display img{
   @include centered;
@@ -62,6 +69,10 @@
     width: 100%;
     padding: 2.5rem 2.5rem 3.6rem;
   }
+
+  @include phone {
+    padding: 0.7rem 0.5rem 2rem;
+  }
 }
 
 .slider__skills {
@@ -74,6 +85,11 @@
   @include tablet {
     margin-top: 0.7rem;
     margin-bottom: 1.2rem;
+  }
+  @include phone {
+    margin-top: 0;
+    margin-bottom: 1.4rem;
+    padding: 0.35rem 1rem;
   }
 }
 
@@ -104,6 +120,10 @@
     position: static;
     width: 100%;
   }
+
+  @include phone {
+    height: 6.7rem;
+  }
 }
 .slider__controls {
   bottom: 0;
@@ -117,6 +137,10 @@
   @include tablet {
     position: static;
     height: auto;
+  }
+  @include phone {
+    height: 100%;
+    overflow: hidden;
   }
 }
 .slider__control {
@@ -134,7 +158,7 @@
       position: static;
     }
   }
-  &:before{
+  &:before {
     content: '';
     position: absolute;
     z-index: 1;
@@ -143,8 +167,13 @@
     width: 100%;
     height: 100%;
     background-color: rgba($slider_preview_hover, 0.7);
+    transition: background-color 0.3s;
   }
-  &:after{
+
+  &:hover:before {
+    background-color: rgba($slider_preview_hover, 0.9);
+  }
+  &:after {
     content: '';
     @include centered;
     z-index: 2;
@@ -180,11 +209,19 @@
     @include tablet {
       padding: 2rem 0;
     }
+    @include phone {
+      padding: 2rem 0 1.5rem;
+    }
   }
   .section-title--about .section-title__inner {
     font-size: 3.95rem;
     @include tablet {
       font-size: 3rem;
+    }
+    @include phone {
+      font-size: 2.3rem;
+      max-width: 70%;
+      line-height: 3.1rem;
     }
   }
   .section-title--card .section-title__inner {
@@ -192,6 +229,9 @@
     margin-bottom: 1.65rem;
     @include tablet {
       margin-bottom: 1rem;
+    }
+    @include phone {
+      font-size: 1.45rem;
     }
   }
 }
@@ -203,6 +243,10 @@
       padding-left: 1.5rem;
       padding-right: 1.5rem;
   }
+  @include tablet {
+      padding-left: 0.8rem;
+      padding-right: 0.8rem;
+  }
 }
 .testimonial__list {
   @include clearfix;
@@ -211,6 +255,9 @@
   text-align: left;
   @include tablet {
     margin-bottom: 3.5rem;
+  }
+  @include phone {
+    margin-bottom: 1.5rem;
   }
 }
 .testimonial__item {
@@ -231,15 +278,22 @@
       position: absolute;
       top: 0;
       left: 0;
+
+      @include phone {
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
     }
     @include tablet {
       font-size: 0.85rem;
       padding-top: 2.9rem;
     }
     @include phone {
+      font-size: 1rem;
       display: block;
       width: 100%;
-      margin-bottom: 4rem;
+      margin-bottom: 2.2rem;
+      padding-right: 0;
     }
 }
 .testimonial__text {
@@ -255,6 +309,9 @@
     float: left;
     width: 4.8rem;
     margin-right: 1rem;
+    @include phone {
+      width: 3.6rem;
+    }
 }
 .testimonial__pic-wrap {
   border-radius: 50%;
@@ -269,6 +326,9 @@
   float: left;
   color: $color_slider_skills;
   padding-top: 1rem;
+    @include phone {
+      padding-top: 0.5rem;
+    }
 }
 .testimonial__name {
   @include roboto-bold;

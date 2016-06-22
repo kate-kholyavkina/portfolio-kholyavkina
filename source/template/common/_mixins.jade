@@ -37,7 +37,7 @@ mixin knobList(className, array)
   each sublist, groupTitle in array
     div(class="section-subtitle section-subtitle--#{className}")= groupTitle
       
-    div(class="#{className}__list")
+    div(class="#{className}__list #{className}__list--#{groupTitle}")
       each value, title in sublist
         - var arc = (value * circumference / 100);
           div(class="#{className}__item")

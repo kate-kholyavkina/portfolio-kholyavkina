@@ -116,7 +116,7 @@
   left: 0;
   right: 0;
   bottom: $footer_height_desktop;
-  
+
   background-color: rgba(#fcfcfc, 0.85);
   border-radius: 5px;
   margin: auto;
@@ -275,8 +275,12 @@
   transform-origin: center;
   transform: rotate(-90deg);
   transition: all 1s;
-  stroke: $color_skills_outer;
+  stroke: rgba($color_skills_outer, 0.9);
   fill: transparent;
+
+  .skills__list--Backend & {
+    stroke: rgba($color_skills_outer, 0.35);
+  }
 
   @include wide {
     r: 50px;
