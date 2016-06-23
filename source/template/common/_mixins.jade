@@ -37,10 +37,10 @@ mixin knobList(className, array)
   each sublist, groupTitle in array
     div(class="section-subtitle section-subtitle--#{className}")= groupTitle
       
-    div(class="#{className}__list #{className}__list--#{groupTitle}")
+    ul(class="#{className}__list #{className}__list--#{groupTitle}")
       each value, title in sublist
         - var arc = (value * circumference / 100);
-          div(class="#{className}__item")
+          li(class="#{className}__item")
             svg(class="#{className}__circle" width="#{diameter}" height="#{diameter}")
 
               circle(class="outer" cx="#{radius}" cy="#{radius}" r="#{smallRadius}" stroke-width="#{stroke}" fill="lightgrey")
