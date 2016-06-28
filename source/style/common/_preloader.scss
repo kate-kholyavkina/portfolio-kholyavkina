@@ -1,0 +1,71 @@
+// animation
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+circle {
+  animation-name: rotate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+}
+.preloader__circle1 {
+  stroke-dasharray: 140px 1000px;
+  animation-duration: 1.5s;
+}
+.preloader__circle2 {
+  stroke-dasharray: 110px 1000px;
+  animation-duration: 0.75s;
+}
+.preloader__circle3 {
+  stroke-dasharray: 80px 1000px;
+  animation-duration: 0.5s;
+}
+
+
+// common
+
+.preloader {
+  position: absolute;
+  z-index: 100;
+  background-color: #1bc1a9;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.preloader__percents-holder {
+  width: 144px;
+  height: 144px;
+  // @include centered;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.preloader__percents {
+  text-align: center;
+  line-height: 144px;
+  color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "ArialMT";
+  font-size: 24px;
+}
+.preloader__hidden {
+  display: none;
+}

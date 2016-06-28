@@ -1,13 +1,13 @@
 doctype html
-html
+html(lang="ru-RU")
   include common/_head
   include common/_mixins
   body
-    <!--[if lt IE 7]>
-    <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
-    <![endif]-->
 
-    .wrapper.wrapper--welcome
+    include common/_preloader
+    include common/_ie
+
+    .wrapper.wrapper--welcome.preloader__hidden
       .welcome__login
         .login
           a.btn.btn--transparent(href="#",class="btn--show-login",id="btn-show-login") Авторизоваться
@@ -19,7 +19,7 @@ html
           .card.card--back
             include parts/_welcome__card--back
 
-    footer.footer.footer--welcome
+    footer.footer.footer--welcome.preloader__hidden
       span.footer--welcome__textline © Екатерина Холявкина
       span.footer--welcome__textline создано с любовью в LoftSchool | 2016
 

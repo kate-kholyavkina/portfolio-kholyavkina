@@ -5,11 +5,13 @@ html(lang="ru-RU")
   
   block body
     body
+
+      include common/_preloader
       include common/_ie
     
-      .top-nav
+      .top-nav.preloader__hidden
         include parts/_header_nav
-      .wrapper
+      .wrapper.preloader__hidden
         include parts/_header
 
         block content 
