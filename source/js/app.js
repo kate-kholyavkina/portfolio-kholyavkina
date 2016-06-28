@@ -73,6 +73,26 @@
 
 
 
+// blur 
+function blur(){
+
+    var bg   = $('.blur__bg'),
+      form = $('.blur__form'),
+
+      bgWidth = bg.width(),
+      posTop  = bg.offset().top  - form.offset().top,
+      posLeft = bg.offset().left - form.offset().left;
+
+  form.css({
+    'background-size': bgWidth + 'px' + ' ' + 'auto',
+    'background-position': posLeft + 'px' + ' ' + posTop + 'px'
+  });
+};
+
+$(window).on('load resize', function(){
+  blur();
+});
+
 
 // blog
   (function(){
