@@ -152,12 +152,11 @@ $(window).on('load resize', function(){
 
     $('#burger-btn').on('click', function() {
       $(this).toggleClass('burger-btn--active');
-      $('.header__burger').toggleClass('fixed');
+      // $('.header__burger').toggleClass('fixed');
       $('.main-menu').toggleClass('main-menu--open');
     });
 
   })();
-
 
 
 

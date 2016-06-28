@@ -10,7 +10,7 @@ mixin socials_navigation(className, ulClassName, items)
 mixin navigation(className, items)
   ul(class="#{className}__list")
     each item, ndx in items
-      li(class="#{className}__item")
+      li(class="#{className}__item #{className}__item--#{ndx}")
         a(class="#{className}__link #{item.class}"  href=item.href) #{item.title}  
 
 

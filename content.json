@@ -31,19 +31,19 @@
     }
   },
   "mainMenu" : {
-    "works" : {
+    "1": {
       "href" : "works.html",
       "title" : "Мои работы"
     },
-    "blog" : {
+    "2" : {
       "href" : "blog.html",
       "title" : "Блог"
     },
-    "about" : {
+    "3" : {
       "href" : "about.html",
       "title" : "Обо мне"
     },
-    "login" : {
+    "4" : {
       "href" : "/",
       "title" : "Авторизация"
     }

@@ -255,15 +255,14 @@
   overflow: hidden;
   border-radius: 5px;
 }
+
 .blur__form {
-  
   filter: blur(5px);
   height: 100%;
   width: 100%;
   position: absolute;
   background-position: 0 0;
   text-align: center;
-
   @include desktop {
     background-image: url(../img/testimonials-bg.jpg);
   }
