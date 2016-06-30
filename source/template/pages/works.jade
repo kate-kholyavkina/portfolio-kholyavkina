@@ -7,24 +7,9 @@ block title
 block content
   .section-title.section-title--bg.section-title--works
     .section-title__inner Мои работы
-  .slider
-    .slider__left
-      .slider__display
-        img(src="assets/img/slider-big.png", alt="")
-      .slider__info
-        .section-title 
-          .section-title__inner Сайт школы онлайн Образования
-        .slider__skills HTML , CSS, JAVASCRIPT
-        .slider__btn 
-          a(href="").btn 
-            <i class="fa fa-link" aria-hidden="true"></i>
-            span Посмотреть сайт 
-    .slider__right
-      .slider__controls
-        a(href="").slider__control.slider__control--prev
-          img(src="assets/img/slider-small-1.png", alt="")
-        a(href="").slider__control.slider__control--next
-          img(src="assets/img/slider-small-2.png", alt="")
+
+    
+  include _slider.jade
 
   .testimonials.blur
     .blur__bg

@@ -58,6 +58,8 @@
 .footer__scroll-control {
   margin: 0 auto 4rem;
   display: inline-block;
+  z-index: 1;
+  position: relative;
 
   @include tablet {
     margin: 0 auto 3rem;

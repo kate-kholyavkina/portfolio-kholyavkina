@@ -54,6 +54,7 @@ $color_quote: #dde0e0;
 
 // sections
 @import 'sections/header';
+@import 'sections/main-menu';
 @import 'sections/footer';
 
 // socials, buttons, titles 
@@ -71,3 +72,4 @@ $color_quote: #dde0e0;
 @import 'sections/about';
 @import 'sections/blog';
 @import 'sections/works';
+@import 'sections/slider';
