@@ -44,7 +44,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  min-width: 900px;
+  min-width: 1200px;
 
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -54,6 +54,10 @@
   @include wide {
     background-image: url(../img/testimonials-bg-lg.jpg);
   }
+  @include tablet {
+    min-width: 1200px;
+  }
+
 }
 
 .blur__form-wrapper {
