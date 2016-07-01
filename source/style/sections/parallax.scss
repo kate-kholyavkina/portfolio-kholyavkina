@@ -1,0 +1,48 @@
+.parallax {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  // top: 20%;
+  // left: 20%;
+  // right: 20%;
+  // bottom: 20%;
+  // border: 5px solid
+ 
+// background: #b6c7c1; /* Old browsers */
+// background: -moz-linear-gradient(left,  #b6c7c1 0%, #81b2b9 100%); /* FF3.6-15 */
+// background: -webkit-linear-gradient(left,  #b6c7c1 0%,#81b2b9 100%); /* Chrome10-25,Safari5.1-6 */
+// background: linear-gradient(to right,  #b6c7c1 0%,#81b2b9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b6c7c1', endColorstr='#81b2b9',GradientType=1 ); /* IE6-9 */
+
+  @include phone {
+    display: none;
+  }
+}
+
+.parallax__layer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 110%;
+  height: auto;
+  will-change: transform;
+  transition: transform 1s;
+}
+
+.parallax__layer-img {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  
+  @include phone {
+    display: none;
+  }
+}

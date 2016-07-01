@@ -18,7 +18,6 @@
 
         var path = background.replace('url("', "").replace('")', "");
         var path = path.replace('url(', "").replace(')', "");
-
         imgs.push(path);
 
       }
@@ -26,7 +25,7 @@
       if (img) {
         var path = '' + $this.attr('src');
 
-        if (path) {
+        if ( (path) && ($this.css('display') !== 'none') ) {
           imgs.push(path);
         }
       }
@@ -263,13 +262,13 @@ $(function() {
     });
 
 
-    $('.wrapper--welcome').on('click', function(e){
+    $('.wrapper--welcome, .footer--welcome').on('click', function(e){
       
-      // console.log(e.target);
-      if (e.target !== this) {
+      // если кликаем на карточке, то переворачивать не надо
+      if (e.target.closest('.welcome__card') !== null) {
         return;
       }
-
+      // если кликаем не на карточке, то
       if (isWelcomeFlipped && 
           e.target.id != buttonTriggerFlip.attr('id')
         ) {
