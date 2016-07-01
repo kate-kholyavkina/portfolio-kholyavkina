@@ -38,7 +38,7 @@ block content
 
       .form--contact__wrapper.blur__form-wrapper
         .blur__form
-        form.form.form--contact(action="")
+        form.form.form--contact(action="" method="post")
 
           .section-title.section-title--card
             .section-title__inner Связаться со мной
@@ -49,9 +49,9 @@ block content
           .contact-form__buttons
             ul.welcome-nav__list
               li.welcome-nav__item
-                input.welcome-nav__link(type="submit" value="Отправить")
+                input.welcome-nav__link(id="contact-btn" type="submit" value="Отправить")
               li.welcome-nav__item
-                input.welcome-nav__link(type="submit" value="Очистить")
+                input.welcome-nav__link(type="reset" value="Очистить")
 
             
       .footer__scroll-control

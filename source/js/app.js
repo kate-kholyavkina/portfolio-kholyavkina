@@ -48,9 +48,6 @@
       });  
     };
 
-    console.log(imgs);
-
-
     function countPercent(current, total){
       return Math.ceil(current / total * 100);
     }
@@ -76,12 +73,16 @@
 // blur 
 function blur(){
 
-    var bg   = $('.blur__bg'),
-      form = $('.blur__form'),
+  var bg = $('.blur__bg');
 
-      bgWidth = bg.width(),
-      posTop  = bg.offset().top  - form.offset().top,
-      posLeft = bg.offset().left - form.offset().left;
+  if (bg.length === 0) {
+    return;
+  };
+
+  var form = $('.blur__form'),
+    bgWidth = bg.width(),
+    posTop  = bg.offset().top  - form.offset().top,
+    posLeft = bg.offset().left - form.offset().left;
 
   form.css({
     'background-size': bgWidth + 'px' + ' ' + 'auto',
@@ -92,126 +93,6 @@ function blur(){
 $(window).on('load resize', function(){
   blur();
 });
-
-// slider 
-
-
-
-
-
-
-(function(){
-
-    function indexDec(activeIndex, total) {
-        var prevIndex = (activeIndex <=   0  ) ? total : activeIndex - 1;
-        return prevIndex;
-    };
-
-    function indexInc(activeIndex, total) {
-        var nextIndex = (activeIndex >= total) ?   0   : activeIndex + 1;
-        return nextIndex;
-    };
-
-
-    function moveSlider(direction, control, newIndex) {
-      var 
-        items = control.find('.control__item'),
-        oldItem = control.find('.control__item--active'),
-        newItem = items.eq(newIndex);
-
-
-
-        oldItem.removeClass('control__item--active');
-        newItem.addClass('control__item--active');
-
-
-      if (direction == 'up') {
-
-          newItem.css('top', '100%');
-          oldItem.animate({'top': '-100%'}, 300);
-          newItem.animate({'top': '0'}, 300);
-
-      };
-      if (direction == 'down') {
-
-          newItem.css('top', '-100%');
-          oldItem.animate({'top': '100%'}, 300);
-          newItem.animate({'top': '0'}, 300);
-        
-      };
-    };
-
-
-    function displaySlide(indexToHide, indexToShow, items) {
-
-      var 
-        itemToHide = items.eq(indexToHide),
-        itemToShow = items.eq(indexToShow);
-
-      itemToHide.removeClass('slider__item--active');
-      itemToHide.animate({'opacity': '0'}, 150);
-
-      itemToShow.addClass('slider__item--active');
-      itemToShow.delay(150).animate({'opacity': '1'}, 150);
-    };
-
-
-    function displayInfo(indexToHide, indexToShow, infoItems) {
-      infoItems.eq(indexToHide).css('display', 'none');
-      infoItems.eq(indexToShow).css('display', 'inline-block');
-    }
-
-
-
-    $('.slider__control').on('click', function(e){
-
-      e.preventDefault();
-
-      var
-        $this = $(this),
-        container = $this.closest('.slider'),
-        items = container.find('.slider__item'),
-        infoItems = container.find('.slider__item-info'),
-        total = items.length - 1,
-        prevControl = container.find('.slider__control--prev'),
-        nextControl = container.find('.slider__control--next'),
-        activeItem = container.find('.slider__item--active'),
-        activeIndex = items.index(activeItem),
-        prevIndex = indexDec(activeIndex, total),
-        nextIndex = indexInc(activeIndex, total);
-
-
-      if ( $this.hasClass('slider__control--prev') ) {
-
-        var prevIndexDec = indexDec(prevIndex, total);
-        var nextIndexDec = indexDec(nextIndex, total);
-
-        displaySlide(activeIndex, prevIndex, items);
-        displayInfo(activeIndex, prevIndex, infoItems);
-
-        moveSlider('up', prevControl, prevIndexDec);
-        moveSlider('down', nextControl, nextIndexDec);
-
-      };
-
-
-      if ( $this.hasClass('slider__control--next') ) {
-
-        var prevIndexInc = indexInc(prevIndex, total);
-        var nextIndexInc = indexInc(nextIndex, total);
-        
-        displaySlide(activeIndex, nextIndex, items);
-        displayInfo(activeIndex, nextIndex, infoItems);
-
-        moveSlider('up', prevControl, prevIndexInc);
-        moveSlider('down', nextControl, nextIndexInc);
-
-      };
-
-    });
- 
-
-})();
 
 
 
@@ -239,8 +120,7 @@ $(function() {
           i++;
         });
 
-        var word = $('<span class="word"></span>').html(inject);
-        console.log(word);
+        var word = '<span class="word">' + inject + '</span>';
         $this.append(word);
     });
 
@@ -385,7 +265,7 @@ $(function() {
 
     $('.wrapper--welcome').on('click', function(e){
       
-      console.log(e.target);
+      // console.log(e.target);
       if (e.target !== this) {
         return;
       }

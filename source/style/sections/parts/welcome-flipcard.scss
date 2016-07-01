@@ -28,13 +28,21 @@
   top: 0;
   left: 0;
 }
+
+
 /* front pane, placed above back */
-.card--front {
+
+// .card--front {
+.card--back {
   z-index: 2;
   /* for firefox 31 */
   transform: rotateY(0deg);
 }
+
+
 /* back, initially hidden pane */
-.card--back {
+
+// .card--back {
+.card--front {
   transform: rotateY(-180deg);
 }
