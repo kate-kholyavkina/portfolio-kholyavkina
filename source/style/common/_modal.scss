@@ -1,0 +1,31 @@
+.modal__holder {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(#000, 0.7);
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  width: rem(280px);
+  // height: rem(112px);
+  top: -100%;
+  left: 50%;
+  margin-left: rem(-140px);
+  margin-top: rem(-56px);
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  text-align: center;
+  padding: 1rem;
+}
+
+.modal__text {
+  margin-bottom: 1rem;
+}
+.modal__btn .btn {
+    cursor: pointer;
+}

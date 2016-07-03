@@ -177,20 +177,9 @@
   }
 }
 
-.slider__btn .btn{
-  @extend .btn;
-  @include roboto-regular;
+
+.btn--slider {
   padding: 0.95rem 1.15rem 0.75rem;
-  background-color: $color_welcome_nav;
-  color: #fff;
-  &:hover {
-    background-color: rgba($color_welcome_nav_hover, 0.85);
-  }
-  .fa {
-    font-size: 1.35rem;
-    padding-right: 0.9rem;
-    vertical-align: middle;
-  }
 }
 .slider__right {
   float: left;

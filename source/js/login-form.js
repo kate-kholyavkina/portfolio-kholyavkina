@@ -5,16 +5,14 @@ var loginForm = (function () {
   };
 
   function _setUpListeners () {
-    $('#login-btn').on('click', _submitForm);  
-    $('.form--login input').on('keydown', _clearErrorStyles);  
+    $('#login-btn').on('click', _submitForm);
+    $('.form--login input').not('#login-btn').on('keydown', _clearErrorStyles);
   };
 
-  function _clearErrorStyles(e) {
-    var element = $(this);
-    element.css({
-      'background-color': '#fff'
-    });
+  function _clearErrorStyles() {
+    validation.clearErrorStyles($(this));
   }
+
   function _submitForm(e) {
     console.log('submitting Login Form ');
     e.preventDefault();
@@ -22,7 +20,22 @@ var loginForm = (function () {
       form = $(this).closest('.form'),
       data = form.serialize();
 
-    validation.validateForm(form);
+    validation.validateForm(form, [{
+      id: 'ishuman',
+      type: 'checkbox',
+      checked: true,
+      errorMsg: 'Роботам здесь не место'
+    }, {
+      id: 'notrobot-yes',
+      type: 'radio',
+      checked: true,
+      errorMsg: 'Роботам здесь не место'
+    }, {
+      id: 'notrobot-no',
+      type: 'radio',
+      checked: false,
+      errorMsg: 'Роботам здесь не место'
+    }]);
 
   }
 

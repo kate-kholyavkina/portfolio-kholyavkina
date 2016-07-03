@@ -6,8 +6,14 @@ var loginForm = (function () {
 
   function _setUpListeners () {
     $('#contact-btn').on('click', _submitForm);  
+    $('.form--contact input, .form--contact textarea').on('keydown', _clearErrorStyles);  
   };
 
+
+  function _clearErrorStyles() {
+    validation.clearErrorStyles($(this));
+  }
+  
   function _submitForm(e) {
     console.log('submitting Login Form ');
     e.preventDefault();

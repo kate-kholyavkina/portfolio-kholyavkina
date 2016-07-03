@@ -32,17 +32,14 @@
 
 /* front pane, placed above back */
 
-// .card--front {
-.card--back {
+.card--front {
   z-index: 2;
-  /* for firefox 31 */
   transform: rotateY(0deg);
 }
 
 
 /* back, initially hidden pane */
 
-// .card--back {
-.card--front {
+.card--back {
   transform: rotateY(-180deg);
 }

@@ -76,6 +76,10 @@
     transform: translate3d(0, 0, 0);
   }
 
+  @include phone {
+    height: 100%;
+    min-height: 0;
+  }
 
 }
 
@@ -95,6 +99,11 @@
     animation-name: bounceIn;
     animation-fill-mode: both;
     animation-duration: .5s;
+    
+    @include phone {
+      padding: 1rem;
+    }
+
   }
   $menu-items: 4;
 
@@ -104,6 +113,7 @@
       animation-delay: 0.4s + ($i * 0.05s);
     }
   }
+
 }
 
 

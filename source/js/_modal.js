@@ -1,30 +1,54 @@
 var modal = (function () {
 
-  function showMessage (msg) {
-  //   var modal = $('<div class="modal"></div>');
-  //   var body = $('body');
-
-  //   console.log(body);
-  //   console.log(modal);
-
-
-  //   body.append(modal);
-  //   modal.css({
-  //     'position': 'absolute',
-  //     'top': '-100%',
-  //     'height': '100px',
-  //     'width': '400px',
-  //     'left': '50%',
-  //     'margin-left': '-200px',
-  //     'margin-top': '-100px'
-  //   });
-  //   modal.animate({
-  //     'top': '50%',
-  //   },300);
+  function init() {
+    _setUpListeners();
   }
 
+  function showMessage(msg) {
+    _showMessage(msg);
+  }
+
+  var modalHolder = $('.modal__holder');
+  var modal = $('.modal');
+  var modalText = $('.modal__text');
+
+  // прослушка событий
+  function _setUpListeners() {
+    $('#modal-close').on("click", _hideMessage);
+  }
+
+  // показываем сообщение
+  function _showMessage (msg) {
+
+    modalText.text(msg);
+
+    modal.animate({
+      'top': '50%',
+    }, 300);
+
+    modalHolder.show();
+
+  }
+
+  // прячем сообщение
+  function _hideMessage(e) {
+
+    e.preventDefault();
+
+    modal.animate({
+      'top': '-100%',
+    }, 300, function(){
+      modalHolder.hide();
+    });
+
+  };
+
   return {
+    init: init,
     showMessage: showMessage
   };
 
 })();
+
+
+modal.init();

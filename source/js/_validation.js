@@ -1,34 +1,117 @@
 var validation = (function () {
 
+
+  function _validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    // var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+    return re.test(email);
+  }
+
+  // закрашиваем некорректные инпуты в красный
+  function setErrorStyles(element) {
+    element.css({
+      'background-color': 'rgba(255, 200, 200, 0.7)'
+    });
+  }
+
+  // перекрашиваем инпуты обратно в белый
+  function clearErrorStyles(element) {
+
+    // все, кроме submit
+    if (element.attr('type') == 'submit') {
+      return;
+    }
+
+    element.css({
+      'background-color': '#fff'
+    });
+  }
+
+
+
   function validateForm (form) {
 
     var valid = true;
-    var elements = form.find('input, textarea').not('input[type="checkbox"], ' + 
-      'input[type="radio"], input[type="hidden"], input[type="file"],' + 
-      'input[type="submit"]');
+        message = '';
+    var elements = form.find('input, textarea').not(
+      'input[type="hidden"], ' + 
+      'input[type="file"], ' + 
+      'input[type="submit"]'),
+      // элементы лдя дополнительной проверки
+      itemsToCheck = arguments[1];
 
 
-    $.each(elements, function(index, val){
+    // каждый эл-т формы
+    $.each(elements, function(index, elem){
 
       var 
-        element = $(val),
+        element = $(elem),
         value = element.val();
 
-      if (value.length === 0) {
-        element.css({
-          'background-color': 'rgba(255, 0, 0, 0.1)'
-        });
+      // проверяем каждый эл-т на пустоту (кроме checkbox и radio)
+      if (  (element.attr('type') != "checkbox") &&
+            (element.attr('type') != "radio") &&
+            (value.length === 0) ) {
+
+        //если да, то ошибка 
+        setErrorStyles(element);
         valid = false;
-        modal.showMessage('Вы заполнили не все поля формы');
+        message = 'Вы заполнили не все поля формы';
       }
 
+      // проверяем каждый email валидатором имейлов
+      if (element.attr('type') == "email") {
+
+
+        // если имейл не валидный
+        if (!_validateEmail(value)) {
+
+          //то ошибка 
+          setErrorStyles(element);
+          valid = false;
+          message = 'Некорректный email';
+          console.log(message);
+        }
+
+      }
+
+      // парсим список дополнительных элементов на проверку
+      $(itemsToCheck).map(function(key, item){
+
+        // если текущий элемент формы совпадает с каким-то из эл-тов списка itemsToCheck
+        if (element.attr('id') === item.id) {
+
+          // если это чекбокс или радио, 
+          // &&
+          // если значение checked не равно тому, что мы хотим (что мы передали при вызове) ( true/ false )
+          if ( (item.type === 'checkbox' || item.type === 'radio') &&
+            element.prop('checked') !== item.checked  ) {
+
+            // то ошибка 
+            setErrorStyles(element);
+            valid = false;
+            message = item.errorMsg;
+          }
+        }
+
+      });
+
+
     });
+
+
+    // выводим сообщение об ошибке с помощью модуля modal (_modal.js)
+    if (message !== '') {
+      modal.showMessage(message);
+    }
 
     return valid;
   }
 
   return {
-    validateForm: validateForm
+    validateForm: validateForm,
+    setErrorStyles: setErrorStyles,
+    clearErrorStyles: clearErrorStyles
   };
 
 })();

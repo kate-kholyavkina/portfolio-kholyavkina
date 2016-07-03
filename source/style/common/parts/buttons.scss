@@ -65,3 +65,18 @@
     margin: 0 auto 3rem;
   }
 }
+
+.btn--primary {
+  @include roboto-regular;
+  padding: 0.85rem 1.15rem;
+  background-color: $color_welcome_nav;
+  color: #fff;
+  &:hover {
+    background-color: rgba($color_welcome_nav_hover, 0.85);
+  }
+  .fa {
+    font-size: 1.35rem;
+    padding-right: 0.9rem;
+    vertical-align: middle;
+  }
+}
