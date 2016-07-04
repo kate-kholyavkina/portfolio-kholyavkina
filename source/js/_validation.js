@@ -10,7 +10,7 @@ var validation = (function () {
   // закрашиваем некорректные инпуты в красный
   function setErrorStyles(element) {
     element.css({
-      'background-color': 'rgba(255, 200, 200, 0.7)'
+      'background-color': '#fffafa'
     });
   }
 

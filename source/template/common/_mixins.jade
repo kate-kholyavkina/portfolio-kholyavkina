@@ -51,9 +51,9 @@ mixin knobList(className, array)
 
 
 mixin blogArticles(className, array)
-  ul(class="#{className}__list")
+  div(class="#{className}")
     each item, ndx in array
-      li(class="#{className}__item")
+      article(class="#{className}__item" data-article="article#{ndx}")
         h2(class="#{className}__title")= item.title
         div(class="#{className}__date")= item.date
         div(class="#{className}__text")= item.text
@@ -64,8 +64,9 @@ mixin blogMenu(className, array)
   ul(class="#{className}__list")
     each item, ndx in array
       if (ndx == 1)
-        li(class="#{className}__item")
-          div(class="#{className}__title #{className}__title--active")= item.title
+        - var active = 'active'
       else
-        li(class="#{className}__item")
-          div(class="#{className}__title")= item.title
+        - var active = ''
+      li(class="#{className}__item  #{active}")
+        a(href="#article#{ndx}" class="#{className}__link")= item.title
+

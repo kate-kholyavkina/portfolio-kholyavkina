@@ -32,8 +32,10 @@ var parallax = (function () {
 
 
     // каждый раз при ресайзе пересчитаываем размеры окна
-    var _wWidth  = _window.innerWidth();
-    var _wHeight = _window.innerHeight();
+    var 
+      _wWidth  = _window.innerWidth(),
+      _wHeight = _window.innerHeight(),
+      _halfHeight = _window.innerHeight() / 2;
 
     // ищем максимальный номер слоя
     var maxIndex = _layers.length -1;
@@ -80,6 +82,16 @@ var parallax = (function () {
     });
 
 
+    $.each(_layers, function(index, elem){
+      // topShift - это величина, на которую нужно сдвинуть каждый слой вниз, чтобы не было видно краев 
+      topShift =  (_halfHeight * index * _speed);
+      $(elem).css({
+        'top': topShift + 'px',
+      });
+    });
+
+
+
   };
 
 
@@ -103,13 +115,13 @@ var parallax = (function () {
           // рассчитываем для каждого слоя, на сколько его сдвигать
           var shiftX = Math.round(coordX * index * _speed),
               shiftY = Math.round(coordY * index * _speed),
-              // bottomShift - это величина, на которую нужно сдвинуть каждый слой вниз, чтобы не было видно краев 
-              bottomShift =  - (_halfHeight * index * _speed);
+              // topShift - это величина, на которую нужно сдвинуть каждый слой вниз, чтобы не было видно краев 
+              topShift =  (_halfHeight * index * _speed);
 
           $(elem).css({
-            'bottom': bottomShift + 'px',
+            'top': topShift + 'px',
             'transform': 'translate3d(' + shiftX + 'px, ' + shiftY + 'px, ' + ' 0)'
-          })
+          });
         });
   }
 

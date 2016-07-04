@@ -128,36 +128,40 @@ html.html--blog-opened .top-nav {
 
 .blog-nav {}
 .blog-nav__list {}
-.blog-nav__item {
-}
-.blog-nav__title {
-  @include roboto-regular;
-    color: #455a64;
-    padding: 0.6rem 1rem 0.6rem 1.3rem;
-    text-align: right;
-    margin-bottom: 1rem;
+.blog-nav__item.active {
 
-  &.blog-nav__title--active {
-    @include roboto-bold;
+  .blog-nav__link {
+
+    // @include roboto-bold;
     color: $color_welcome_nav;
     border-right: 3px solid;
+    margin-right: -3px;
+
+    @include tablet {
+      color: #fff;
+      border-right: none;
+      margin-right: 0;
+    }
+
   }
+}
+.blog-nav__link {
+  display: block;
+  @include roboto-regular;
+  color: #455a64;
+  padding: 0.6rem 1rem 0.6rem 1.3rem;
+  text-align: right;
+  margin-bottom: 1rem;
 
   @include tablet {
     color: rgba(#fff, 0.7);
     font-size: 1.135rem;
     line-height: 1.9rem;
-
-    &.blog-nav__title--active {
-      @include roboto-bold;
-      color: #fff;
-      border-right: none;
-    }
   }
+
 }
 
-.articles {}
-.articles__list {
+.articles {
 
   max-width: 71.5rem;
   padding-right: 10rem;

@@ -4,68 +4,26 @@
 
 
 
-// preloader
+  modal.init();
+
+  preloader.init();
+
+
+  // Модуль blogMenu должен быть инициализирован после отрисовки всех элементов,
+  // для чего логично было бы использовать document.ready
+  // Но использование document.ready тут невозможно из-за прелоадера, 
+  // так как для правильной работы прелоадера у всех элементов сначала стоит display: none.
+  // из-за этого document.ready срабатывает слишком рано, когда отрисован только прелоадер.
+  // 
+  // поэтому пришлось создать Deferred объект в модуле preloader: preloader.contentReady
+  // preloader.contentReady получает метод .resolve() только после того, как все элементы получают display: block
+  // Соответственно, инициализация blogMenu происходит после получения display: block и отрисовки всех элементов
   
-  (function(){
-    var imgs = [];
-
-    $.each($('*'), function(){
-      var $this = $(this),
-          background = $this.css('background-image'),
-          img = $this.is('img');
-
-      if (background != 'none') {
-
-        var path = background.replace('url("', "").replace('")', "");
-        var path = path.replace('url(', "").replace(')', "");
-        imgs.push(path);
-
-      }
-
-      if (img) {
-        var path = '' + $this.attr('src');
-
-        if ( (path) && ($this.css('display') !== 'none') ) {
-          imgs.push(path);
-        }
-      }
-
-    });
-
-    var loaded = 1;
-
-    for (var i = 0; i < imgs.length; i++) {
-      var image = $('<img>', {
-        attr: {
-          src: imgs[i]
-        }
-      });
-      $(image).load(function(){
-        var percentLoaded = countPercent(loaded,imgs.length);
-        setPercent(percentLoaded);
-        loaded++;
-      });  
-    };
-
-    function countPercent(current, total){
-      return Math.ceil(current / total * 100);
-    }
-
-    
-
-    function setPercent(percent){
-
-      $('.preloader__percents').text(percent);
-      
-      if (percent >= 100) {
-        $('.preloader__hidden').delay(500).css('display', 'block');
-        $('.preloader').delay(500).fadeOut(300);
-      }
-
-    }
+  preloader.contentReady.done(function() { 
+    blogMenu.init();
+  });
 
 
-  })();
 
 
 
@@ -162,11 +120,11 @@ $(function() {
 
     $('.off-canvas--menu').on('click', function() {
       html.addClass('html--blog-opened');
-      body.addClass('overfow-hidden');
+      // body.addClass('overfow-hidden');
     });
     $('.off-canvas--content').on('click', function() {
       html.removeClass('html--blog-opened');
-      body.removeClass('overfow-hidden');
+      // body.removeClass('overfow-hidden');
     });
 
     $(window).on({
@@ -174,7 +132,7 @@ $(function() {
       'resize' : function(){
         if ( $( window ).width() > 768 ) {
           html.removeClass('html--blog-opened');
-          body.removeClass('overfow-hidden');
+          // body.removeClass('overfow-hidden');
         }
         blogMenuFindTop();
       },

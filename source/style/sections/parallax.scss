@@ -13,7 +13,8 @@
 .parallax__layer {
   position: absolute;
   left: 0;
-  bottom: 0;
+  // bottom: 0;
+  top: 0;
   width: 110%;
   height: auto;
   will-change: transform;
@@ -23,7 +24,8 @@
 .parallax__layer-img {
   position: absolute;
   display: block;
-  bottom: 0;
+  // bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
   width: 100%;

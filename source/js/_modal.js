@@ -1,47 +1,48 @@
 var modal = (function () {
 
+
   function init() {
     _setUpListeners();
   }
+
 
   function showMessage(msg) {
     _showMessage(msg);
   }
 
-  var modalHolder = $('.modal__holder');
-  var modal = $('.modal');
-  var modalText = $('.modal__text');
+
+  var 
+    _modalHolder = $('.modal__holder'),
+    _modal = $('.modal'),
+    _modalText = $('.modal__text');
+
 
   // прослушка событий
   function _setUpListeners() {
     $('#modal-close').on("click", _hideMessage);
   }
 
+
   // показываем сообщение
   function _showMessage (msg) {
-
-    modalText.text(msg);
-
-    modal.animate({
+    _modalText.text(msg);
+    _modal.animate({
       'top': '50%',
     }, 300);
-
-    modalHolder.show();
-
+    _modalHolder.show();
   }
+
 
   // прячем сообщение
   function _hideMessage(e) {
-
     e.preventDefault();
-
-    modal.animate({
+    _modal.animate({
       'top': '-100%',
     }, 300, function(){
-      modalHolder.hide();
+      _modalHolder.hide();
     });
-
   };
+
 
   return {
     init: init,
@@ -51,4 +52,3 @@ var modal = (function () {
 })();
 
 
-modal.init();
