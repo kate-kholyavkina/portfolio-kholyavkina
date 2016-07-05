@@ -17,7 +17,7 @@ var validation = (function () {
   // перекрашиваем инпуты обратно в белый
   function clearErrorStyles(element) {
 
-    // все, кроме submit
+    // любые, кроме submit
     if (element.attr('type') == 'submit') {
       return;
     }
@@ -37,7 +37,16 @@ var validation = (function () {
       'input[type="hidden"], ' + 
       'input[type="file"], ' + 
       'input[type="submit"]'),
-      // элементы лдя дополнительной проверки
+      //  элементы лдя дополнительной проверки. Если в форме есть специфические поля
+      //  пример использования: нужно проверить инпут типа 'checkbox' с id 'ishuman' на то что он 'true', 
+      //  в случае ошибки вывести 'errorMsg'.
+      // 
+      //  validation.validateForm(form, [{
+      //    id: 'ishuman',
+      //    type: 'checkbox',
+      //    checked: true,
+      //    errorMsg: 'Роботам здесь не место'
+      //  }]);
       itemsToCheck = arguments[1];
 
 
@@ -70,7 +79,6 @@ var validation = (function () {
           setErrorStyles(element);
           valid = false;
           message = 'Некорректный email';
-          console.log(message);
         }
 
       }

@@ -89,9 +89,7 @@ var parallax = (function () {
         'top': topShift + 'px',
       });
     });
-
-
-
+    
   };
 
 
@@ -132,4 +130,3 @@ var parallax = (function () {
 
 })();
 
-parallax.init();

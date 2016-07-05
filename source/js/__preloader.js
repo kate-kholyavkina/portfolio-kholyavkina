@@ -1,8 +1,13 @@
 var preloader = (function () {
 
-  // массив для всех изображений на странице
-  var _imgs = [],
-      contentReady = $.Deferred();
+  var 
+    // массив для всех изображений на странице
+    _imgs = [],
+    
+    // будет использоваться из других модулей, чтобы проверить, отрисованы ли все элементы
+    // будет использоваться вместо document.ready, который из-за прелоадера срабатывает раньше 
+    // (когда отрисован прелоадер, а не вся страница)
+    contentReady = $.Deferred();
 
 
   // инициальзация модуля
@@ -78,7 +83,7 @@ var preloader = (function () {
 
   
   
-  // записывает процент в div прелоадера
+  // записывает процент в div прелоадер
   // percent - number, какую цифру записать
   function _setPercent(percent){
 
@@ -94,10 +99,8 @@ var preloader = (function () {
   };
 
   function _finishPreloader(){
-    // устанавливаем переменную в true. Она будет доступна из других модулей
-    contentReady.resolve();
-    console.log('a1 resolved');
 
+    contentReady.resolve();
   };
 
 

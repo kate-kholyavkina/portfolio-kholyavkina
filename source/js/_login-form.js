@@ -44,5 +44,3 @@ var loginForm = (function () {
   };
 
 })();
-
-loginForm.init();

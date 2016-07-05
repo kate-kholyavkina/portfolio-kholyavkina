@@ -1,4 +1,4 @@
-var loginForm = (function () {
+var contactForm = (function () {
 
   function init () {
     _setUpListeners();
@@ -15,7 +15,6 @@ var loginForm = (function () {
   }
   
   function _submitForm(e) {
-    console.log('submitting Login Form ');
     e.preventDefault();
     var
       form = $(this).closest('.form'),
@@ -30,5 +29,3 @@ var loginForm = (function () {
   };
 
 })();
-
-loginForm.init();

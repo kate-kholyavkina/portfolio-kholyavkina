@@ -245,6 +245,8 @@
   margin-right: 10px;
   position: relative;
   margin: 0.7rem 1.6rem 1.7rem 0;
+  opacity: 0;
+  
 
   height: 110px;
   width: 110px;
@@ -260,6 +262,7 @@
 .skills__circle {
   width: 100%;
   height: 100%;
+  // opacity: 0;
 }
 .skills__circle .outer{
   fill: $color_skills_inner;
