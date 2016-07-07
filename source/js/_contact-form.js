@@ -19,9 +19,24 @@ var contactForm = (function () {
     var
       form = $(this).closest('.form'),
       data = form.serialize();
+    
+    if (validation.validateForm(form)) {
+      _sendForm(form);
+    };
 
-    validation.validateForm(form);
+  }
 
+  function _sendForm(form){
+    $.ajax({
+      type: "POST",
+      url: 'assets/php/mail.php',
+      cache: false,
+      data: form.serialize()
+    }).done(function(html){
+      modal.showMessage(html);
+    }).fail(function(html){
+      modal.showMessage('Сообщение не отправлено!');
+    })
   }
 
   return {

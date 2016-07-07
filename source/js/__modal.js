@@ -26,8 +26,11 @@ var modal = (function () {
   // показываем сообщение
   function _showMessage (msg) {
     _modalText.text(msg);
-    _modal.animate({
+    _modal.css({
       'top': '50%',
+      'opacity': '0'
+    }).animate({
+      'opacity': '1',
     }, 300);
     _modalHolder.show();
   }
@@ -36,8 +39,10 @@ var modal = (function () {
   // прячем сообщение
   function _hideMessage(e) {
     e.preventDefault();
-    _modal.animate({
-      'top': '-100%',
+    _modal.css({
+      'top': '-100%'
+    }).animate({
+      'opacity': '0',
     }, 300, function(){
       _modalHolder.hide();
     });
