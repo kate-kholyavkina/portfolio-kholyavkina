@@ -5,8 +5,7 @@ var preloader = (function () {
     _imgs = [],
     
     // будет использоваться из других модулей, чтобы проверить, отрисованы ли все элементы
-    // будет использоваться вместо document.ready, который из-за прелоадера срабатывает раньше 
-    // (когда отрисован прелоадер, а не вся страница)
+    // т.к. document.ready из-за прелоадера срабатывает раньше, когда отрисован прелоадер, а не вся страница
     contentReady = $.Deferred();
 
 
@@ -51,6 +50,8 @@ var preloader = (function () {
 
   function _startPreloader(){
 
+    $('body').addClass('overflow-hidden');
+
     // загружено 0 картинок
     var loaded = 0;
 
@@ -93,6 +94,7 @@ var preloader = (function () {
     if (percent >= 100) {
       $('.preloader__hidden').css('display', 'block');
       $('.preloader').fadeOut(300);
+      $('body').removeClass('overflow-hidden');
       _finishPreloader();
     }
 

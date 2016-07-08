@@ -1,34 +1,61 @@
 // animation
 
-@keyframes rotate {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+  @keyframes rotate {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
   }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
 
-circle {
+
+.preloader__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 3px solid transparent;
+  border-right-color: white;
+  border-radius: 50%;
   animation-name: rotate;
-  animation-timing-function: linear;
   animation-iteration-count: infinite;
   transform-origin: center;
 }
+
+$circle1_size: 200px;
+$circle2_size: 170px;
+$circle3_size: 140px;
+
+@mixin preloader_circle($size) {
+  width: $size;
+  height: $size;
+  margin-left: -($size / 2);
+  margin-top:  -($size / 2);
+}
+
 .preloader__circle1 {
-  stroke-dasharray: 140px 1000px;
-  animation-duration: 1.5s;
+  @include preloader_circle($circle1_size);
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(.75,.1,.75,1);
 }
+
 .preloader__circle2 {
-  stroke-dasharray: 110px 1000px;
-  animation-duration: 0.75s;
+  @include preloader_circle($circle2_size);
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(.50,.1,.50,1);
 }
+
 .preloader__circle3 {
-  stroke-dasharray: 80px 1000px;
-  animation-duration: 0.5s;
+  @include preloader_circle($circle3_size);
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(.25,.1,.25,1);
 }
+
+
+
+
 
 
 // common
