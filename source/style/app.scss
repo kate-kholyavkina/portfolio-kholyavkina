@@ -56,24 +56,26 @@ $color_quote: #dde0e0;
 @import 'common/modal';
 
 // sections
-@import 'sections/header';
-@import 'sections/main-menu';
-@import 'sections/footer';
+@import 'common/header';
+@import 'common/main-menu';
+@import 'common/footer';
 
 // socials, buttons, titles 
-@import 'common/parts/socials';
-@import 'common/parts/titles';
-@import 'common/parts/buttons';
-@import 'common/parts/forms';
-
-// welcome page
-@import 'sections/welcome';
-@import 'sections/parts/welcome-flipcard';
-@import 'sections/parts/welcome-nav';
-@import 'sections/parallax';
+@import 'common/socials';
+@import 'common/titles';
+@import 'common/buttons';
+@import 'common/forms';
 
 // pages
-@import 'sections/about';
-@import 'sections/blog';
-@import 'sections/works';
-@import 'sections/slider';
+@import 'pages/welcome';
+@import 'pages/welcome/welcome-flipcard';
+@import 'pages/welcome/welcome-nav';
+@import 'pages/about';
+@import 'pages/blog';
+@import 'pages/works';
+
+// slider
+@import 'common/slider';
+
+// parallax
+@import 'common/parallax';

@@ -1,7 +1,7 @@
-.map#map
+var map = (function () {
 
-script.
-  function initMap() {
+
+function init() {
     var 
       mapDiv = document.getElementById('map'),
       isDraggable;
@@ -29,4 +29,9 @@ script.
 
   };
 
-<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+
+  return {
+    init: init
+  };
+
+})();

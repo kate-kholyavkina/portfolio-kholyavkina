@@ -5,20 +5,20 @@ html(lang="ru-RU")
 
 
   block body
-    body
-      include common/_preloader
-      include common/_ie
+    //- body
+    include common/_preloader
+    include common/_ie
 
-      .top-nav.preloader__hidden
-        include parts/_header_nav
-      .off-canvas--content.preloader__hidden
-        .wrapper
-          include parts/_header
+    .top-nav.preloader__hidden
+      include common/_header_nav
+    .off-canvas--content.preloader__hidden
+      .wrapper
+        include common/_header
 
-          block content 
+        block content 
 
-        include parts/_footer
+      include common/_footer
 
-      .off-canvas--menu.preloader__hidden
-        
-        block menu 
+    .off-canvas--menu.preloader__hidden
+      
+      block menu 

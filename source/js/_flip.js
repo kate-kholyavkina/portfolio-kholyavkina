@@ -20,11 +20,11 @@ var flipCard = (function () {
 
 
 
+  // переворачиваем обратно
   function _hideLogin(e) {
 
     e.preventDefault();
 
-    // то переворачиваем обратно
     isWelcomeFlipped = false;
     flipContainer.removeClass('flip');
     buttonTriggerFlip.fadeTo(300, 1, function(){
@@ -35,15 +35,18 @@ var flipCard = (function () {
 
 
 
+  // по клику на области вокруг, переворачиваем обратно
   function _prepareToHide(e) {
       // если кликаем на карточке, то переворачивать не надо
       if (e.target.closest('.welcome__card') !== null) {
         return;
       }
-      // если кликаем не на карточке,
-      if (isWelcomeFlipped && 
-          e.target.id != buttonTriggerFlip.attr('id')
+      // если карточка уже перевернута,
+      if (isWelcomeFlipped 
+        // и мы кликнули не по кнопке "Авторизоваться"
+        && e.target.id != buttonTriggerFlip.attr('id')
         ) {
+        // то переворачиваем обратно
         _hideLogin(e);
       }
   };
