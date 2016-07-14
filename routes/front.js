@@ -2,7 +2,7 @@
 
 let route = require('express').Router();
 let mongoose = require('mongoose');
-let skills = require('../../models/skills.json');
+let skills = require('../models/skills.json');
 
 route.get('/', (req,res) => {
   res.render('auth');

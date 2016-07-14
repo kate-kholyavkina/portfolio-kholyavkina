@@ -43,7 +43,7 @@ route.post('/about', (req,res) => {
 
   // валидация (нужны числа)
   if (models.filter(m => m.validateSync()).length) {
-    return res.json({ error: 'Не удалось сохранить данные!' })ж
+    return res.json({ error: 'Не удалось сохранить данные!' });
   }
 
   // удаление старых навыков из базы и запись новых
