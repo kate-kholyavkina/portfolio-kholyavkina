@@ -1,0 +1,26 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": "27017",
+    "name": "portfolio",
+    "user": "",
+    "password": ""
+  },
+  "http": {
+    "port": 3000,
+    "host": "localhost",
+    "publicRoot": "public"
+  },
+  "mail": {
+    "subject": "СОобщение с сайта-портфолио",
+    "smtp": {
+      "host": "smtp.gmail.com",
+      "port": "465",
+      "secure": "true",
+      "auth": {
+        "user": "katerina.kholyavkina@gmail.com",
+        "pass": "..."
+      }
+    }
+  }
+}

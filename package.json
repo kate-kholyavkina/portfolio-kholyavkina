@@ -1,7 +1,7 @@
 {
-  "name": "loftschool-builder",
+  "name": "portfolio",
   "version": "1.0.0",
-  "author": "a.kalin",
+  "author": "kate.kholyavkina",
   "license": "ISC",
   "scripts": {
     "postinstall": "bower install"
@@ -22,6 +22,15 @@
     "rimraf": "2.5.2"
   },
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "connect-mongo": "^1.2.1",
+    "crypto": "0.0.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "mongoose": "^4.5.3",
+    "multiparty": "^4.1.2",
+    "nodemailer": "^2.5.0",
+    "pug": "^2.0.0-beta3",
     "normalize.css": "^4.1.1"
   }
 }
