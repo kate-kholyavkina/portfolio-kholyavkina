@@ -1,10 +1,10 @@
 # My Portfolio - Kholyavkina Kate
 
-This project is a Portfolio of Kate Kholyavkina. This is a first project I made at the online education school Loftschool during Web Advanced cource.
+This project is a portfolio of Kate Kholyavkina. This is a first project I made during my Web Advanced cource at the online school Loftschool.
 
 
 
-How to use this project
+How to open this project on your local computer
 --------
 
 1. clone this repo
