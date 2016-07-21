@@ -10,17 +10,17 @@ How to open this project on your local computer
 1. clone this repo
 2. On command line, type in the following commands to install libraries:
 
-```
-	$ cd path/to/project
-	$ npm install gulpjs/gulp-cli#4.0 -g
-	$ npm install
-```
+	```
+		$ cd path/to/project
+		$ npm install gulpjs/gulp-cli#4.0 -g
+		$ npm install
+	```
 
 3. On command line, type in the following commands to start:
 
-```
-	$ gulp
-```
+	```
+		$ gulp
+	```
 
 
 Example
