@@ -1,0 +1,19 @@
+extends ../main-blog.jade
+block prepend body
+  body.body--blog
+block title
+   title Блог. Статьи, которые я написала
+
+block avatar-text
+  .avatar-text.avatar-text--white
+    .avatar-text__title Блог
+    .avatar-text__text Статьи, которые я написала
+    
+block content
+  .blog__articles
+    +blogArticles("articles", content.blogArticles)
+
+
+block menu 
+  .blog__blog-nav
+    +blogMenu("blog-nav", content.blogArticles)

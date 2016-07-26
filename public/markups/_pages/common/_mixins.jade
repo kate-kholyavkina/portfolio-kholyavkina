@@ -1,0 +1,72 @@
+mixin socials_navigation(className, ulClassName, items)
+  ul(class="#{className} #{ulClassName}")
+    each item, ndx in items
+      li(class="#{className}__item")
+        a(class="#{className}__link" target="_blank" href=item.href)
+          span(class="#{className}__link-hidden")
+          i(class="#{item.iconClass}" aria-hidden='true')
+
+
+mixin navigation(className, items)
+  ul(class="#{className}__list")
+    each item, ndx in items
+      li(class="#{className}__item #{className}__item--#{ndx}")
+        a(class="#{className}__link #{item.class}"  href=item.href) #{item.title}  
+
+
+mixin contactList(className, array)
+  ul(class="#{className}__list")
+    each item, ndx in array
+      li(class="#{className}__item")
+        span(class="#{className}__icon")
+          i(class="#{item.iconClass}" aria-hidden='true')
+        if (item.href)
+          span(class="#{className}__text")
+            a(class="#{className}__link" href= item.href)= item.title
+        else 
+          span(class="#{className}__text")= item.title
+
+
+mixin knobList(className, array)
+  - var radius = 55;
+  - var stroke = 20;
+  - var diameter = radius * 2;
+  - var smallRadius = radius - stroke/2;
+  - var circumference = 2 * Math.PI * smallRadius;
+
+  each sublist, groupTitle in array
+    div(class="section-subtitle section-subtitle--#{className}")= groupTitle
+      
+    ul(class="#{className}__list #{className}__list--#{groupTitle}")
+      each value, title in sublist
+        - var arc = (value * circumference / 100);
+          li(class="#{className}__item")
+            svg(class="#{className}__circle" width="#{diameter}" height="#{diameter}")
+
+              circle(class="outer" cx="#{radius}" cy="#{radius}" r="#{smallRadius}" stroke-width="#{stroke}" fill="lightgrey")
+
+              circle(class="inner" cx="#{radius}" cy="#{radius}" r="#{smallRadius}" stroke="black" stroke-width="#{stroke}" fill="lightgrey" data-arc="#{arc}" data-circumference="#{circumference}" stroke-dasharray="0 1000")
+            div(class="#{className}__label-holder")
+              div(class="#{className}__label")= title
+
+
+mixin blogArticles(className, array)
+  div(class="#{className}")
+    each item, ndx in array
+      article(class="#{className}__item" data-article="article#{ndx}")
+        h2(class="#{className}__title")= item.title
+        div(class="#{className}__date")= item.date
+        div(class="#{className}__text")= item.text
+
+
+
+mixin blogMenu(className, array)
+  ul(class="#{className}__list")
+    each item, ndx in array
+      if (ndx == 1)
+        - var active = 'active'
+      else
+        - var active = ''
+      li(class="#{className}__item  #{active}")
+        a(href="#article#{ndx}" class="#{className}__link")= item.title
+

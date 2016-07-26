@@ -3,13 +3,21 @@
 let fs = require('fs');
 let path = require('path');
 let express = require('express');
-let pug = require('pug');
-let app = express();
+let jade = require('jade');
 let config = require('./config.json');
 let mongoose = require('./mongoose');
 let bodyParser = require('body-parser');
 let session = require('express-session');
 let MongoStore = require('connect-mongo')(session);
+let app = express();
+
+let blog = require('./models/blog');
+let skills = require('./models/skills');
+let work = require('./models/work');
+let user = require('./models/user');
+
+// let content = require('./content');
+let content = require('./content.json');
 
 app.use(session({
   secret: 'kate',
@@ -18,7 +26,7 @@ app.use(session({
   store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
 
-app.set('view engine', 'pug');
+app.set('view engine', 'jade');
 app.set('views', path.resolve(`./${config.http.publicRoot}/markups/_pages`));
 
 app.use(express.static(path.resolve(config.http.publicRoot)));
@@ -30,6 +38,7 @@ app.use('/admin', require('./routes/admin/middleware'));
 app.use('/admin', require('./routes/admin/about'));
 app.use('/admin', require('./routes/admin/blog'));
 app.use('/admin', require('./routes/admin/works'));
+// app.use('/blog.html', require('./routes/front'));
 app.use('/', require('./routes/front'));
 app.use('/mail', require('./routes/mail'));
 app.use('/auth', require('./routes/auth'));

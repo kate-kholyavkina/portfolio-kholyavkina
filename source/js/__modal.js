@@ -55,5 +55,3 @@ var modal = (function () {
   };
 
 })();
-
-

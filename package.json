@@ -27,10 +27,10 @@
     "crypto": "0.0.3",
     "express": "^4.14.0",
     "express-session": "^1.14.0",
+    "jade": "^1.11.0",
     "mongoose": "^4.5.3",
     "multiparty": "^4.1.2",
     "nodemailer": "^2.5.0",
-    "pug": "^2.0.0-beta3",
     "normalize.css": "^4.1.1"
   }
 }
