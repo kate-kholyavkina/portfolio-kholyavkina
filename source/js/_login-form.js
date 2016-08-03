@@ -19,39 +19,45 @@ var loginForm = (function () {
     var
       form = $(this).closest('.form'),
       data = form.serialize();
-      validationParameters = [{
-        id: 'ishuman',
-        type: 'checkbox',
-        checked: true,
-        errorMsg: 'Роботам здесь не место'
-      }, {
-        id: 'notrobot-yes',
-        type: 'radio',
-        checked: true,
-        errorMsg: 'Роботам здесь не место'
-      }, {
-        id: 'notrobot-no',
-        type: 'radio',
-        checked: false,
-        errorMsg: 'Роботам здесь не место'
-      }];
 
-    if (validation.validateForm(form, validationParameters)) {
-      _sendForm(form);
+    formIsValid = validation.validateForm(form, [{
+      id: 'ishuman',
+      type: 'checkbox',
+      checked: true,
+      errorMsg: 'Роботам здесь не место'
+    }, {
+      id: 'notrobot-yes',
+      type: 'radio',
+      checked: true,
+      errorMsg: 'Роботам здесь не место'
+    }, {
+      id: 'notrobot-no',
+      type: 'radio',
+      checked: false,
+      errorMsg: 'Роботам здесь не место'
+    }]);
+
+    if (formIsValid) {
+      _sendForm(data, '/auth/')
     }
+  }
 
-    function _sendForm(form){
-      // $.ajax({
-      //   type: "POST",
-      //   url: 'assets/php/mail.php',
-      //   cache: false,
-      //   data: form.serialize()
-      // }).done(function(html){
-      //   modal.showMessage(html);
-      // }).fail(function(html){
-      //   modal.showMessage('Сообщение не отправлено!');
-      // })
-    };
+  function _sendForm(data, url){
+    $.ajax({
+      type: "POST",
+      url: url,
+      cache: false,
+      data: data
+    }).done(function(responce){
+      if (responce.error) {
+        modal.showMessage(responce.error);
+      } else {
+        window.location.href = '/admin';
+      }
+    }).fail(function(responce){
+      modal.showMessage('произошла непредвиденная ошибка. попробуйте еще раз или обратитесь к администратору');
+    })
+  };
 
 
   }
