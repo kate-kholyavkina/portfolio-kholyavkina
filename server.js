@@ -41,7 +41,6 @@ app.use('/admin', require('./routes/admin/middleware'));
 app.use('/admin', require('./routes/admin/about'));
 app.use('/admin', require('./routes/admin/blog'));
 app.use('/admin', require('./routes/admin/works'));
-// app.use('/blog.html', require('./routes/front'));
 app.use('/', require('./routes/front'));
 app.use('/mail', require('./routes/mail'));
 app.use('/auth', require('./routes/auth'));

@@ -21,11 +21,9 @@ route.post('/', (req, res) => {
   }).then(item => {
     if (!item) {
       res.json({ error: 'Логин и/или пароль введены неверно! '});
-      console.log('auth.js: Логин и/или пароль введены неверно!');
     }
     else {
-      console.log('auth.js: Вошли!');
-      res.session.isAdmin = true;
+      req.session.isAdmin = true;
       res.json({});
     }
   });

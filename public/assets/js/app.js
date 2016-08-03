@@ -742,10 +742,14 @@ var loginForm = (function () {
       url: url,
       cache: false,
       data: data
-    }).done(function(html){
-      modal.showMessage('запрос отправлен');
-    }).fail(function(html){
-      modal.showMessage('запрос не отправлен');
+    }).done(function(responce){
+      if (responce.error) {
+        modal.showMessage(responce.error);
+      } else {
+        window.location.href = '/admin';
+      }
+    }).fail(function(responce){
+      modal.showMessage('произошла непредвиденная ошибка. попробуйте еще раз или обратитесь к администратору');
     })
   };
 
