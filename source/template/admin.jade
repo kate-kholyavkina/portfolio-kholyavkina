@@ -84,16 +84,16 @@ html(lang="ru-RU")
         
       .admin__tab
 
-        form.form.add-blog(method="post")
+        form.form.form--add-blog(method="post")
           h2.admin-h2 Страница "Блог"
           h3.admin-h3 добавить запись
-          input(type="text" id="blog-title" placeholder="Название")
+          input(type="text" name="itemName" placeholder="Название")
           br
-          input(type="date" id="blog-date" placeholder="Дата")
+          input(type="date" name="itemDate" placeholder="Дата")
           br
-          textarea(name="", id="blog-text" cols="30", rows="10" placeholder="Содержание")
+          textarea(name="itemBody" cols="30", rows="10" placeholder="Содержание")
           br
-          input(type="submit" value="Добавить")
+          button#add-blog-btn(type="submit") Добавить
 
 
       .admin__tab
@@ -111,3 +111,6 @@ html(lang="ru-RU")
           input(type="submit" value="Добавить")
 
     .admin__wrapper
+
+
+    include common/_modal

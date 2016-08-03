@@ -53,4 +53,11 @@
   }
 
 
+  // на странице admin
+  if ($('#add-blog-btn').length) {
+    addBlogForm.init('#add-blog-btn');
+  }
+
+
+
 })();

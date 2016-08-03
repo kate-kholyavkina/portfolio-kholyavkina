@@ -11,7 +11,14 @@ block avatar-text
     
 block content
   .blog__articles
-    +blogArticles("articles", blogArticles)
+    div !{items}
+    //- div.items .items #{items[0].title}
+    //- div.items .items #{items[0].body}
+    //- div.items .items #{items[0].date}
+    //- div.items .items #{items.title}
+    //- div.items .items #{items.body}
+    //- div.items .items #{items.date}
+    //- +blogArticles("articles", blogArticles)
 
 
 block menu 

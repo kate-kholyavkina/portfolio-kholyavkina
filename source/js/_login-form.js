@@ -48,13 +48,13 @@ var loginForm = (function () {
       url: url,
       cache: false,
       data: data
-    }).done(function(responce){
-      if (responce.error) {
-        modal.showMessage(responce.error);
+    }).done(function(response){
+      if (response.error) {
+        modal.showMessage(response.error);
       } else {
         window.location.href = '/admin';
       }
-    }).fail(function(responce){
+    }).fail(function(response){
       modal.showMessage('произошла непредвиденная ошибка. попробуйте еще раз или обратитесь к администратору');
     })
   };

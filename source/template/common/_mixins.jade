@@ -1,10 +1,11 @@
 mixin socials_navigation(className, ulClassName, items)
   ul(class="#{className} #{ulClassName}")
-    each item, ndx in items
-      li(class="#{className}__item")
-        a(class="#{className}__link" target="_blank" href=item.href)
-          span(class="#{className}__link-hidden")
-          i(class="#{item.iconClass}" aria-hidden='true')
+    - if (items)
+      each item, ndx in items
+        li(class="#{className}__item")
+          a(class="#{className}__link" target="_blank" href=item.href)
+            span(class="#{className}__link-hidden")
+            i(class="#{item.iconClass}" aria-hidden='true')
 
 
 mixin navigation(className, items)
