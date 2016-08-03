@@ -30,7 +30,7 @@ block content
             p.
               Больше всего меня привлекет Frontend разработка, но я также знакома и могу решать несложные задачи на Backend. Но давайте по порядку.
           .skills
-            +knobList("skills", content.skillsList)
+            +knobList("skills", skillsList)
 
   section.section-map
     include ../common/_map
@@ -39,4 +39,4 @@ block content
     .about__contacts
       .section-title.section-title--contacts
         .section-title__inner Контакты
-      +contactList("contacts", content.contactsList)
+      +contactList("contacts", contactsList)

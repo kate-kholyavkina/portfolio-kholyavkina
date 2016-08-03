@@ -11,16 +11,25 @@ block avatar-text
     
 block content
   .blog__articles
-    div !{items}
-    //- div.items .items #{items[0].title}
-    //- div.items .items #{items[0].body}
-    //- div.items .items #{items[0].date}
-    //- div.items .items #{items.title}
-    //- div.items .items #{items.body}
-    //- div.items .items #{items.date}
-    //- +blogArticles("articles", blogArticles)
-
+    if ( items )
+      each item, ndx in items
+        article(class="articles__item" data-article="article#{ndx}")
+          h2(class="articles__title")= item.title
+          div(class="articles__date")= item.date
+          div(class="articles__text")= item.body
+    else
+      .blog__error Здесь пока нет ни одной статьи
 
 block menu 
   .blog__blog-nav
-    +blogMenu("blog-nav", blogArticles)
+    ul(class="blog-nav__list")
+      if ( items )
+        each item, ndx in items
+          if (ndx == 1)
+            - var active = 'active'
+          else
+            - var active = ''
+          li(class="blog-nav__item  #{active}")
+            a(href="#article#{ndx}" class="blog-nav__link")= item.title
+      else
+        .blog__error Здесь пока нет ни одной статьи
