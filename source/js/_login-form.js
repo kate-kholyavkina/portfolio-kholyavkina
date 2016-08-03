@@ -59,9 +59,6 @@ var loginForm = (function () {
     })
   };
 
-
-  }
-
   return {
     init: init
   };
