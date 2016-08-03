@@ -3,10 +3,8 @@
 let route = require('express').Router();
 let mongoose = require('mongoose');
 
-
 // сохранение в базу 
 route.post('/blog', (req,res) => {
-
   // обработка тела запроса и приведение его к формату, который можно созранить в базе
   let Model = mongoose.model('blog'),
       item = new Model({

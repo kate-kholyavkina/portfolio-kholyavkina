@@ -5,6 +5,7 @@ let mongoose = require('mongoose');
 let crypto = require('crypto');
 
 route.post('/', (req, res) => {
+
   if (!req.body.login || !req.body.password) {
     return res.json({ error: 'Укажите логин и пароль!' });
   }
@@ -19,9 +20,11 @@ route.post('/', (req, res) => {
     password: password
   }).then(item => {
     if (!item) {
-      res.json({ error: 'Логин и/или пароль введены неверно! '})
+      res.json({ error: 'Логин и/или пароль введены неверно! '});
+      console.log('auth.js: Логин и/или пароль введены неверно!');
     }
     else {
+      console.log('auth.js: Вошли!');
       res.session.isAdmin = true;
       res.json({});
     }

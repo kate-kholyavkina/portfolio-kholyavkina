@@ -714,7 +714,7 @@ var loginForm = (function () {
       form = $(this).closest('.form'),
       data = form.serialize();
 
-    validation.validateForm(form, [{
+    formIsValid = validation.validateForm(form, [{
       id: 'ishuman',
       type: 'checkbox',
       checked: true,
@@ -731,7 +731,23 @@ var loginForm = (function () {
       errorMsg: 'Роботам здесь не место'
     }]);
 
+    if (formIsValid) {
+      _sendForm(data, '/auth/')
+    }
   }
+
+  function _sendForm(data, url){
+    $.ajax({
+      type: "POST",
+      url: url,
+      cache: false,
+      data: data
+    }).done(function(html){
+      modal.showMessage('запрос отправлен');
+    }).fail(function(html){
+      modal.showMessage('запрос не отправлен');
+    })
+  };
 
   return {
     init: init

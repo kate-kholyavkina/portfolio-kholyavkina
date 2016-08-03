@@ -19,6 +19,8 @@ let user = require('./models/user');
 // let content = require('./content');
 let content = require('./content.json');
 
+mongoose.Promise = global.Promise;
+
 app.use(session({
   secret: 'kate',
   saveUninitialized: false,
@@ -30,6 +32,7 @@ app.set('view engine', 'jade');
 app.set('views', path.resolve(`./${config.http.publicRoot}/markups/_pages`));
 
 app.use(express.static(path.resolve(config.http.publicRoot)));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //=== routes ===

@@ -14,7 +14,7 @@ route.get('/', (req,res) => {
         res.render('index', {content: CONTENT});
 });
 
-route.get('/blog.html', (req,res) => {
+route.get('/blog', (req,res) => {
   let Model = mongoose.model('blog');
 
   console.log(Model);
@@ -24,7 +24,7 @@ route.get('/blog.html', (req,res) => {
   });
 });
 
-route.get('/works.html', (req,res) => {
+route.get('/works', (req,res) => {
   let Model = mongoose.model('work');
 
   Model.find().then(items => {
@@ -32,7 +32,7 @@ route.get('/works.html', (req,res) => {
   });
 });
 
-route.get('/about.html', (req,res) => {
+route.get('/about', (req,res) => {
   let Model = mongoose.model('skills');
 
   Model.find().then(items => {

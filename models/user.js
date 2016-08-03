@@ -12,7 +12,7 @@ let UserSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Укажите пароль'],
     set(v) {
-      if (v != '') {
+      if (v == '') {
         return v;
       }
       else {
