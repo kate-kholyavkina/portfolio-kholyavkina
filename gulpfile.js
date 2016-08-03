@@ -34,6 +34,15 @@ $.gulp.task('default', $.gulp.series(
     'css.foundation'
   ),
   $.gulp.parallel(
+    'public.sass',
+    'public.copy.jade',
+    'public.js.foundation',
+    'public.js.process',
+    'public.copy.image',
+    'public.copy.fonts',
+    'public.css.foundation'
+  ),
+  $.gulp.parallel(
     'watch',
     'serve'
   )
