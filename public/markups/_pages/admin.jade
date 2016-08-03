@@ -2,7 +2,112 @@ doctype html
 html(lang="ru-RU")
   include common/_head
   include common/_mixins
-  
   body
-    h1 admin
-    
+
+    //- include common/_preloader
+    include common/_ie
+  
+    .admin__header
+      h1.admin-h1 Панель администрирования
+      .come-back
+        a(href="/").come-back__link Вернуться на сайт
+
+    .admin__menu
+
+      .admin__menu-item Tab 1
+        
+      .admin__menu-item Tab 2
+        
+      .admin__menu-item Tab 3
+
+    .admin__tabs
+
+      .admin__tab
+
+        form.form.add-work(method="post")
+          h2.admin-h2 Страница "Обо мне"
+          h3.admin-h3 Frontend
+
+          label Html
+            input(type="text", id="skills-html", name="", placeholder="100")
+            | %
+            br
+          label CSS
+            input(type="text", id="skills-css", name="", placeholder="100")
+            | %
+            br
+          label Javascript
+            input(type="text", id="skills-javascript", name="", placeholder="100")
+            | %
+            br
+          label SASS
+            input(type="text", name="", placeholder="100")
+            | %
+            br
+          label BEM naming
+            input(type="text", name="", placeholder="100")
+            | %
+            br
+
+          h3.admin-h3 Backend
+
+          label PHP
+            input(type="text", id="skills-php", name="", placeholder="100")
+            | %
+            br
+          label Node.js
+            input(type="text", id="skills-node", name="", placeholder="100")
+            | %
+            br
+          label Mongo.db
+            input(type="text", id="skills-mongo", name="", placeholder="100")
+            | %
+            br
+
+          h3.admin-h3 Frontend
+
+          label Git
+            input(type="text", id="skills-git", name="", placeholder="100")
+            | %
+            br
+          label Gulp
+            input(type="text", id="skills-gulp", name="", placeholder="100")
+            | %
+            br
+          label Bower
+            input(type="text", id="skills-bower", name="", placeholder="100")
+            | %
+            br
+
+          br
+          input(type="submit" value="Сохранить")
+        
+      .admin__tab
+
+        form.form.add-blog(method="post")
+          h2.admin-h2 Страница "Блог"
+          h3.admin-h3 добавить запись
+          input(type="text" id="blog-title" placeholder="Название")
+          br
+          input(type="date" id="blog-date" placeholder="Дата")
+          br
+          textarea(name="", id="blog-text" cols="30", rows="10" placeholder="Содержание")
+          br
+          input(type="submit" value="Добавить")
+
+
+      .admin__tab
+
+        form.form.add-work(method="post")
+          h2.admin-h2 Страница "Мои работы"
+          h3.admin-h3 добавить работу
+          input(type="text" id="work-title" placeholder="Название проекта")
+          br
+          input(type="text" id="work-techs" placeholder="Технологии")
+          br
+          label Загрузить картинку
+            input(type="file", id="work-file" name="")
+          br
+          input(type="submit" value="Добавить")
+
+    .admin__wrapper

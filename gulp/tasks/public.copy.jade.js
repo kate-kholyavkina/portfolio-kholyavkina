@@ -22,6 +22,6 @@
 module.exports = function() {
   $.gulp.task('public.copy.jade', function() {
     return $.gulp.src($.path.template)
-      .pipe($.gulp.dest($.config.root + '/public/markups/_pages'));
+      .pipe($.gulp.dest($.config.public + '/markups/_pages'));
   });
 };

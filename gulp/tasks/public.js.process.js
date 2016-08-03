@@ -6,6 +6,6 @@ module.exports = function() {
       .pipe($.gp.sourcemaps.init({identityMap: true}))
       .pipe($.gp.concat('app.js'))
       .pipe($.gp.sourcemaps.write())
-      .pipe($.gulp.dest($.config.root + '/public/assets/js'))
+      .pipe($.gulp.dest($.config.public + '/assets/js'))
   })
 };

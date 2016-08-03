@@ -1,0 +1,58 @@
+extends ../main.jade
+block prepend body
+  body.body--works
+block title
+   title Мои работы
+
+block content
+  .section-title.section-title--bg.section-title--works
+    .section-title__inner Мои работы
+
+    
+  include ../common/_slider.jade
+
+  .testimonials.blur
+    .blur__bg
+    .container
+      .section-title.section-title--bg.section-title--about
+        .section-title__inner Что обо мне говорят
+      .testimonial__list
+        .testimonial__item
+          .testimonial__text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+          .testimonial__photo
+            .testimonial__pic-wrap
+              img.testimonial__pic(src="assets/img/testimonial-pic-1.jpg", alt="")
+          .testimonial__person-info
+            .testimonial__name Ковальчук Дмитрий
+            .testimonial__position основатель Loftschool
+
+        .testimonial__item
+          .testimonial__text Этот код выдержет любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
+          .testimonial__photo
+            .testimonial__pic-wrap
+              img.testimonial__pic(src="assets/img/testimonial-pic-2.jpg", alt="")
+          .testimonial__person-info
+            .testimonial__name Зар Захаров
+            .testimonial__position главный преподаватель
+
+
+      .form--contact__wrapper.blur__form-wrapper
+        .blur__form
+        form.form.form--contact(method="post")
+
+          .section-title.section-title--card
+            .section-title__inner Связаться со мной
+          input.form__input.form--contact__input(type="text",placeholder="Имя" name="contactname")
+          input.form__input.form--contact__input(type="email",placeholder="Email" name="contactemail")
+          textarea.form__input.form__input--textarea.form--contact__input(name="contactmessage", cols="30", rows="6", placeholder="Ваше сообщение")
+
+          .contact-form__buttons
+            ul.welcome-nav__list
+              li.welcome-nav__item
+                input.welcome-nav__link(id="contact-btn" type="submit" value="Отправить")
+              li.welcome-nav__item
+                input.welcome-nav__link(type="reset" value="Очистить")
+
+            
+      .footer__scroll-control
+        a(href="#").scroll-control.scroll-control--up
