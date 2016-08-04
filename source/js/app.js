@@ -52,12 +52,43 @@
     skillsAnimation.init();
   }
 
-
-  // на странице admin
+  // ---------------------------
+  // Adding Blog Post Init
+  // ---------------------------
   if ($('#add-blog-btn').length) {
     addBlogForm.init('#add-blog-btn');
   }
 
 
+  // ---------------------------
+  // Edit Skills Init
+  // ---------------------------
+  if ($('#edit-skills-btn').length) {
+    esitSkillsForm.init('#edit-skills-btn');
+  }
+
+
+  // ---------------------------
+  // Edit Skills Init
+  // ---------------------------
+  // if ($('#js-get-admin-about').length) {
+  //   $('#js-get-admin-about').on('click', function(){
+
+  //     $.ajax({
+  //       type: "GET",
+  //       url: '/admin/',
+  //       cache: false,
+  //       data: {}
+  //     }).done(function(response){
+  //       // if (response.error) {
+  //       //   modal.showMessage(response.error);
+  //       // } else {
+  //       //   window.location.href = '/admin';
+  //       // }
+  //     }).fail(function(response){
+  //       modal.showMessage('произошла непредвиденная ошибка. попробуйте еще раз или обратитесь к администратору');
+  //     })
+  //   })
+  // }
 
 })();

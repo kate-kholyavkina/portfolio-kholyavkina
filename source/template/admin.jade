@@ -16,7 +16,7 @@ html(lang="ru-RU")
 
       .admin__menu-item Tab 1
         
-      .admin__menu-item Tab 2
+      button.admin__menu-item#js-get-admin-about Tab 2
         
       .admin__menu-item Tab 3
 
@@ -24,63 +24,30 @@ html(lang="ru-RU")
 
       .admin__tab
 
-        form.form.add-work(method="post")
+        form.form.form--edit-skills(method="post")
           h2.admin-h2 Страница "Обо мне"
-          h3.admin-h3 Frontend
 
-          label Html
-            input(type="text", id="skills-html", name="", placeholder="100")
-            | %
-            br
-          label CSS
-            input(type="text", id="skills-css", name="", placeholder="100")
-            | %
-            br
-          label Javascript
-            input(type="text", id="skills-javascript", name="", placeholder="100")
-            | %
-            br
-          label SASS
-            input(type="text", name="", placeholder="100")
-            | %
-            br
-          label BEM naming
-            input(type="text", name="", placeholder="100")
-            | %
-            br
+          if ( skills)
+            each group, i in skills
+              h3.admin-h3 #{group.name}
+              div(class="skills-group" data-title=group.id)
+                if ( group.items )
+                  each title, id in group.items
+                    br
+                    label= title
+                      if ( !form )
+                        input(type="text", id="", name=id, value="50")
+                        | %
+                      else 
+                        each formgroup, formi in form
+                          each formvalue, formid in formgroup
+                            if (formid == id)
+                              input(type="text", id="", name=id, value=formvalue)
+                              | %
+            
 
-          h3.admin-h3 Backend
 
-          label PHP
-            input(type="text", id="skills-php", name="", placeholder="100")
-            | %
-            br
-          label Node.js
-            input(type="text", id="skills-node", name="", placeholder="100")
-            | %
-            br
-          label Mongo.db
-            input(type="text", id="skills-mongo", name="", placeholder="100")
-            | %
-            br
-
-          h3.admin-h3 Frontend
-
-          label Git
-            input(type="text", id="skills-git", name="", placeholder="100")
-            | %
-            br
-          label Gulp
-            input(type="text", id="skills-gulp", name="", placeholder="100")
-            | %
-            br
-          label Bower
-            input(type="text", id="skills-bower", name="", placeholder="100")
-            | %
-            br
-
-          br
-          input(type="submit" value="Сохранить")
+          button#edit-skills-btn(type="submit") Сохранить
         
       .admin__tab
 
@@ -89,7 +56,7 @@ html(lang="ru-RU")
           h3.admin-h3 добавить запись
           input(type="text" name="itemName" placeholder="Название")
           br
-          input(type="date" name="itemDate" placeholder="Дата")
+          input(type="date" name="itemDate" id="datePicker" placeholder="Дата")
           br
           textarea(name="itemBody" cols="30", rows="10" placeholder="Содержание")
           br

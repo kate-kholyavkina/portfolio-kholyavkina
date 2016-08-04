@@ -30,7 +30,26 @@ block content
             p.
               Больше всего меня привлекет Frontend разработка, но я также знакома и могу решать несложные задачи на Backend. Но давайте по порядку.
           .skills
-            +knobList("skills", skillsList)
+            //- +knobList("skills", form)
+            - var className = "skills"
+            if (skills)
+              each group, i in skills
+
+                div(class="section-subtitle section-subtitle--#{className}")= group.name
+                ul(class="#{className}__list #{className}__list--#{group.id}")
+
+                  if ( group.items )
+                    each title, id in group.items
+                      if ( !form )
+                        +skillCircle("skills", '50', title)
+                      else 
+                        each formgroup, formi in form
+                          each formvalue, formid in formgroup
+                            if (formid == id)
+                              +skillCircle("skills", formvalue, title)
+
+
+
 
   section.section-map
     include ../common/_map

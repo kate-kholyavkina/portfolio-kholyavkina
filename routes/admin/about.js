@@ -3,6 +3,7 @@
 let route = require('express').Router();
 let mongoose = require('mongoose');
 let skills = require('../../models/skills.json');
+let querystring = require('querystring');
 
 require('../../models/skills');
 
@@ -20,7 +21,6 @@ route.get('/', (req, res) => {
 
       return prev;
     }, {});
-
     res.render('admin', { skills: skills, form: form });
   });
 });
@@ -35,9 +35,9 @@ route.post('/about', (req,res) => {
 
   Object.keys(req.body).map(section => ({
     section: section,
-    items: Object.keys(req.body[section]).map(i => ({
+    items: Object.keys(querystring.parse(req.body[section])).map(i => ({
       name: i,
-      value: req.body[section][i]
+      value: querystring.parse(req.body[section])[i]
     }))
   })).forEach(toSave => models.push(new Model(toSave)));
 

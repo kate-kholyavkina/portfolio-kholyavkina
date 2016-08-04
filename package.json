@@ -31,6 +31,7 @@
     "mongoose": "^4.5.3",
     "multiparty": "^4.1.2",
     "nodemailer": "^2.5.0",
-    "normalize.css": "^4.1.1"
+    "normalize.css": "^4.1.1",
+    "querystring": "^0.2.0"
   }
 }
