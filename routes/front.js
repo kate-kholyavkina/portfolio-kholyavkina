@@ -17,9 +17,7 @@ route.get('/', (req,res) => {
 route.get('/blog.html', (req,res) => {
   let Model = mongoose.model('blog');
 
-  console.log(Model);
-
-  Model.find().then(items => {
+  Model.find({}).sort({date: 'desc'}).then(items => {
     res.render('pages/blog', {content: CONTENT, items: items});
   });
 });
