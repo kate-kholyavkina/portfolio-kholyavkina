@@ -37,20 +37,22 @@ mixin knobList(className, array)
   - var smallRadius = radius - stroke/2;
   - var circumference = 2 * Math.PI * smallRadius;
 
-  each sublist, groupTitle in array
-    div(class="section-subtitle section-subtitle--#{className}")= groupTitle
-      
-    ul(class="#{className}__list #{className}__list--#{groupTitle}")
-      each value, title in sublist
-        - var arc = (value * circumference / 100);
-          li(class="#{className}__item")
-            svg(class="#{className}__circle" width="#{diameter}" height="#{diameter}")
+  if (array)
+    each sublist, groupTitle in array
+      div(class="section-subtitle section-subtitle--#{className}")= groupTitle
+        
+      ul(class="#{className}__list #{className}__list--#{groupTitle}")
+        if (sublist)
+          each value, title in sublist
+            - var arc = (value * circumference / 100);
+              li(class="#{className}__item")
+                svg(class="#{className}__circle" width="#{diameter}" height="#{diameter}")
 
-              circle(class="outer" cx="#{radius}" cy="#{radius}" r="#{smallRadius}" stroke-width="#{stroke}" fill="lightgrey")
+                  circle(class="outer" cx="#{radius}" cy="#{radius}" r="#{smallRadius}" stroke-width="#{stroke}" fill="lightgrey")
 
-              circle(class="inner" cx="#{radius}" cy="#{radius}" r="#{smallRadius}" stroke="black" stroke-width="#{stroke}" fill="lightgrey" data-arc="#{arc}" data-circumference="#{circumference}" stroke-dasharray="0 1000")
-            div(class="#{className}__label-holder")
-              div(class="#{className}__label")= title
+                  circle(class="inner" cx="#{radius}" cy="#{radius}" r="#{smallRadius}" stroke="black" stroke-width="#{stroke}" fill="lightgrey" data-arc="#{arc}" data-circumference="#{circumference}" stroke-dasharray="0 1000")
+                div(class="#{className}__label-holder")
+                  div(class="#{className}__label")= title
 
 
 mixin blogArticles(className, array)
