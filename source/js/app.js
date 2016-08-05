@@ -69,26 +69,12 @@
 
 
   // ---------------------------
-  // Edit Skills Init
+  // Admin Menu Tabs
   // ---------------------------
-  // if ($('#js-get-admin-about').length) {
-  //   $('#js-get-admin-about').on('click', function(){
+  if ($('.admin__menu-item').length && $('.admin__tabs').length ) {
+    adminTabs.init('.admin__menu-item', '.admin__tabs');
+  }
 
-  //     $.ajax({
-  //       type: "GET",
-  //       url: '/admin/',
-  //       cache: false,
-  //       data: {}
-  //     }).done(function(response){
-  //       // if (response.error) {
-  //       //   modal.showMessage(response.error);
-  //       // } else {
-  //       //   window.location.href = '/admin';
-  //       // }
-  //     }).fail(function(response){
-  //       modal.showMessage('произошла непредвиденная ошибка. попробуйте еще раз или обратитесь к администратору');
-  //     })
-  //   })
-  // }
+
 
 })();
