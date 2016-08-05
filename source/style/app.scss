@@ -38,6 +38,13 @@ $color_slider_left: #f0efe9;
 $color_quote: #dde0e0;
 
 
+// admin
+$admin_theme_color: #00bfa5;
+$admin_menu_bg: #f0efe9;
+$admin_menu_color: #455a64;
+$admin_text_color: #455a64;
+
+
 
 // fonts
 @import 'font-awesome/font-awesome';
@@ -79,3 +86,6 @@ $color_quote: #dde0e0;
 
 // parallax
 @import 'common/parallax';
+
+// admin panel
+@import 'pages/admin';

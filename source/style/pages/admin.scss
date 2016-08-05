@@ -1,0 +1,153 @@
+.body--admin {
+  color: $admin_text_color;
+  overflow-x: hidden;
+}
+
+.admin__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/admin-bg.jpg) no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+.admin__content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.admin__header {
+  background-color: $admin_theme_color;
+  @include clearfix;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: rem(22px) rem(30px);
+
+  @include phone {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.admin-h1 {
+  color: white;
+  font-family: 'Roboto-Medium';
+  font-size: rem(28px);
+  margin: 0;
+  @include phone {
+    text-align: center;
+    margin-bottom: 1rem;
+
+  }
+}
+
+.admin-h2 {
+  font-size: rem(21px);
+  margin-bottom: rem(42px);
+}
+.admin-h3 {
+  font-size: rem(16px);
+}
+
+.admin-back {
+  margin-left: auto;
+  @include phone {
+    margin-left: 0;
+  }
+}
+
+.admin-back__link {
+  color: rgba(#fff, 0.7);
+  text-decoration: underline;
+  font-family: 'Roboto-Medium';
+  font-size: 1rem;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.admin__menu {
+  background-color: $admin_menu_bg;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.admin__menu-item {
+  width: rem(180px);
+  height: rem(60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-transform: uppercase;
+  color: $admin_menu_color;
+  border-right: 2px solid #fff;
+  cursor: pointer;
+
+  &.active{
+    background-color: #ffffff;
+    color: $admin_theme_color;
+  }
+  &:hover {
+    color: $admin_theme_color;
+  }
+}
+
+.admin__tabs {
+  flex-grow: 1;
+  display: flex;
+}
+.admin__tab {
+  padding: rem(22px) rem(30px);
+  display: none;
+
+  &.active {
+    display: flex;
+    flex-grow: 1;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+}
+
+
+.admin__content {
+  input[type="text"], 
+  input[type="date"] {
+    @extend .form__input;
+    max-width: 300px;
+  }
+  textarea {
+    @extend .form__input;
+    @extend .form__input--textarea;
+    max-width: 500px;
+  }
+  input[type="submit"], 
+  button {
+    @extend .btn;
+    @extend .btn--primary;
+    align-self: flex-start;
+    margin-top: auto;
+  }
+  .upload-label{
+    display: block;
+    padding: 10px 5px 10px 40px;
+    background: url(../img/add-photo.svg) no-repeat left bottom;
+    cursor: pointer;
+    color: $admin_theme_color;
+    input {
+      display: none;
+    } 
+    &:hover {
+      opacity: 0.8
+    } 
+  }
+}
