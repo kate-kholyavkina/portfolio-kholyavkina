@@ -33,7 +33,7 @@ Thumbs.db
 bower_components
 dist
 build
-public
+public/
 
 # Node.JS
 node_modules
