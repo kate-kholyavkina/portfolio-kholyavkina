@@ -127,12 +127,12 @@
   input[type="date"] {
     @extend .form__input;
     width: auto;
-    max-width: 300px;
+    max-width: rem(300px);
   }
   textarea {
     @extend .form__input;
     @extend .form__input--textarea;
-    max-width: 500px;
+    max-width: rem(500px);
   }
   input[type="submit"], 
   button {
@@ -143,7 +143,7 @@
   }
   .upload-label{
     display: block;
-    padding: 10px 5px 10px 40px;
+    padding: rem(10px) rem(5px) rem(10px) rem(40px);
     background: url(../img/add-photo.svg) no-repeat left bottom;
     cursor: pointer;
     color: $admin_theme_color;
@@ -159,12 +159,13 @@
   .admin-skills-holder {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .admin-skills-block {
-    width: 210px;
+    width: rem(210px);
     flex-shrink: 0;
-    margin-right: 100px;
+    margin-right: rem(100px);
   }
   .skill-label {
     display: flex;
@@ -178,10 +179,10 @@
     font-size: rem(16px);
   }
   .skill-input[type="text"] {
-    width: 60px;
+    width: rem(60px);
     margin-left: auto;
     margin-bottom: 0;
-    margin-right: 10px;
+    margin-right: rem(10px);
     text-align: right;
   }
 
