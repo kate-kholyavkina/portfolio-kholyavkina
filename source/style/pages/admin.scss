@@ -126,6 +126,7 @@
   input[type="text"], 
   input[type="date"] {
     @extend .form__input;
+    width: auto;
     max-width: 300px;
   }
   textarea {
@@ -154,4 +155,34 @@
       opacity: 0.8
     } 
   }
+
+  .admin-skills-holder {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .admin-skills-block {
+    width: 210px;
+    flex-shrink: 0;
+    margin-right: 100px;
+  }
+  .skill-label {
+    display: flex;
+    align-items: center;
+    // width: 300px;
+    margin-bottom: rem(20px);
+  }
+  .skill-title {
+    font-family:'Roboto-Regular';
+    padding-left: rem(20px);
+    font-size: rem(16px);
+  }
+  .skill-input[type="text"] {
+    width: 60px;
+    margin-left: auto;
+    margin-bottom: 0;
+    margin-right: 10px;
+    text-align: right;
+  }
+
 }

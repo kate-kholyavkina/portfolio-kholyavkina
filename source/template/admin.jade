@@ -26,22 +26,25 @@ html(lang="ru-RU")
           form.form.form--edit-skills(method="post")
             h2.admin-h2 Страница &laquo;Обо мне&raquo;
 
-            if ( skills)
-              each group, i in skills
-                h3.admin-h3 #{group.name}
-                div(class="skills-group" data-title=group.id)
-                  if ( group.items )
-                    each title, id in group.items
-                      label= title
-                        if ( !form )
-                          input(type="text", id="", name=id, value="50")
-                          | %
-                        else 
-                          each formgroup, formi in form
-                            each formvalue, formid in formgroup
-                              if (formid == id)
-                                input(type="text", id="", name=id, value=formvalue)
-                                | %
+            .admin-skills-holder
+              if ( skills)
+                each group, i in skills
+                  .admin-skills-block
+                    h3.admin-h3 #{group.name}
+                    div(class="skills-group" data-title=group.id)
+                      if ( group.items )
+                        each title, id in group.items
+                          label.skill-label
+                            span.skill-title= title
+                            if ( !form )
+                              input.input--skill(type="text", id="", name=id, value="50")
+                              | %
+                            else 
+                              each formgroup, formi in form
+                                each formvalue, formid in formgroup
+                                  if (formid == id)
+                                    input.skill-input(type="text", id="", name=id, value=formvalue)
+                                    | %
               
 
 
