@@ -53,11 +53,15 @@
 
 
 .aboutme {
+  padding-bottom: 50px;
   @include clearfix;
   @include wide {
     text-align: right;
     display: flex;
     align-items: flex-start;
+  }
+  @include tablet {
+    padding-bottom: 20px;
   }
   .about__content {
     max-width: 29rem;
