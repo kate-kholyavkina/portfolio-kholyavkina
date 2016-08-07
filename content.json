@@ -85,18 +85,19 @@
     "Frontend" : {
       "HTML5" : "80",
       "CSS3" : "85",
-      "JavaScript & jQuery" : "65"
+      "JavaScript & jQuery" : "65",
+      "SASS & Jade" : "75"
     },
     "Backend" : {
       "PHP" : "20",
       "mySQL" : "25",
-      "Node.js & npm" : "10",
+      "Node.js" : "10",
       "Mongo.db" : "5"
     },
     "WorkFlow" : {
-      "Git" : "50",
+      "Git" : "60",
       "Gulp" : "65",
-      "Bower" : "65"
+      "NPM & Bower" : "80"
     }
   },
   "blogArticles": {
