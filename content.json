@@ -44,13 +44,13 @@
       "title" : "Обо мне"
     },
     "4" : {
-      "href" : "/",
+      "href" : "index.html",
       "title" : "Авторизация"
     }
   },
   "loginpageMenu" : {
     "works" : {
-      "href" : "/",
+      "href" : "index.html",
       "title" : "На главную",
       "class" : "btn--hide-login"
     },
