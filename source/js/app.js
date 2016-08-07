@@ -52,5 +52,29 @@
     skillsAnimation.init();
   }
 
+  // ---------------------------
+  // Adding Blog Post Init
+  // ---------------------------
+  if ($('#add-blog-btn').length) {
+    addBlogForm.init('#add-blog-btn');
+  }
+
+
+  // ---------------------------
+  // Edit Skills Init
+  // ---------------------------
+  if ($('#edit-skills-btn').length) {
+    esitSkillsForm.init('#edit-skills-btn');
+  }
+
+
+  // ---------------------------
+  // Admin Menu Tabs
+  // ---------------------------
+  if ($('.admin__menu-item').length && $('.admin__tabs').length ) {
+    adminTabs.init('.admin__menu-item', '.admin__tabs');
+  }
+
+
 
 })();
