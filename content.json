@@ -1,9 +1,9 @@
 {
   "socials": {
-    "Vkontakte" : {
-      "href" : "https://vk.com/id9807272",
-      "title" : "Vkontakte",
-      "iconClass" : "fa fa-vk"
+    "Facobook" : {
+      "href" : "https://www.facebook.com/kat.oleynick",
+      "title" : "Facebook",
+      "iconClass" : "fa fa-facebook"
     },
     "Github" : {
       "href" : "https://github.com/kate-kholyavkina",
