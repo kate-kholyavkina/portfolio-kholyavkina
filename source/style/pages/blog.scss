@@ -48,6 +48,8 @@ html.html--blog-opened .top-nav {
 
 .blog__articles {
   margin-left: 28%;
+  margin-right: 10%;
+  @include clearfix;
 
   @include desktop {
     margin-left: 33.5%;
@@ -56,7 +58,8 @@ html.html--blog-opened .top-nav {
 
   }
   @include tablet {
-    margin-left: 0;
+    margin-left: 2%;
+    margin-right: 2%;
   }
   @include phone {
     
@@ -105,6 +108,8 @@ html.html--blog-opened .top-nav {
   height: auto;
   padding-top: 68px;
   max-width: 24.5rem;
+  overflow-y: auto;
+  max-height: 100%;
   @include wide {
     padding-left: 6rem;
   }

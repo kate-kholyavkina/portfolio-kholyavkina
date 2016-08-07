@@ -6,6 +6,7 @@
   text-align: center;
   border-radius: 0.35714285rem;
   transition: all 0.3s;
+  border: none;
   @include phone {
     padding: 0.85rem 1.35rem;
   }
