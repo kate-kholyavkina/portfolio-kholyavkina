@@ -128,12 +128,30 @@ var blogMenuPanel = (function(){
     var menu = $('.off-canvas--menu');
     var scrollY = window.scrollY;
 
-    if (scrollY > headerHeight) {
+    if ( (scrollY > headerHeight) ){
       menu.addClass('fixed');
     } else {
       menu.removeClass('fixed');
     }
-        
+
+
+
+    // add margin-top to menu to avoid overlapping with footer
+    var menuHeight = $('.blog__blog-nav').outerHeight();
+    var footerTop = $('.footer').offset().top;
+    var menuOffset = scrollY - (footerTop - menuHeight);
+    
+    if (menuOffset >= 0) {
+      menu.css('margin-top', - menuOffset + 'px');
+    } else {
+      menu.css('margin-top', '0');
+    }
+
+
+
+    $('.blog__blog-nav').css('max-height', footerTop - headerHeight + 'px');
+
+
   }
 
   function _locateMenu() {

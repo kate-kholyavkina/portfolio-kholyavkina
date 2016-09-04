@@ -54,7 +54,7 @@ var addBlogForm = (function () {
         modal.showMessage(response.message);
       }
     }).fail(function(response){
-      modal.showMessage('произошла непредвиденная ошибка. попробуйте еще раз или обратитесь к администратору');
+      modal.showMessage('Произошла ошибка. Попробуйте еще или обратитесь к администратору');
     })
   };
 

@@ -1,59 +1,121 @@
 (function() {
   'use strict';
 
-  preloader.init();
-  modal.init();
-  hamburgerMenu.init();
-  scrollButtons.init();
+  // ---------------------------
+  // Common: Main Preloader
+  // ---------------------------
+  if ($('.preloader').length) {
+    preloader.init();
+  }
 
+  // ---------------------------
+  // Common: Modal
+  // ---------------------------
+  if ($('.modal').length) {
+    modal.init();
+  }
 
+  // ---------------------------
+  // Common: Burger Menu
+  // ---------------------------
+  if ($('#burger-btn').length) {
+    hamburgerMenu.init();
+  }
 
-  // на странице index
-  if (window.location.pathname == '/index.html' || window.location.pathname == '/') {
+  // ---------------------------
+  // Common: Scroll Up, Scroll Down Animation
+  // ---------------------------
+  if ($('.scroll-control--down').length || $('.scroll-control--up').length) {
+    scrollButtons.init();
+  }
 
+  // ---------------------------
+  // Home Page: Parallax
+  // ---------------------------
+  if ($('.parallax').length) {
     parallax.init();
+  }
+
+  // ---------------------------
+  // Home Page: Login Form Sending
+  // ---------------------------
+  if ($('.form--login').length) {
     loginForm.init();
+  }
+
+  // ---------------------------
+  // Home Page: Flip Animation
+  // ---------------------------
+  if ($('.flip-container').length) {
     flipCard.init();
   }
 
+  // ---------------------------
+  // Blog Page: Menu and ScrollSpy
+  // ---------------------------
 
-  // на странице blog
-  if (window.location.pathname == '/blog.html') {
+  // if there is a preloader on page
+  if ($('.preloader').length) {
 
-    // Модуль blogMenu должен быть инициализирован после отрисовки всех элементов,
-    // для чего логично было бы использовать document.ready
-    // Но использование document.ready тут невозможно из-за прелоадера, 
-    // так как для правильной работы прелоадера у всех элементов сначала стоит display: none.
-    // из-за этого document.ready срабатывает слишком рано, когда отрисован только прелоадер.
-    // 
-    // поэтому пришлось создать Deferred объект в модуле preloader: preloader.contentReady
-    // preloader.contentReady получает метод .resolve() только после того, как все элементы получают display: block
-    // Соответственно, инициализация blogMenu происходит после получения display: block и отрисовки всех элементов
-
-    preloader.contentReady.done(function() { 
-      scrollspy.init();
-      blogMenuPanel.init();
+    // wait until preloader is loaded
+    preloader.contentReady.done(function() {
+      if ($('.off-canvas--menu').length) {
+        blogMenuPanel.init();
+      }
+      if ($('.blog-nav__link').length) {
+        scrollspy.init();
+      }
     });
+
+  } else {
+    if ($('.off-canvas--menu').length) {
+      blogMenuPanel.init();
+    }
+    if ($('.blog-nav__link').length) {
+      scrollspy.init();
+    }
   }
 
 
-  // на странице works
-  if (window.location.pathname == '/works.html') {
 
+  // ---------------------------
+  // Works Page: Blur
+  // ---------------------------
+  if ($('.blur').length) {
     blur.init();
+  }
+
+  // ---------------------------
+  // Works Page: Slider
+  // ---------------------------
+  if ($('.slider').length) {
     slider.init();
+  }
+
+  // ---------------------------
+  // Works Page: Slider Titles Animation
+  // ---------------------------
+  if ($('.slider__info').length) {
     sliderTitlesAnimation.init();
+  }
+
+  // ---------------------------
+  // Works Page: Sending Contact Form
+  // ---------------------------
+  if ($('.form--contact').length) {
     contactForm.init();
   }
 
 
-  // на странице about
-  if (window.location.pathname == '/about.html') {
+  // ---------------------------
+  // About Page: Skills Animation
+  // ---------------------------
+  if ($('.skills__item').length) {
     skillsAnimation.init();
   }
 
   // ---------------------------
-  // Adding Blog Post Init
+  // Admin Page: Adding Blog Post Init
   // ---------------------------
   if ($('#add-blog-btn').length) {
     addBlogForm.init('#add-blog-btn');
@@ -61,7 +123,7 @@
 
 
   // ---------------------------
-  // Edit Skills Init
+  // Admin Page: Edit Skills Init
   // ---------------------------
   if ($('#edit-skills-btn').length) {
     esitSkillsForm.init('#edit-skills-btn');
@@ -69,26 +131,11 @@
 
 
   // ---------------------------
-  // Edit Skills Init
+  // Admin Page: Admin Menu Tabs
   // ---------------------------
-  // if ($('#js-get-admin-about').length) {
-  //   $('#js-get-admin-about').on('click', function(){
+  if ($('.admin__menu-item').length && $('.admin__tabs').length ) {
+    adminTabs.init('.admin__menu-item', '.admin__tabs');
+  }
 
-  //     $.ajax({
-  //       type: "GET",
-  //       url: '/admin/',
-  //       cache: false,
-  //       data: {}
-  //     }).done(function(response){
-  //       // if (response.error) {
-  //       //   modal.showMessage(response.error);
-  //       // } else {
-  //       //   window.location.href = '/admin';
-  //       // }
-  //     }).fail(function(response){
-  //       modal.showMessage('произошла непредвиденная ошибка. попробуйте еще раз или обратитесь к администратору');
-  //     })
-  //   })
-  // }
 
 })();
