@@ -6,14 +6,15 @@ It has:
 --------
 - beautiful mountains parallax effect (on Homepage, desktop)
 - cool flip effect - Authorization page 
-- preloader
+- preloader - All pages
 - animated slider - Portfolio page
-- form with interesting blur effect
-- My skills: svg animation
-- yummy animation
+- form with interesting blur effect - Portfolio page
+- My skills: svg animation - About me page
+- tiny yummy main menu animation - All pages
+- scrollspy - Blog page
 
- 
-And all of that features is my own pure js+jquery code, with no more special plugins. 
+All of this is fully responsive
+And all of the features are my own pure js+jquery code, I didnt use any special plugins. 
 
 
 How to open this project on your computer
