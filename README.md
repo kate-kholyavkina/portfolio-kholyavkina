@@ -1,4 +1,4 @@
-# My Portfolio - Kholyavkina Kate
+# My Portfolio - Karteryna Oliinyk
 
 This is my tiny but beautiful portfolio project.
 
