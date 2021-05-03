@@ -8,7 +8,7 @@ It has:
 - cool flip effect - Authorization page 
 - preloader - All pages
 - animated slider - Portfolio page
-- form with interesting blur effect - Portfolio page
+- form with blur effect - Portfolio page
 - My skills: svg animation - About me page
 - tiny yummy main menu animation - All pages
 - scrollspy - Blog page
